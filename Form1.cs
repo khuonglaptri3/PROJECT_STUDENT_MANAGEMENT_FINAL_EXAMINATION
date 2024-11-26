@@ -33,6 +33,9 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             if(panel2.Width >= 525 )
              {
                 timer1.Stop(); 
+                LoginForm loginForm = new LoginForm(); 
+                loginForm.Show();   
+                this.Hide();     
             }
         }
     }
