@@ -16,5 +16,15 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
