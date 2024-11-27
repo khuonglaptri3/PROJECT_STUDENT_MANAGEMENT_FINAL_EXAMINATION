@@ -60,7 +60,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
         public virtual string PrintDetails()
         {
-            return $" ID : {ID} ";
+            return $" ID : {ID}, Full Name : {FIRSTNAME} {LASTNAME}, Date of birth {DATEOFBIRTH.ToString()}";
         }
     }
 }
