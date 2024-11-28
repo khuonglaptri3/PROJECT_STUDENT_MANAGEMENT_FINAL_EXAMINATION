@@ -50,7 +50,20 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                         adapter.Fill(table);
                         if (table.Rows.Count >= 1)
                         {
-                            MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if(Teacherrarbut.Checked)
+                            {
+                                MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                TeacherForm teacherForm = new TeacherForm();
+                                teacherForm.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                StudentForm studentForm = new StudentForm();
+                                studentForm.Show();
+                                this.Hide();
+                            }
                         }
                         else
                         {

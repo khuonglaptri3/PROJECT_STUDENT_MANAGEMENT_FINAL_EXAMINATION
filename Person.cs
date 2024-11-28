@@ -14,19 +14,19 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private String lastname; 
 
 
-        Person ()
+        public Person ()
         {
             id = default;
             name = default;
             dateofbirth = default; 
         }
-        Person(int id, String name, Date dateofbirth)
+        public Person(int id, String name, Date dateofbirth)
         {
             this.id = id;
             this.name = name;
             this.dateofbirth = dateofbirth;
         }
-        Person (int id , String firstname , String lastname , Date dateofbirth)
+        public Person (int id , String firstname , String lastname , Date dateofbirth)
         {
             this.id = id;
             this.firstname = firstname;

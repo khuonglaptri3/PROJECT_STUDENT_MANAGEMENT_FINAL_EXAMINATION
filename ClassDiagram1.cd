@@ -15,14 +15,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Teacher">
-    <Position X="2" Y="5" Width="1.5" />
+    <Position X="2.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Teacher.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Administrator">
-    <Position X="8.5" Y="2.25" Width="1.5" />
+    <Position X="8.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Administrator.cs</FileName>

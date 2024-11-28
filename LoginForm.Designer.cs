@@ -40,6 +40,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.Teacherrarbut = new System.Windows.Forms.RadioButton();
+            this.Studentrar = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -92,6 +94,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.MintCream;
+            this.panel3.Controls.Add(this.Studentrar);
+            this.panel3.Controls.Add(this.Teacherrarbut);
             this.panel3.Controls.Add(this.showpass);
             this.panel3.Controls.Add(this.Loginbut);
             this.panel3.Controls.Add(this.Password);
@@ -99,9 +103,9 @@
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(101, 72);
+            this.panel3.Location = new System.Drawing.Point(65, 72);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(317, 421);
+            this.panel3.Size = new System.Drawing.Size(399, 421);
             this.panel3.TabIndex = 0;
             // 
             // showpass
@@ -109,7 +113,7 @@
             this.showpass.AutoSize = true;
             this.showpass.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.showpass.ForeColor = System.Drawing.Color.Black;
-            this.showpass.Location = new System.Drawing.Point(163, 286);
+            this.showpass.Location = new System.Drawing.Point(214, 318);
             this.showpass.Name = "showpass";
             this.showpass.Size = new System.Drawing.Size(125, 20);
             this.showpass.TabIndex = 2;
@@ -122,7 +126,7 @@
             this.Loginbut.BackColor = System.Drawing.Color.Teal;
             this.Loginbut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Loginbut.ForeColor = System.Drawing.Color.Black;
-            this.Loginbut.Location = new System.Drawing.Point(187, 323);
+            this.Loginbut.Location = new System.Drawing.Point(252, 367);
             this.Loginbut.Name = "Loginbut";
             this.Loginbut.Size = new System.Drawing.Size(87, 41);
             this.Loginbut.TabIndex = 5;
@@ -133,7 +137,7 @@
             // Password
             // 
             this.Password.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password.Location = new System.Drawing.Point(17, 230);
+            this.Password.Location = new System.Drawing.Point(56, 199);
             this.Password.Name = "Password";
             this.Password.PasswordChar = '*';
             this.Password.Size = new System.Drawing.Size(284, 31);
@@ -143,7 +147,7 @@
             // Username
             // 
             this.Username.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Username.Location = new System.Drawing.Point(17, 148);
+            this.Username.Location = new System.Drawing.Point(55, 125);
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(284, 29);
             this.Username.TabIndex = 3;
@@ -153,7 +157,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(13, 192);
+            this.label5.Location = new System.Drawing.Point(52, 167);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 19);
             this.label5.TabIndex = 2;
@@ -164,7 +168,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(13, 110);
+            this.label4.Location = new System.Drawing.Point(51, 90);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 19);
             this.label4.TabIndex = 1;
@@ -180,6 +184,32 @@
             this.label3.Size = new System.Drawing.Size(102, 31);
             this.label3.TabIndex = 0;
             this.label3.Text = "Sign In ";
+            // 
+            // Teacherrarbut
+            // 
+            this.Teacherrarbut.AutoSize = true;
+            this.Teacherrarbut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Teacherrarbut.ForeColor = System.Drawing.Color.Black;
+            this.Teacherrarbut.Location = new System.Drawing.Point(149, 253);
+            this.Teacherrarbut.Name = "Teacherrarbut";
+            this.Teacherrarbut.Size = new System.Drawing.Size(86, 20);
+            this.Teacherrarbut.TabIndex = 6;
+            this.Teacherrarbut.TabStop = true;
+            this.Teacherrarbut.Text = "Teacher";
+            this.Teacherrarbut.UseVisualStyleBackColor = true;
+            // 
+            // Studentrar
+            // 
+            this.Studentrar.AutoSize = true;
+            this.Studentrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Studentrar.ForeColor = System.Drawing.Color.Black;
+            this.Studentrar.Location = new System.Drawing.Point(260, 253);
+            this.Studentrar.Name = "Studentrar";
+            this.Studentrar.Size = new System.Drawing.Size(80, 20);
+            this.Studentrar.TabIndex = 7;
+            this.Studentrar.TabStop = true;
+            this.Studentrar.Text = "Student";
+            this.Studentrar.UseVisualStyleBackColor = true;
             // 
             // LoginForm
             // 
@@ -217,5 +247,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox showpass;
+        private System.Windows.Forms.RadioButton Studentrar;
+        private System.Windows.Forms.RadioButton Teacherrarbut;
     }
 }
