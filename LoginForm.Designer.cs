@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Teacherrarbut = new System.Windows.Forms.RadioButton();
-            this.label7 = new System.Windows.Forms.Label();
-            this.Registerbut = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Registerbut = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.Adminrarbut = new System.Windows.Forms.RadioButton();
             this.Studentrar = new System.Windows.Forms.RadioButton();
+            this.Teacherrarbut = new System.Windows.Forms.RadioButton();
             this.showpass = new System.Windows.Forms.CheckBox();
             this.Loginbut = new System.Windows.Forms.Button();
             this.Password = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -61,44 +61,6 @@
             this.panel2.Size = new System.Drawing.Size(550, 570);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // Teacherrarbut
-            // 
-            this.Teacherrarbut.AutoSize = true;
-            this.Teacherrarbut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Teacherrarbut.ForeColor = System.Drawing.Color.Black;
-            this.Teacherrarbut.Location = new System.Drawing.Point(193, 222);
-            this.Teacherrarbut.Name = "Teacherrarbut";
-            this.Teacherrarbut.Size = new System.Drawing.Size(86, 20);
-            this.Teacherrarbut.TabIndex = 6;
-            this.Teacherrarbut.TabStop = true;
-            this.Teacherrarbut.Text = "Teacher";
-            this.Teacherrarbut.UseVisualStyleBackColor = true;
-            this.Teacherrarbut.CheckedChanged += new System.EventHandler(this.Teacherrarbut_CheckedChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(46, 370);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(167, 18);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Don\'t have an account ?";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // Registerbut
-            // 
-            this.Registerbut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Registerbut.ForeColor = System.Drawing.Color.IndianRed;
-            this.Registerbut.Location = new System.Drawing.Point(234, 361);
-            this.Registerbut.Name = "Registerbut";
-            this.Registerbut.Size = new System.Drawing.Size(142, 36);
-            this.Registerbut.TabIndex = 11;
-            this.Registerbut.Text = "Register here";
-            this.Registerbut.UseVisualStyleBackColor = true;
-            this.Registerbut.Click += new System.EventHandler(this.Registerbut_Click);
             // 
             // panel3
             // 
@@ -121,6 +83,40 @@
             this.panel3.Size = new System.Drawing.Size(440, 421);
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // Registerbut
+            // 
+            this.Registerbut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Registerbut.ForeColor = System.Drawing.Color.IndianRed;
+            this.Registerbut.Location = new System.Drawing.Point(234, 361);
+            this.Registerbut.Name = "Registerbut";
+            this.Registerbut.Size = new System.Drawing.Size(142, 36);
+            this.Registerbut.TabIndex = 11;
+            this.Registerbut.Text = "Register here";
+            this.Registerbut.UseVisualStyleBackColor = true;
+            this.Registerbut.Click += new System.EventHandler(this.Registerbut_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(46, 370);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(167, 18);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Don\'t have an account ?";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 16);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "label6";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // Adminrarbut
             // 
@@ -150,12 +146,26 @@
             this.Studentrar.UseVisualStyleBackColor = true;
             this.Studentrar.CheckedChanged += new System.EventHandler(this.Studentrar_CheckedChanged);
             // 
+            // Teacherrarbut
+            // 
+            this.Teacherrarbut.AutoSize = true;
+            this.Teacherrarbut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Teacherrarbut.ForeColor = System.Drawing.Color.Black;
+            this.Teacherrarbut.Location = new System.Drawing.Point(193, 222);
+            this.Teacherrarbut.Name = "Teacherrarbut";
+            this.Teacherrarbut.Size = new System.Drawing.Size(86, 20);
+            this.Teacherrarbut.TabIndex = 6;
+            this.Teacherrarbut.TabStop = true;
+            this.Teacherrarbut.Text = "Teacher";
+            this.Teacherrarbut.UseVisualStyleBackColor = true;
+            this.Teacherrarbut.CheckedChanged += new System.EventHandler(this.Teacherrarbut_CheckedChanged);
+            // 
             // showpass
             // 
             this.showpass.AutoSize = true;
             this.showpass.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.showpass.ForeColor = System.Drawing.Color.Black;
-            this.showpass.Location = new System.Drawing.Point(251, 248);
+            this.showpass.Location = new System.Drawing.Point(251, 262);
             this.showpass.Name = "showpass";
             this.showpass.Size = new System.Drawing.Size(125, 20);
             this.showpass.TabIndex = 2;
@@ -168,7 +178,7 @@
             this.Loginbut.BackColor = System.Drawing.Color.Teal;
             this.Loginbut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Loginbut.ForeColor = System.Drawing.Color.Black;
-            this.Loginbut.Location = new System.Drawing.Point(25, 281);
+            this.Loginbut.Location = new System.Drawing.Point(25, 295);
             this.Loginbut.Name = "Loginbut";
             this.Loginbut.Size = new System.Drawing.Size(87, 41);
             this.Loginbut.TabIndex = 5;
@@ -265,16 +275,6 @@
             this.panel1.Size = new System.Drawing.Size(550, 30);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 16);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "label6";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // LoginForm
             // 

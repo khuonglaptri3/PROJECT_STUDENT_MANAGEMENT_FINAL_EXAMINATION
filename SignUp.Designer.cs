@@ -107,7 +107,7 @@
             this.Loginbut.Name = "Loginbut";
             this.Loginbut.Size = new System.Drawing.Size(87, 41);
             this.Loginbut.TabIndex = 5;
-            this.Loginbut.Text = "Log in ";
+            this.Loginbut.Text = "Sign Up";
             this.Loginbut.UseVisualStyleBackColor = false;
             // 
             // Password
@@ -156,9 +156,9 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(162, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 31);
+            this.label3.Size = new System.Drawing.Size(105, 31);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Sign In ";
+            this.label3.Text = "Sign Up";
             // 
             // label2
             // 
