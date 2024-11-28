@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
-    public partial class AdminForm : Form
+    public partial class SignUp : Form
     {
-        public AdminForm()
+        public SignUp()
         {
             InitializeComponent();
-        }
-
-        private void AdminForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
