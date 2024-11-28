@@ -32,7 +32,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.showpass = new System.Windows.Forms.CheckBox();
-            this.Loginbut = new System.Windows.Forms.Button();
+            this.Sign_upBut = new System.Windows.Forms.Button();
             this.Password = new System.Windows.Forms.TextBox();
             this.Username = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@
             this.panel3.Controls.Add(this.Registerbut);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.showpass);
-            this.panel3.Controls.Add(this.Loginbut);
+            this.panel3.Controls.Add(this.Sign_upBut);
             this.panel3.Controls.Add(this.Password);
             this.panel3.Controls.Add(this.Username);
             this.panel3.Controls.Add(this.label5);
@@ -75,6 +75,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(440, 421);
             this.panel3.TabIndex = 0;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label7
             // 
@@ -98,18 +99,20 @@
             this.showpass.TabIndex = 2;
             this.showpass.Text = "Show Password";
             this.showpass.UseVisualStyleBackColor = false;
+            this.showpass.CheckedChanged += new System.EventHandler(this.showpass_CheckedChanged);
             // 
-            // Loginbut
+            // Sign_upBut
             // 
-            this.Loginbut.BackColor = System.Drawing.Color.Teal;
-            this.Loginbut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Loginbut.ForeColor = System.Drawing.Color.Black;
-            this.Loginbut.Location = new System.Drawing.Point(25, 281);
-            this.Loginbut.Name = "Loginbut";
-            this.Loginbut.Size = new System.Drawing.Size(87, 41);
-            this.Loginbut.TabIndex = 5;
-            this.Loginbut.Text = "Sign Up";
-            this.Loginbut.UseVisualStyleBackColor = false;
+            this.Sign_upBut.BackColor = System.Drawing.Color.Teal;
+            this.Sign_upBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sign_upBut.ForeColor = System.Drawing.Color.Black;
+            this.Sign_upBut.Location = new System.Drawing.Point(25, 281);
+            this.Sign_upBut.Name = "Sign_upBut";
+            this.Sign_upBut.Size = new System.Drawing.Size(106, 41);
+            this.Sign_upBut.TabIndex = 5;
+            this.Sign_upBut.Text = "Sign Up";
+            this.Sign_upBut.UseVisualStyleBackColor = false;
+            this.Sign_upBut.Click += new System.EventHandler(this.Sign_upBut_Click);
             // 
             // Password
             // 
@@ -157,9 +160,9 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(162, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 31);
+            this.label3.Size = new System.Drawing.Size(147, 31);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Sign Up";
+            this.label3.Text = "Get Started";
             // 
             // label2
             // 
@@ -167,9 +170,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(316, 24);
+            this.label2.Size = new System.Drawing.Size(335, 24);
             this.label2.TabIndex = 1;
-            this.label2.Text = "School Management System | Login";
+            this.label2.Text = "School Management System | Sign Up";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
@@ -204,6 +207,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(562, 583);
             this.panel2.TabIndex = 3;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // SignUp
             // 
@@ -231,7 +235,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox showpass;
-        private System.Windows.Forms.Button Loginbut;
+        private System.Windows.Forms.Button Sign_upBut;
         private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.TextBox Username;
         private System.Windows.Forms.Label label5;
