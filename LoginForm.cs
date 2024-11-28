@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data; 
 using System.Data.SqlClient; 
 namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
@@ -108,7 +107,9 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void Registerbut_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            SignUp signUp = new SignUp();   
+            signUp.Show();
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)

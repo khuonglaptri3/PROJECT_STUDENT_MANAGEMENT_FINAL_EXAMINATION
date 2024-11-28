@@ -55,8 +55,9 @@
             this.Registerbut.Name = "Registerbut";
             this.Registerbut.Size = new System.Drawing.Size(142, 36);
             this.Registerbut.TabIndex = 11;
-            this.Registerbut.Text = "Register here";
+            this.Registerbut.Text = "Login here";
             this.Registerbut.UseVisualStyleBackColor = true;
+            this.Registerbut.Click += new System.EventHandler(this.Registerbut_Click);
             // 
             // panel3
             // 
@@ -82,9 +83,9 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(46, 370);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(167, 18);
+            this.label7.Size = new System.Drawing.Size(188, 18);
             this.label7.TabIndex = 10;
-            this.label7.Text = "Don\'t have an account ?";
+            this.label7.Text = "Already have an account. ? ";
             // 
             // showpass
             // 
@@ -169,6 +170,7 @@
             this.label2.Size = new System.Drawing.Size(316, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "School Management System | Login";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -179,6 +181,7 @@
             this.label1.Size = new System.Drawing.Size(25, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -211,6 +214,7 @@
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SignUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUp";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
