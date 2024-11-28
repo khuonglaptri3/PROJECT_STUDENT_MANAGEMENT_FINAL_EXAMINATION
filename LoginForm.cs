@@ -57,11 +57,18 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                                 teacherForm.Show();
                                 this.Hide();
                             }
-                            else
+                            else if (Studentrar.Checked)
                             {
                                 MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 StudentForm studentForm = new StudentForm();
                                 studentForm.Show();
+                                this.Hide();
+                            }
+                            else 
+                            {
+                                MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                AdminForm adminForm = new AdminForm();
+                                adminForm.Show();
                                 this.Hide();
                             }
                         }
