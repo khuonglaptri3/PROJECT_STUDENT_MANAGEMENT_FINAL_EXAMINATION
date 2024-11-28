@@ -1,28 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Person" Collapsed="true">
-    <Position X="5.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAhAgAAAAAAAUEAAAAAEAAAQAAAAAAAAAkA=</HashCode>
-      <FileName>Person.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Student">
-    <Position X="9.25" Y="5" Width="1.5" />
+    <Position X="2.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Student.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Person" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAhAgAAAAAAAUEAAAAAEAAAQAAAAAAAAAkA=</HashCode>
+      <FileName>Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Date" Collapsed="true">
+    <Position X="9.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAkAAAIAAAAAAAEAAAAAABAAAQCAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Date.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Teacher">
-    <Position X="2.5" Y="3.75" Width="1.5" />
+    <Position X="7.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Teacher.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Administrator">
-    <Position X="8.5" Y="3" Width="1.5" />
+    <Position X="9.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Administrator.cs</FileName>
