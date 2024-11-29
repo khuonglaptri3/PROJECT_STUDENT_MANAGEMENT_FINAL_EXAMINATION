@@ -130,7 +130,6 @@
     <None Include="Resources\LOGO.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon1.ico" />
     <None Include="Assets\icons8_dashboard_35px_1.png" />
     <None Include="Assets\icons8_dashboard_50px_2.png" />
     <None Include="Assets\icons8_logout_rounded_up_filled_35px.png" />
