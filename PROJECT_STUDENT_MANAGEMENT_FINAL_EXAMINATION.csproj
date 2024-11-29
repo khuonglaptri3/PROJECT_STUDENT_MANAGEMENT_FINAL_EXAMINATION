@@ -130,6 +130,15 @@
     <None Include="Resources\LOGO.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\icons8_dashboard_35px_1.png" />
+    <None Include="Assets\icons8_dashboard_50px_2.png" />
+    <None Include="Assets\icons8_logout_rounded_up_filled_35px.png" />
+    <None Include="Assets\icons8_School_80px_1.png" />
+    <None Include="Assets\icons8_student_35px.png" />
+    <None Include="Assets\icons8_student_registration_filled_60px.png" />
+    <None Include="Assets\icons8_students_filled_60px.png" />
+    <None Include="Assets\icons8_training_35px.png" />
+    <None Include="Assets\icons8_training_filled_60px.png" />
     <Content Include="Resources\LOGO2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
