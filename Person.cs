@@ -59,7 +59,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
         public virtual string PrintDetails()
         {
-            return $" ID : {ID}, Full Name : {GetLastName} {GetFirstName}, Date of birth {GetDayOfBirth.ToShortDateString()}, Information to Contact: {GetContactInfo}";
+            return $" ID : {ID}, Full Name : {GetLastName} {GetFirstName}, Date of birth {GetDayOfBirth.ToString()}, Information to Contact: {GetContactInfo}";
         }
     }
 }
