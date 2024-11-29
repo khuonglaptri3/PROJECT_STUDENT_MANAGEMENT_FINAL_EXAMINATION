@@ -41,9 +41,11 @@
             this.button_std = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.HCMUTE = new System.Windows.Forms.Label();
             this.panel_slide.SuspendLayout();
             this.Panel_subtch.SuspendLayout();
             this.panel_substd.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_slide
@@ -188,6 +190,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SpringGreen;
+            this.panel2.Controls.Add(this.HCMUTE);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -205,6 +208,16 @@
             this.label1.Text = "X";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // HCMUTE
+            // 
+            this.HCMUTE.AutoSize = true;
+            this.HCMUTE.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HCMUTE.Location = new System.Drawing.Point(48, 41);
+            this.HCMUTE.Name = "HCMUTE";
+            this.HCMUTE.Size = new System.Drawing.Size(102, 27);
+            this.HCMUTE.TabIndex = 2;
+            this.HCMUTE.Text = "HCMUTE";
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -220,6 +233,8 @@
             this.panel_slide.ResumeLayout(false);
             this.Panel_subtch.ResumeLayout(false);
             this.panel_substd.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +255,6 @@
         private System.Windows.Forms.Button button_Registrationtch;
         private System.Windows.Forms.Button button_tch;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label HCMUTE;
     }
 }
