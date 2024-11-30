@@ -12,10 +12,6 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private string teacherID;
         private List<string> subjectTaught = new List<string>();
 
-        public Teacher(int id, string firstName, string lastName, bool gender, Date dateofBirth, string teacherID, string contactInfo) : base (id, firstName, lastName, gender, dateofBirth, contactInfo)
-        {
-            this.teacherID = teacherID;
-        }
         public string GetTeacherID
         {
             get { return teacherID; }

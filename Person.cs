@@ -8,11 +8,12 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
     public abstract class Person
     {
         private int id; 
-        private Date dateofBirth;
-        private String firstName;    
-        private String lastName;
-        private bool gender;//true Man false Female
-        private string contactInfo;
+        private DateTime dateofBirth;
+        private string firstName;    
+        private string lastName;
+        private string  gender;//true Man false Female
+        private string address; 
+  
 
         public Person ()
         {
@@ -21,23 +22,38 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             id = default;
             gender = default;
             dateofBirth = default;
-            contactInfo = default;
+            address = default; 
         }
-        public Person(int id, String firstName,String lastName, bool gender, Date dateofBirth,string contactInfo)
+        public Person(int id, string firstName,string lastName, string gender, DateTime  dateofBirth  )
         {
             this.id = id;
             this.firstName = firstName;
             this.lastName = lastName;
             this.dateofBirth = dateofBirth;
             this.gender = gender;
-            this.contactInfo = contactInfo;
-        }  
-        public string GetFirstName
+           
+        }
+        public Person(string firstName, string lastName, string gender, DateTime dateofBirth , string address )
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.dateofBirth = dateofBirth;
+            this.gender = gender;
+            this.address = address; 
+
+        }
+        public string ADDRESS
+        {
+            get { return address; }
+            set { address = value; }
+        }
+
+        public string FIRSTNAME 
         {
             get { return firstName; }
             set { firstName = value; }
         }
-        public string GetLastName
+        public string LASTNAME
         {
             get { return lastName; }
             set { lastName = value; }
@@ -47,19 +63,19 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             get { return id; }
             set { id = value; }
         }
-        public Date GetDayOfBirth
+        public DateTime  GetDayOfBirth
         {
             get { return dateofBirth; }
             set { dateofBirth = value; }
         }
-        public string GetContactInfo
+        public string GENDER
         {
-            get { return contactInfo; }
-            set { contactInfo = value; }
+            get { return gender;  }
+            set { gender = value;  }
         }
         public virtual string PrintDetails()
         {
-            return $" ID : {ID}, Full Name : {GetLastName} {GetFirstName}, Date of birth {GetDayOfBirth.ToString()}, Information to Contact: {GetContactInfo}";
+            return $" ID : {ID}, Full Name : {LASTNAME} {FIRSTNAME}, Date of birth {GetDayOfBirth.ToLongDateString()}, Address: {ADDRESS}";
         }
     }
 }

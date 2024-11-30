@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
@@ -9,22 +10,33 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
     public class Student : Person
     {
 
-        private string studentID;
+        private string phone; 
         private List<string> courses;
         private Dictionary<string, string> grades;//courses va grades
 
-        public Student(int id, string firstName, string lastName,bool gender, Date dateofBirth, string studentID,string contactInfo) : base(id,firstName,lastName,gender,dateofBirth, contactInfo)
+       public string PHONE
         {
-            this.studentID = studentID;
-            this.courses = new List<string>();
-            this.grades = new Dictionary<string, string>();
+            get { return phone;  } 
+            set { phone = value;  }
         }
-        public string GetStudentID
+        public Student ()
         {
-            get { return studentID; }
-            set { studentID = value; }
+            FIRSTNAME = default;
+            LASTNAME = default;
+            GENDER = default;
+            GetDayOfBirth = default;
+            PHONE = default;
+            ADDRESS = default; 
         }
-
+        public Student (string FirstName , string LastName , string address ,  string gender , DateTime dateofbirth , string phone )
+        {
+            FIRSTNAME = FirstName;
+            LASTNAME = LastName;
+            GENDER = gender;
+            GetDayOfBirth = dateofbirth;
+            PHONE = phone;
+            ADDRESS = address; 
+        }
         public string EnrollInCourse(string course)
         {
             if(courses.Contains(course))
