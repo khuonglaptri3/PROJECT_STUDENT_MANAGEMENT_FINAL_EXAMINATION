@@ -18,6 +18,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             this.courses = new List<string>();
             this.grades = new Dictionary<string, string>();
         }
+
         public string GetStudentID
         {
             get { return studentID; }
