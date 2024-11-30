@@ -8,6 +8,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
     public class Student : Person
     {
+
         private string studentID;
         private List<string> courses;
         private Dictionary<string, string> grades;//courses va grades
