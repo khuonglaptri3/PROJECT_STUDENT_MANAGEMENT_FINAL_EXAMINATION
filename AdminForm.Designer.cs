@@ -40,12 +40,25 @@
             this.button_registrationstd = new System.Windows.Forms.Button();
             this.button_std = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.HCMUTE = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.Total_stdtxt = new System.Windows.Forms.Label();
+            this.Maletxt = new System.Windows.Forms.Label();
+            this.Femaletxt = new System.Windows.Forms.Label();
             this.panel_slide.SuspendLayout();
             this.Panel_subtch.SuspendLayout();
             this.panel_substd.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_slide
@@ -59,7 +72,7 @@
             this.panel_slide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_slide.Location = new System.Drawing.Point(0, 0);
             this.panel_slide.Name = "panel_slide";
-            this.panel_slide.Size = new System.Drawing.Size(212, 689);
+            this.panel_slide.Size = new System.Drawing.Size(212, 693);
             this.panel_slide.TabIndex = 0;
             // 
             // Panel_subtch
@@ -197,17 +210,6 @@
             this.panel2.Size = new System.Drawing.Size(212, 118);
             this.panel2.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(858, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "X";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // HCMUTE
             // 
             this.HCMUTE.AutoSize = true;
@@ -218,12 +220,119 @@
             this.HCMUTE.TabIndex = 2;
             this.HCMUTE.Text = "HCMUTE";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1045, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.MintCream;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(212, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1073, 80);
+            this.panel1.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(212, 80);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1073, 83);
+            this.panel3.TabIndex = 4;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 27);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Welcome";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(136, 27);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Role: Admin";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Properties.Resources.icons8_School_80px_1;
+            this.pictureBox1.Location = new System.Drawing.Point(955, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.GrayText;
+            this.panel4.Controls.Add(this.Femaletxt);
+            this.panel4.Controls.Add(this.Maletxt);
+            this.panel4.Controls.Add(this.Total_stdtxt);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(212, 593);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1073, 100);
+            this.panel4.TabIndex = 5;
+            // 
+            // Total_stdtxt
+            // 
+            this.Total_stdtxt.AutoSize = true;
+            this.Total_stdtxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Total_stdtxt.Location = new System.Drawing.Point(6, 0);
+            this.Total_stdtxt.Name = "Total_stdtxt";
+            this.Total_stdtxt.Size = new System.Drawing.Size(171, 27);
+            this.Total_stdtxt.TabIndex = 6;
+            this.Total_stdtxt.Text = "Total Students: ";
+            // 
+            // Maletxt
+            // 
+            this.Maletxt.AutoSize = true;
+            this.Maletxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Maletxt.Location = new System.Drawing.Point(17, 45);
+            this.Maletxt.Name = "Maletxt";
+            this.Maletxt.Size = new System.Drawing.Size(75, 27);
+            this.Maletxt.TabIndex = 7;
+            this.Maletxt.Text = "Male: ";
+            // 
+            // Femaletxt
+            // 
+            this.Femaletxt.AutoSize = true;
+            this.Femaletxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Femaletxt.Location = new System.Drawing.Point(123, 45);
+            this.Femaletxt.Name = "Femaletxt";
+            this.Femaletxt.Size = new System.Drawing.Size(97, 27);
+            this.Femaletxt.TabIndex = 8;
+            this.Femaletxt.Text = "Female: ";
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 689);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1285, 693);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_slide);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminForm";
@@ -235,8 +344,14 @@
             this.panel_substd.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -256,5 +371,14 @@
         private System.Windows.Forms.Button button_tch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label HCMUTE;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label Femaletxt;
+        private System.Windows.Forms.Label Maletxt;
+        private System.Windows.Forms.Label Total_stdtxt;
     }
 }

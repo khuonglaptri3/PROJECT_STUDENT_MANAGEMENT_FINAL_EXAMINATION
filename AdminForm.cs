@@ -66,13 +66,6 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             hideSubMenu();
         }
         #endregion Student_SubMenu   
-
-
-
-
-
-
-
         private void label1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -98,5 +91,10 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             hideSubMenu();   
         }
         #endregion Teacher_SubMenu   
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
