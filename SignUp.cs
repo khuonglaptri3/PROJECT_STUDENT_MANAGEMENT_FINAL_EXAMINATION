@@ -13,7 +13,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
     public partial class SignUp : Form
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\lanph\OneDrive\Tệp đính kèm\Tài liệu\School.mdf"";Integrated Security=True;Connect Timeout=30");
+        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\School.mdf;Integrated Security=True;Connect Timeout=30");
 
         public SignUp()
         {

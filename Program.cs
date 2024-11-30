@@ -16,7 +16,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminForm());
+            Application.Run(new LoginForm());
         }
     }
 }
