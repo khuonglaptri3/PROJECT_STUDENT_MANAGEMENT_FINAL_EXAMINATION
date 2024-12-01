@@ -32,7 +32,9 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void RegisterForm_Load(object sender, EventArgs e)
         {
-            guna2DataGridView1.DataSource = new Administrator().GetStudentList(connect);
+            Administrator administrator = new Administrator();
+            DataGridView_student.ReadOnly = true;
+            DataGridView_student.DataSource = administrator.GetStudentList(connect);    
             //DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
             //imageColumn = (DataGridViewImageColumn)guna2DataGridView1.Columns[6];
             //imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
@@ -75,7 +77,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 if(test == "True")
                 {
                     MessageBox.Show("New Student Added", "Add Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    guna2DataGridView1.DataSource = administrator.GetStudentList(connect);
+                    DataGridView_student.DataSource = administrator.GetStudentList(connect);
                 }
                 else
                 {

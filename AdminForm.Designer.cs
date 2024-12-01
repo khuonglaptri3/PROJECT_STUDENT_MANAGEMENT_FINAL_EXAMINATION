@@ -44,13 +44,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.Total_stdtxt = new System.Windows.Forms.Label();
-            this.Maletxt = new System.Windows.Forms.Label();
             this.Femaletxt = new System.Windows.Forms.Label();
+            this.Maletxt = new System.Windows.Forms.Label();
+            this.Total_stdtxt = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel_main = new System.Windows.Forms.Panel();
             this.panel_slide.SuspendLayout();
             this.Panel_subtch.SuspendLayout();
             this.panel_substd.SuspendLayout();
@@ -59,6 +61,7 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_slide
@@ -250,19 +253,18 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(212, 80);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1073, 83);
+            this.panel3.Size = new System.Drawing.Size(1073, 203);
             this.panel3.TabIndex = 4;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // label3
+            // pictureBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 27);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Welcome";
+            this.pictureBox1.BackgroundImage = global::PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Properties.Resources.icons8_School_80px_1;
+            this.pictureBox1.Location = new System.Drawing.Point(955, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -274,14 +276,15 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Role: Admin";
             // 
-            // pictureBox1
+            // label3
             // 
-            this.pictureBox1.BackgroundImage = global::PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Properties.Resources.icons8_School_80px_1;
-            this.pictureBox1.Location = new System.Drawing.Point(955, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 27);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Welcome";
             // 
             // panel4
             // 
@@ -295,15 +298,15 @@
             this.panel4.Size = new System.Drawing.Size(1073, 100);
             this.panel4.TabIndex = 5;
             // 
-            // Total_stdtxt
+            // Femaletxt
             // 
-            this.Total_stdtxt.AutoSize = true;
-            this.Total_stdtxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total_stdtxt.Location = new System.Drawing.Point(6, 0);
-            this.Total_stdtxt.Name = "Total_stdtxt";
-            this.Total_stdtxt.Size = new System.Drawing.Size(171, 27);
-            this.Total_stdtxt.TabIndex = 6;
-            this.Total_stdtxt.Text = "Total Students: ";
+            this.Femaletxt.AutoSize = true;
+            this.Femaletxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Femaletxt.Location = new System.Drawing.Point(123, 45);
+            this.Femaletxt.Name = "Femaletxt";
+            this.Femaletxt.Size = new System.Drawing.Size(97, 27);
+            this.Femaletxt.TabIndex = 8;
+            this.Femaletxt.Text = "Female: ";
             // 
             // Maletxt
             // 
@@ -315,21 +318,38 @@
             this.Maletxt.TabIndex = 7;
             this.Maletxt.Text = "Male: ";
             // 
-            // Femaletxt
+            // Total_stdtxt
             // 
-            this.Femaletxt.AutoSize = true;
-            this.Femaletxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Femaletxt.Location = new System.Drawing.Point(123, 45);
-            this.Femaletxt.Name = "Femaletxt";
-            this.Femaletxt.Size = new System.Drawing.Size(97, 27);
-            this.Femaletxt.TabIndex = 8;
-            this.Femaletxt.Text = "Female: ";
+            this.Total_stdtxt.AutoSize = true;
+            this.Total_stdtxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Total_stdtxt.Location = new System.Drawing.Point(6, 0);
+            this.Total_stdtxt.Name = "Total_stdtxt";
+            this.Total_stdtxt.Size = new System.Drawing.Size(171, 27);
+            this.Total_stdtxt.TabIndex = 6;
+            this.Total_stdtxt.Text = "Total Students: ";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.panel_main);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(212, 283);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1073, 310);
+            this.panel5.TabIndex = 6;
+            // 
+            // panel_main
+            // 
+            this.panel_main.Location = new System.Drawing.Point(0, -200);
+            this.panel_main.Name = "panel_main";
+            this.panel_main.Size = new System.Drawing.Size(1070, 607);
+            this.panel_main.TabIndex = 0;
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 693);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -351,6 +371,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -380,5 +401,7 @@
         private System.Windows.Forms.Label Femaletxt;
         private System.Windows.Forms.Label Maletxt;
         private System.Windows.Forms.Label Total_stdtxt;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel_main;
     }
 }

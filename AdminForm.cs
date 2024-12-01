@@ -71,6 +71,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void button_registrationstd_Click(object sender, EventArgs e)
         {
+            openChildForm(new RegisterForm()); 
             hideSubMenu();
 
         }
@@ -110,6 +111,20 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel_main.Controls.Add(childForm);
+            panel_main.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
     }
 }
