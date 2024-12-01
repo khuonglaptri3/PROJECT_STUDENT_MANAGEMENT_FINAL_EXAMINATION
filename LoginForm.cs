@@ -47,6 +47,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                         String selectData1 = "SELECT * FROM studentUsers Where username = @username AND password = @password";
                         using (SqlCommand cmd1 = new SqlCommand(selectData1, connect1))
                         {
+                            // dflsfjskfjlksjf
 
                             cmd1.Parameters.AddWithValue("@username", Username.Text.Trim());
                             cmd1.Parameters.AddWithValue("@password", Password.Text.Trim());
