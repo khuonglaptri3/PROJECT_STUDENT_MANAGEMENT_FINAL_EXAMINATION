@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,12 +11,18 @@ using System.Windows.Forms;
 
 namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
+   
     public partial class AdminForm : Form
     {
+        Administrator Administrator1 = new Administrator();
+        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
         public AdminForm()
         {
             InitializeComponent();
-            customizeDesign();   
+            customizeDesign();
+            Total_studenttxt.Text = Administrator1.coutstudent(connect, "SELECT COUNT(*) FROM student").ToString();
+            Total_femaletxt.Text = Administrator1.coutstudent(connect, "SELECT COUNT(*) FROM student WHERE  Gender = 'Female'").ToString(); 
+            Totalmaletxt.Text = Administrator1.coutstudent(connect, "SELECT COUNT(*) FROM   student WHRER Gender = 'Male'").ToString(); 
         }
         //private Form activeForm = null;
         //private void openChildForm(Form childForm)
@@ -125,6 +132,11 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
 
         private void panel_cover_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }

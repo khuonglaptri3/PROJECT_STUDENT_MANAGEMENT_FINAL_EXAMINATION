@@ -67,6 +67,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             }
             return "False";
         }
+
         public bool deletestudent(SqlConnection connect, int id)
         {
             if (connect.State == ConnectionState.Open)
@@ -127,6 +128,17 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
             connect.Close();
             return table;
+        }
+        public int coutstudent(SqlConnection connect , string query)
+        {
+            if (connect.State == ConnectionState.Closed)
+            {
+                connect.Open();
+            }
+            SqlCommand command = new SqlCommand(query, connect);
+            int count = (int)command.ExecuteScalar();
+            connect.Close();
+            return count;
         }
     }
 }
