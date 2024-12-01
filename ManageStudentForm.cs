@@ -48,7 +48,6 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             textBox_address.Text = DataGridView_student.CurrentRow.Cells[6].Value.ToString();
             byte[] img = (byte[])DataGridView_student.CurrentRow.Cells[7].Value;
             MemoryStream ms = new MemoryStream(img);
-            pictureBox_student.Image = Image.FromStream(ms);
         }
 
         private void button_clear_Click(object sender, EventArgs e)
@@ -60,18 +59,17 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             textBox_address.Clear();
             radioButton_male.Checked = true;
             dateTimePicker1.Value = DateTime.Now;
-            pictureBox_student.Image = null;
         }
 
-        private void button_upload_Click(object sender, EventArgs e)
-        {
-            // browse photo from your computer
-            OpenFileDialog opf = new OpenFileDialog();
-            opf.Filter = "Select Photo(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+        //private void button_upload_Click(object sender, EventArgs e)
+        //{
+        //    // browse photo from your computer
+        //    OpenFileDialog opf = new OpenFileDialog();
+        //    opf.Filter = "Select Photo(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
 
-            if (opf.ShowDialog() == DialogResult.OK)
-                pictureBox_student.Image = Image.FromFile(opf.FileName);
-        }
+        //    if (opf.ShowDialog() == DialogResult.OK)
+        //        pictureBox_student.Image = Image.FromFile(opf.FileName);
+        //}
 
         private void button_search_Click(object sender, EventArgs e)
         {
@@ -84,8 +82,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         bool verify()
         {
             if ((textBox_Fname.Text == "") || (textBox_Lname.Text == "") ||
-                (textBox_phone.Text == "") || (textBox_address.Text == "") ||
-                (pictureBox_student.Image == null))
+                (textBox_phone.Text == "") || (textBox_address.Text == ""))
             {
                 return false;
             }
@@ -119,7 +116,6 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 {
                     // to get photo from picture box
                     MemoryStream ms = new MemoryStream();
-                    pictureBox_student.Image.Save(ms, pictureBox_student.Image.RawFormat);
                     byte[] img = ms.ToArray();
                     if (student.updateStudent(id, fname, lname, bdate, gender, phone, address))
                     {

@@ -40,8 +40,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button_delete = new System.Windows.Forms.Button();
             this.button_update = new System.Windows.Forms.Button();
-            this.button_upload = new System.Windows.Forms.Button();
-            this.pictureBox_student = new System.Windows.Forms.PictureBox();
             this.textBox_address = new System.Windows.Forms.TextBox();
             this.radioButton_female = new System.Windows.Forms.RadioButton();
             this.radioButton_male = new System.Windows.Forms.RadioButton();
@@ -59,7 +57,6 @@
             this.button_search = new System.Windows.Forms.Button();
             this.DataGridView_student = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_student)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_student)).BeginInit();
             this.SuspendLayout();
@@ -74,8 +71,6 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.button_delete);
             this.panel2.Controls.Add(this.button_update);
-            this.panel2.Controls.Add(this.button_upload);
-            this.panel2.Controls.Add(this.pictureBox_student);
             this.panel2.Controls.Add(this.textBox_address);
             this.panel2.Controls.Add(this.radioButton_female);
             this.panel2.Controls.Add(this.radioButton_male);
@@ -184,31 +179,6 @@
             this.button_update.TabIndex = 28;
             this.button_update.Text = "Update";
             this.button_update.UseVisualStyleBackColor = false;
-            // 
-            // button_upload
-            // 
-            this.button_upload.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_upload.BackColor = System.Drawing.Color.Green;
-            this.button_upload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_upload.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_upload.ForeColor = System.Drawing.Color.White;
-            this.button_upload.Location = new System.Drawing.Point(987, 133);
-            this.button_upload.Name = "button_upload";
-            this.button_upload.Size = new System.Drawing.Size(118, 39);
-            this.button_upload.TabIndex = 27;
-            this.button_upload.Text = "Upload";
-            this.button_upload.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox_student
-            // 
-            this.pictureBox_student.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox_student.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox_student.Location = new System.Drawing.Point(987, 17);
-            this.pictureBox_student.Name = "pictureBox_student";
-            this.pictureBox_student.Size = new System.Drawing.Size(118, 110);
-            this.pictureBox_student.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_student.TabIndex = 26;
-            this.pictureBox_student.TabStop = false;
             // 
             // textBox_address
             // 
@@ -447,7 +417,6 @@
             this.Text = "ManageStudentForm";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_student)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_student)).EndInit();
@@ -467,8 +436,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.Button button_update;
-        private System.Windows.Forms.Button button_upload;
-        private System.Windows.Forms.PictureBox pictureBox_student;
         private System.Windows.Forms.TextBox textBox_address;
         private System.Windows.Forms.RadioButton radioButton_female;
         private System.Windows.Forms.RadioButton radioButton_male;

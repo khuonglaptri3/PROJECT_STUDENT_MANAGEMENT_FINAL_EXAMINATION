@@ -25,8 +25,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         bool verify()
         {
             if ((textBox_Fname.Text == "") || (textBox_Lname.Text == "") ||
-                (textBox_phone.Text == "") || (textBox_address.Text == "") ||
-                (pictureBox_student.Image == null))
+                (textBox_phone.Text == "") || (textBox_address.Text == ""))
             {
                 return false;
             }
@@ -82,9 +81,6 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 try
                 {
                     // to get photo from picture box
-                    MemoryStream ms = new MemoryStream();
-                    pictureBox_student.Image.Save(ms, pictureBox_student.Image.RawFormat);
-                    byte[] img = ms.ToArray();
                     if (student.insertStudent(fname, lname, bdate, gender, phone, address))
                     {
                         showTable();
@@ -110,7 +106,6 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             textBox_address.Clear();
             radioButton_male.Checked = true;
             dateTimePicker1.Value = DateTime.Now;
-            pictureBox_student.Image = null;
         }
     }
 }
