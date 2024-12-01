@@ -38,17 +38,14 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         {
             Application.Exit();  
         }
-
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
         private void Sign_upBut_Click(object sender, EventArgs e)
         {
             if (connect.State != ConnectionState.Open)
@@ -94,7 +91,6 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 }
             }
         }
-
         private void showpass_CheckedChanged(object sender, EventArgs e)
         {
             Password.PasswordChar = showpass.Checked ? '\0' : '*'; 

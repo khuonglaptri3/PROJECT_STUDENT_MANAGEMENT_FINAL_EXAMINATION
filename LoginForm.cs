@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.SchoolSysDBDataSet;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
     //public partial class LoginForm : Form
@@ -31,144 +33,144 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
     //    private void Loginbut_Click(object sender, EventArgs e)
     //    {
-    //        if (Username.Text == "" || Password.Text == "")
-    //        {
-    //            MessageBox.Show("Please fill in the required information", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-    //        }
-    //        else
-    //        {
-    //            try
-    //            {
-    //                connect.Open();
-    //                String selectData = "SELECT * FROM users Where username = @username AND password = @password";
-    //                using (SqlCommand cmd = new SqlCommand(selectData, connect))
-    //                {
-    //                    cmd.Parameters.AddWithValue("@username", Username.Text.Trim());
-    //                    cmd.Parameters.AddWithValue("@password", Password.Text.Trim());
-    //                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-    //                    DataTable table = new DataTable();
-    //                    adapter.Fill(table);
-    //                    if (table.Rows.Count >= 1)
-    //                    {
-    //                        if(Teacherrarbut.Checked)
-    //                        {
-    //                            MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-    //                            TeacherForm teacherForm = new TeacherForm();
-    //                            teacherForm.Show();
-    //                            this.Hide();
-    //                        }
-    //                        else if (Studentrar.Checked)
-    //                        {
-    //                            MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-    //                            StudentForm studentForm = new StudentForm();
-    //                            studentForm.Show();
-    //                            this.Hide();
-    //                        }
-    //                        else 
-    //                        {
-    //                            MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-    //                            AdminForm adminForm = new AdminForm();
-    //                            adminForm.Show();
-    //                            this.Hide();
-    //                        }
-    //                    }
-    //                    else
-    //                    {
-    //                        MessageBox.Show("Login Failed ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-    //                    }
-    //                }
+//            if (Username.Text == "" || Password.Text == "")
+//            {
+//                MessageBox.Show("Please fill in the required information", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+//            }
+//            else
+//{
+//    try
+//    {
+//        connect.Open();
+//        String selectData = "SELECT * FROM users Where username = @username AND password = @password";
+//        using (SqlCommand cmd = new SqlCommand(selectData, connect))
+//        {
+//            cmd.Parameters.AddWithValue("@username", Username.Text.Trim());
+//            cmd.Parameters.AddWithValue("@password", Password.Text.Trim());
+//            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+//            DataTable table = new DataTable();
+//            adapter.Fill(table);
+//            if (table.Rows.Count >= 1)
+//            {
+//                if (Teacherrarbut.Checked)
+//                {
+//                    MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+//                    TeacherForm teacherForm = new TeacherForm();
+//                    teacherForm.Show();
+//                    this.Hide();
+//                }
+//                else if (Studentrar.Checked)
+//                {
+//                    MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+//                    StudentForm studentForm = new StudentForm();
+//                    studentForm.Show();
+//                    this.Hide();
+//                }
+//                else
+//                {
+//                    MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+//                    AdminForm adminForm = new AdminForm();
+//                    adminForm.Show();
+//                    this.Hide();
+//                }
+//            }
+//            else
+//            {
+//                MessageBox.Show("Login Failed ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+//            }
+//        }
 
-    //            }
-    //            catch (Exception ex)
-    //            {
-    //                MessageBox.Show("Error connecting Database : " + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-    //            }
-    //            finally
-    //            {
-    //                connect.Close();
-    //            }
+//    }
+//    catch (Exception ex)
+//    {
+//        MessageBox.Show("Error connecting Database : " + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+//    }
+//    finally
+//    {
+//        connect.Close();
+//    }
 
-    //        }
-    //    }
+//}
+//    }
 
-    //    private void panel2_Paint(object sender, PaintEventArgs e)
-    //    {
+//    private void panel2_Paint(object sender, PaintEventArgs e)
+//    {
 
-    //    }
+//    }
 
-    //    private void Password_TextChanged(object sender, EventArgs e)
-    //    {
+//    private void Password_TextChanged(object sender, EventArgs e)
+//    {
 
-    //    }
+//    }
 
-    //    private void Adminrarbut_CheckedChanged(object sender, EventArgs e)
-    //    {
+//    private void Adminrarbut_CheckedChanged(object sender, EventArgs e)
+//    {
 
-    //    }
+//    }
 
-    //    private void Registerbut_Click(object sender, EventArgs e)
-    //    {
-    //        this.Hide();
-    //        SignUp signUp = new SignUp();   
-    //        signUp.Show();
-    //    }
+//    private void Registerbut_Click(object sender, EventArgs e)
+//    {
+//        this.Hide();
+//        SignUp signUp = new SignUp();   
+//        signUp.Show();
+//    }
 
-    //    private void panel3_Paint(object sender, PaintEventArgs e)
-    //    {
+//    private void panel3_Paint(object sender, PaintEventArgs e)
+//    {
 
-    //    }
+//    }
 
-    //    private void label6_Click(object sender, EventArgs e)
-    //    {
+//    private void label6_Click(object sender, EventArgs e)
+//    {
 
-    //    }
+//    }
 
-    //    private void Username_TextChanged(object sender, EventArgs e)
-    //    {
+//    private void Username_TextChanged(object sender, EventArgs e)
+//    {
 
-    //    }
+//    }
 
-    //    private void Teacherrarbut_CheckedChanged(object sender, EventArgs e)
-    //    {
+//    private void Teacherrarbut_CheckedChanged(object sender, EventArgs e)
+//    {
 
-    //    }
+//    }
 
-    //    private void label4_Click(object sender, EventArgs e)
-    //    {
+//    private void label4_Click(object sender, EventArgs e)
+//    {
 
-    //    }
+//    }
 
-    //    private void Studentrar_CheckedChanged(object sender, EventArgs e)
-    //    {
+//    private void Studentrar_CheckedChanged(object sender, EventArgs e)
+//    {
 
-    //    }
+//    }
 
-    //    private void label3_Click(object sender, EventArgs e)
-    //    {
+//    private void label3_Click(object sender, EventArgs e)
+//    {
 
-    //    }
+//    }
 
-    //    private void label2_Click(object sender, EventArgs e)
-    //    {
+//    private void label2_Click(object sender, EventArgs e)
+//    {
 
-    //    }
+//    }
 
-    //    private void panel1_Paint(object sender, PaintEventArgs e)
-    //    {
+//    private void panel1_Paint(object sender, PaintEventArgs e)
+//    {
 
-    //    }
+//    }
 
-    //    private void label5_Click(object sender, EventArgs e)
-    //    {
+//    private void label5_Click(object sender, EventArgs e)
+//    {
 
-    //    }
+//    }
 
-    //    private void label7_Click(object sender, EventArgs e)
-    //    {
+//    private void label7_Click(object sender, EventArgs e)
+//    {
 
-    //    }
-    //}
-    public partial class LoginForm : Form
+//    }
+//}
+public partial class LoginForm : Form
     {
         SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\trant\source\repos\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\School.mdf;Integrated Security=True;Connect Timeout=30");
         StudentClass student = new StudentClass();
@@ -196,7 +198,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         {
             if (textBox_usrname.Text == "" || textBox_password.Text == "")
             {
-                MessageBox.Show("Need login data", "Wrong Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill in the required information", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -227,12 +229,11 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                                 studentForm.Show();
                                 this.Hide();
                             }
-                            else if (adminRadioButton.Checked)
+                            else if(adminRadioButton.Checked)
                             {
                                 MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                //AdminForm adminForm = new AdminForm();
-                                MainForm mainform = new MainForm();
-                                mainform.Show();
+                                MainForm adminForm = new MainForm();
+                                adminForm.Show();
                                 this.Hide();
                             }
                         }
@@ -241,6 +242,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                             MessageBox.Show("Login Failed ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
+
                 }
                 catch (Exception ex)
                 {
@@ -250,18 +252,6 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 {
                     connect.Close();
                 }
-                //string uname = textBox_usrname.Text;
-                //string pass = textBox_password.Text;    
-                //DataTable table = student.getList(new SqlCommand("SELECT * FROM `user` WHERE `username`= '" + uname + "' AND `password`='" + pass + "'"));
-                //if (table.Rows.Count > 0)
-                //{
-
-                //    MainForm main = new MainForm();
-                //    this.Hide();
-                //    main.Show();
-
-                //}
-
 
             }
         }
@@ -277,6 +267,11 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
