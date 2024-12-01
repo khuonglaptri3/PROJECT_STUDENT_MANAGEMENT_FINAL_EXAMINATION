@@ -157,8 +157,13 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             string maleQuery = "SELECT COUNT(*) FROM student INNER JOIN GRADES ON GRADES.StdId = student.StdId WHERE GRADES.CourseId = (SELECT CourseID FROM Course WHERE CourseName = @CourseName) AND student.Gender = 'Male'";
             string femaleQuery = "SELECT COUNT(*) FROM student INNER JOIN GRADES ON GRADES.StdId = student.StdId WHERE GRADES.CourseId = (SELECT CourseID FROM Course WHERE CourseName = @CourseName) AND student.Gender = 'Female'";
 
-            label_cmale.Text = "Male : " + Administrator1.coutstudent(connect, maleQuery, selectedCourse).ToString();
-            label_cfemale.Text = "Female : " + Administrator1.coutstudent(connect, femaleQuery, selectedCourse).ToString();
+            //label_cmale.Text = "Male : " + Administrator1.coutstudent(connect, maleQuery, selectedCourse).ToString();
+            //label_cfemale.Text = "Female : " + Administrator1.coutstudent(connect, femaleQuery, selectedCourse).ToString();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

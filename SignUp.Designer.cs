@@ -42,6 +42,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Idtxt = new System.Windows.Forms.TextBox();
+            this.Studentrar = new System.Windows.Forms.RadioButton();
+            this.Teacherrarbut = new System.Windows.Forms.RadioButton();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -62,6 +66,10 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.MintCream;
+            this.panel3.Controls.Add(this.Studentrar);
+            this.panel3.Controls.Add(this.Teacherrarbut);
+            this.panel3.Controls.Add(this.Idtxt);
+            this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.Registerbut);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.showpass);
@@ -93,7 +101,7 @@
             this.showpass.AutoSize = true;
             this.showpass.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.showpass.ForeColor = System.Drawing.Color.Black;
-            this.showpass.Location = new System.Drawing.Point(251, 248);
+            this.showpass.Location = new System.Drawing.Point(251, 306);
             this.showpass.Name = "showpass";
             this.showpass.Size = new System.Drawing.Size(125, 20);
             this.showpass.TabIndex = 2;
@@ -106,7 +114,7 @@
             this.Sign_upBut.BackColor = System.Drawing.Color.Teal;
             this.Sign_upBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sign_upBut.ForeColor = System.Drawing.Color.Black;
-            this.Sign_upBut.Location = new System.Drawing.Point(25, 281);
+            this.Sign_upBut.Location = new System.Drawing.Point(26, 306);
             this.Sign_upBut.Name = "Sign_upBut";
             this.Sign_upBut.Size = new System.Drawing.Size(106, 41);
             this.Sign_upBut.TabIndex = 5;
@@ -209,6 +217,53 @@
             this.panel2.TabIndex = 3;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(23, 219);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 19);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "ID :";
+            // 
+            // Idtxt
+            // 
+            this.Idtxt.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Idtxt.Location = new System.Drawing.Point(27, 242);
+            this.Idtxt.Name = "Idtxt";
+            this.Idtxt.PasswordChar = '*';
+            this.Idtxt.Size = new System.Drawing.Size(85, 31);
+            this.Idtxt.TabIndex = 13;
+            // 
+            // Studentrar
+            // 
+            this.Studentrar.AutoSize = true;
+            this.Studentrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Studentrar.ForeColor = System.Drawing.Color.Black;
+            this.Studentrar.Location = new System.Drawing.Point(296, 249);
+            this.Studentrar.Name = "Studentrar";
+            this.Studentrar.Size = new System.Drawing.Size(80, 20);
+            this.Studentrar.TabIndex = 15;
+            this.Studentrar.TabStop = true;
+            this.Studentrar.Text = "Student";
+            this.Studentrar.UseVisualStyleBackColor = true;
+            // 
+            // Teacherrarbut
+            // 
+            this.Teacherrarbut.AutoSize = true;
+            this.Teacherrarbut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Teacherrarbut.ForeColor = System.Drawing.Color.Black;
+            this.Teacherrarbut.Location = new System.Drawing.Point(193, 249);
+            this.Teacherrarbut.Name = "Teacherrarbut";
+            this.Teacherrarbut.Size = new System.Drawing.Size(86, 20);
+            this.Teacherrarbut.TabIndex = 14;
+            this.Teacherrarbut.TabStop = true;
+            this.Teacherrarbut.Text = "Teacher";
+            this.Teacherrarbut.UseVisualStyleBackColor = true;
+            this.Teacherrarbut.CheckedChanged += new System.EventHandler(this.Teacherrarbut_CheckedChanged);
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -245,5 +300,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox Idtxt;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton Studentrar;
+        private System.Windows.Forms.RadioButton Teacherrarbut;
     }
 }

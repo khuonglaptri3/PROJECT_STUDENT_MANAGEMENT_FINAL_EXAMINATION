@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,16 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
     public partial class TeacherForm : Form
     {
-        public TeacherForm()
+        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
+        private int tchId; 
+        private Teacher teacher;
+        public TeacherForm(int tchId)
         {
             InitializeComponent();
-            customizeDesign(); 
+            customizeDesign();
+            this.tchId = tchId;
+            teacher = new Teacher(tchId,connect);
+            label3.Text = "Welcome " + teacher.PrintDetails(); 
         }
         private void showSubMenu(Panel subMenu)
         {
@@ -54,11 +61,17 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
         private void button_newcourse_Click(object sender, EventArgs e)
         {
+            Addcourse addcourse = new Addcourse(tchId);  
+            addcourse.Show();   
+            this.Hide(); 
             hideSubMenu();   
         }
 
         private void button_managecourse_Click(object sender, EventArgs e)
         {
+            ManagerCourseForm managerCourseForm = new ManagerCourseForm(tchId); 
+            managerCourseForm.Show();
+            this.Hide(); 
             hideSubMenu();   
         }
 
@@ -92,6 +105,11 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private void label1_Click(object sender, EventArgs e)
         {
             Application.Exit();  
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit(); 
         }
     }
 }

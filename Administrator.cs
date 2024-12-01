@@ -82,23 +82,46 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         public bool deletestudent(SqlConnection connect, int id)
         {
-            if (connect.State == ConnectionState.Open)
+            try
             {
+                // Open the connection
+                connect.Open();
+
+                // Delete related records in the GRADES table
+                string deleteGradesQuery = "DELETE FROM GRADES WHERE StdId = @id";
+                using (SqlCommand deleteGradesCmd = new SqlCommand(deleteGradesQuery, connect))
+                {
+                    deleteGradesCmd.Parameters.AddWithValue("@id", id);
+                    deleteGradesCmd.ExecuteNonQuery();
+                }
+                string deleteGradesQuery1 = "DELETE FROM studentUsers WHERE StdId = @id";
+                using (SqlCommand deleteGradesCmd = new SqlCommand(deleteGradesQuery1, connect))
+                {
+                    deleteGradesCmd.Parameters.AddWithValue("@id", id);
+                    deleteGradesCmd.ExecuteNonQuery();
+                }
+
+                // Delete the student record
+                string deleteStudentQuery = "DELETE FROM Student WHERE StdId = @id";
+                using (SqlCommand deleteStudentCmd = new SqlCommand(deleteStudentQuery, connect))
+                {
+                    deleteStudentCmd.Parameters.AddWithValue("@id", id);
+                    deleteStudentCmd.ExecuteNonQuery();
+                }
+                return true; 
+
+                MessageBox.Show("Student deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error deleting student: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Close the connection
                 connect.Close();
             }
-            if (connect.State != ConnectionState.Open)
-            {
-                connect.Open();
-                string deleteData = "DELETE FROM Student WHERE StdID = @id";
-                using (SqlCommand cmd = new SqlCommand(deleteData, connect))
-                {
-                    cmd.Parameters.AddWithValue("@id", id);
-                    cmd.ExecuteNonQuery();
-                    connect.Close();
-                    return true;
-                }
-            }
-            return false;
+            return false; 
         }
         public bool updatestudent(SqlConnection connect, Student student , int StdId )
         {

@@ -12,12 +12,14 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
     public partial class StudentForm : Form
     {
-        private Student studnet1 = new Student(); 
 
-        public StudentForm(Student student)
+        private int StdId; 
+        public StudentForm(int StdId)
         {
             InitializeComponent();
-            studnet1 = student;  
+            this.StdId = StdId; 
+            label3.Text = "Welcome :" + StdId.ToString();    
+
 
 
         }

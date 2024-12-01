@@ -49,10 +49,12 @@
             this.button_course = new System.Windows.Forms.Button();
             this.panel_slide = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.Panel_subscore.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel_subcourse.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel_slide.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -245,6 +247,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MintCream;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(212, 0);
             this.panel1.Name = "panel1";
@@ -299,6 +302,17 @@
             this.panel2.Size = new System.Drawing.Size(212, 118);
             this.panel2.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1049, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 25);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // TeacherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -319,6 +333,8 @@
             this.panel_subcourse.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel_slide.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -349,5 +365,6 @@
         private System.Windows.Forms.Button button_course;
         private System.Windows.Forms.Panel panel_slide;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
     }
 }
