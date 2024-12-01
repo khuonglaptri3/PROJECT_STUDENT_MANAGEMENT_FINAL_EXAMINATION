@@ -76,7 +76,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             if (connect.State != ConnectionState.Open)
             {
                 connect.Open();
-                string deleteData = "DELETE FROM Student WHERE StdID = @id";
+                string deleteData = "DELETE FROM Student WHERE StdID = @id";//co the loi
                 using (SqlCommand cmd = new SqlCommand(deleteData, connect))
                 {
                     cmd.Parameters.AddWithValue("@id", id);

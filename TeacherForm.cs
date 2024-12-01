@@ -17,6 +17,15 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             InitializeComponent();
             customizeDesign(); 
         }
+        private int teacherId;
+
+        public TeacherForm(int teacherId)
+        {
+            InitializeComponent();
+            this.teacherId = teacherId;
+            customizeDesign();
+            // Use teacherId as needed, for example, to load teacher-specific data
+        }
         private void showSubMenu(Panel subMenu)
         {
             if (subMenu.Visible == false)
@@ -43,7 +52,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         {
 
         }
-      private void TeacherForm_Load(object sender, EventArgs e)
+        private void TeacherForm_Load(object sender, EventArgs e)
         {
 
         }
@@ -54,11 +63,19 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
         private void button_newcourse_Click(object sender, EventArgs e)
         {
+            AddCourseForm addcourseForm = new AddCourseForm();
+            this.Hide();
+            addcourseForm.ShowDialog();
+            this.Close();
             hideSubMenu();   
         }
 
         private void button_managecourse_Click(object sender, EventArgs e)
         {
+            ManageCourseForm manageCourse = new ManageCourseForm();
+            this.Hide();
+            manageCourse.ShowDialog();
+            this.Close();
             hideSubMenu();   
         }
 
