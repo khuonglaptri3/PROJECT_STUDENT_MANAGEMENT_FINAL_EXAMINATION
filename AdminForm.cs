@@ -87,6 +87,9 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void button_stdPrint_Click(object sender, EventArgs e)
         {
+            PrintStudent printStudent = new PrintStudent(); 
+            this.Close();
+            printStudent.ShowDialog();   
             hideSubMenu();
         }
         #endregion Student_SubMenu   

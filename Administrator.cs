@@ -11,7 +11,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
     public class Administrator : Person
     {
 
-        public DataTable GetStudentList(SqlConnection connect)
+        public  DataTable GetStudentList(SqlConnection connect)
         {
             connect.Open();
             String selectData = "SELECT * FROM Student ";
@@ -20,8 +20,23 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
+                connect.Close();
                 return table;
             }
+              
+        }
+        public DataTable GetStudentList(SqlConnection connect , string selectData) 
+        {
+            connect.Open();
+            using (SqlCommand cmd = new SqlCommand(selectData, connect))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                connect.Close();
+                return table;
+            }
+            
         }
         public string insertstudent(SqlConnection connect, Student student)
 
