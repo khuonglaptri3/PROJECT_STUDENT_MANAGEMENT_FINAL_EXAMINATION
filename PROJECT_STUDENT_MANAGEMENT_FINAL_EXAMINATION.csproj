@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Addcourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Addcourse.Designer.cs">
+      <DependentUpon>Addcourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,12 @@
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerCourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerCourseForm.Designer.cs">
+      <DependentUpon>ManagerCourseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ManegerStudentForm.cs">
       <SubType>Form</SubType>
@@ -121,6 +133,9 @@
     <Compile Include="TeacherForm.Designer.cs">
       <DependentUpon>TeacherForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Addcourse.resx">
+      <DependentUpon>Addcourse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerCourseForm.resx">
+      <DependentUpon>ManagerCourseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManegerStudentForm.resx">
       <DependentUpon>ManegerStudentForm.cs</DependentUpon>

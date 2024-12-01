@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
-   
+
     public partial class AdminForm : Form
     {
         Administrator Administrator1 = new Administrator();
@@ -25,7 +25,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             Totalmaletxt.Text = Administrator1.coutstudent(connect, "SELECT COUNT(*) FROM   student WHERE Gender = 'Male'").ToString();
             comboBox_course.DataSource = Administrator1.getCourse(connect, "SELECT * FROM Course");
             comboBox_course.DisplayMember = "CourseName";
-            comboBox_course.ValueMember = "CourseName"; 
+            comboBox_course.ValueMember = "CourseName";
         }
         //private Form activeForm = null;
         //private void openChildForm(Form childForm)
@@ -44,8 +44,8 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         //}
         private void customizeDesign()
         {
-            panel_substd.Visible = false;    
-            Panel_subtch.Visible = false;    
+            panel_substd.Visible = false;
+            Panel_subtch.Visible = false;
         }
         private void hideSubMenu()
         {
@@ -71,35 +71,35 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         #region Student_SubMenu  
         private void button1_Click(object sender, EventArgs e)
         {
-            showSubMenu(panel_substd); 
+            showSubMenu(panel_substd);
         }
 
         private void button3_Click(object sender, EventArgs e)
-        { 
-            this.Close();    
+        {
+            this.Close();
             hideSubMenu();
-            ManegerStudentForm manegerStudentForm = new ManegerStudentForm () ;
-            manegerStudentForm.ShowDialog(); 
+            ManegerStudentForm manegerStudentForm = new ManegerStudentForm();
+            manegerStudentForm.ShowDialog();
         }
 
         private void button_registrationstd_Click(object sender, EventArgs e)
         {
-           RegisterForm registerForm = new RegisterForm(); 
+            RegisterForm registerForm = new RegisterForm();
             this.Hide();
             registerForm.ShowDialog();
-            this.Close(); 
+            this.Close();
 
             hideSubMenu();
-            
+
 
         }
-        
+
 
         private void button_stdPrint_Click(object sender, EventArgs e)
         {
-            PrintStudent printStudent = new PrintStudent(); 
+            PrintStudent printStudent = new PrintStudent();
             this.Close();
-            printStudent.ShowDialog();   
+            printStudent.ShowDialog();
             hideSubMenu();
         }
         #endregion Student_SubMenu   
@@ -110,22 +110,22 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         #region Teacher_SubMenu 
         private void button_tch_Click(object sender, EventArgs e)
         {
-            showSubMenu(Panel_subtch);  
+            showSubMenu(Panel_subtch);
         }
 
         private void button_Registrationtch_Click(object sender, EventArgs e)
         {
-            hideSubMenu();   
+            hideSubMenu();
         }
 
         private void button_managetch_Click(object sender, EventArgs e)
         {
-            hideSubMenu();   
+            hideSubMenu();
         }
 
         private void button_printtch_Click(object sender, EventArgs e)
         {
-            hideSubMenu();   
+            hideSubMenu();
         }
         #endregion Teacher_SubMenu   
 
@@ -157,8 +157,13 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             string maleQuery = "SELECT COUNT(*) FROM student INNER JOIN GRADES ON GRADES.StdId = student.StdId WHERE GRADES.CourseId = (SELECT CourseID FROM Course WHERE CourseName = @CourseName) AND student.Gender = 'Male'";
             string femaleQuery = "SELECT COUNT(*) FROM student INNER JOIN GRADES ON GRADES.StdId = student.StdId WHERE GRADES.CourseId = (SELECT CourseID FROM Course WHERE CourseName = @CourseName) AND student.Gender = 'Female'";
 
-            label_cmale.Text = "Male : " + Administrator1.coutstudent(connect, maleQuery, selectedCourse).ToString();
-            label_cfemale.Text = "Female : " + Administrator1.coutstudent(connect, femaleQuery, selectedCourse).ToString();
+            //label_cmale.Text = "Male : " + Administrator1.coutstudent(connect, maleQuery, selectedCourse).ToString();
+            //label_cfemale.Text = "Female : " + Administrator1.coutstudent(connect, femaleQuery, selectedCourse).ToString();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

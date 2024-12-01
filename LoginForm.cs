@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient; 
+using System.Data.SqlClient;
 namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
     public partial class LoginForm : Form
     {
         SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\School.mdf;Integrated Security=True;Connect Timeout=30");
         SqlConnection connect1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
-        private Student student;
+
 
         public LoginForm()
         {
@@ -47,6 +47,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                         String selectData1 = "SELECT * FROM studentUsers Where username = @username AND password = @password";
                         using (SqlCommand cmd1 = new SqlCommand(selectData1, connect1))
                         {
+                            // dflsfjskfjlksjf
 
                             cmd1.Parameters.AddWithValue("@username", Username.Text.Trim());
                             cmd1.Parameters.AddWithValue("@password", Password.Text.Trim());
@@ -55,12 +56,16 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                             adapter1.Fill(table1);
                             if (table1.Rows.Count >= 1)
                             {
-                              
+                                // int userId = Convert.ToInt32(table.Rows[0][0]);
                                 MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                StudentForm studentForm = new StudentForm(student);
-
+                                int StdId = Convert.ToInt32(table1.Rows[0][3]);
+                                StudentForm studentForm = new StudentForm(StdId);
                                 studentForm.Show();
                                 this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Tai khoan chua duoc dang ki ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
@@ -78,9 +83,14 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                             {
 
                                 MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                TeacherForm teacherForm = new TeacherForm();
+                                int TchId = Convert.ToInt32(table.Rows[0][3]);
+                                TeacherForm teacherForm = new TeacherForm(TchId);
                                 teacherForm.Show();
                                 this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Tai khoan chua duoc dang ki ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
@@ -96,13 +106,16 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                             adapter.Fill(table);
                             if (table.Rows.Count >= 1)
                             {
-                                
-                                    MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    AdminForm adminForm = new AdminForm(); 
-                                    adminForm.Show();    
-                                    this.Hide();
-                               
 
+                                MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                AdminForm adminForm = new AdminForm();
+                                adminForm.Show();
+                                this.Hide();
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Tai khoan chua duoc dang ki ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }

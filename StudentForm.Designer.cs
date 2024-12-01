@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button_stdPrintcourse = new System.Windows.Forms.Button();
             this.button_viewcourse = new System.Windows.Forms.Button();
             this.button_enrollincourse = new System.Windows.Forms.Button();
@@ -104,7 +105,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(212, 80);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1078, 83);
+            this.panel3.Size = new System.Drawing.Size(1056, 83);
             this.panel3.TabIndex = 12;
             // 
             // label2
@@ -132,12 +133,27 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MintCream;
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(212, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1078, 80);
+            this.panel1.Size = new System.Drawing.Size(1056, 80);
             this.panel1.TabIndex = 11;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(168, 80);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(133, 64);
+            this.tableLayoutPanel1.TabIndex = 5;
             // 
             // button_stdPrintcourse
             // 
@@ -146,7 +162,7 @@
             this.button_stdPrintcourse.Location = new System.Drawing.Point(0, 134);
             this.button_stdPrintcourse.Name = "button_stdPrintcourse";
             this.button_stdPrintcourse.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button_stdPrintcourse.Size = new System.Drawing.Size(212, 70);
+            this.button_stdPrintcourse.Size = new System.Drawing.Size(212, 67);
             this.button_stdPrintcourse.TabIndex = 5;
             this.button_stdPrintcourse.Text = "Print";
             this.button_stdPrintcourse.UseVisualStyleBackColor = true;
@@ -214,9 +230,9 @@
             this.panel4.Controls.Add(this.Maletxt);
             this.panel4.Controls.Add(this.Total_stdtxt);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(212, 570);
+            this.panel4.Location = new System.Drawing.Point(212, 561);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1078, 100);
+            this.panel4.Size = new System.Drawing.Size(1056, 100);
             this.panel4.TabIndex = 13;
             // 
             // Femaletxt
@@ -249,19 +265,18 @@
             this.panel_slide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_slide.Location = new System.Drawing.Point(0, 0);
             this.panel_slide.Name = "panel_slide";
-            this.panel_slide.Size = new System.Drawing.Size(212, 670);
+            this.panel_slide.Size = new System.Drawing.Size(212, 661);
             this.panel_slide.TabIndex = 10;
             // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1290, 670);
+            this.ClientSize = new System.Drawing.Size(1268, 661);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel_slide);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StudentForm";
             this.Text = "StudentForm";
             this.Load += new System.EventHandler(this.StudentForm_Load);
@@ -299,5 +314,6 @@
         private System.Windows.Forms.Label Femaletxt;
         private System.Windows.Forms.Label Total_stdtxt;
         private System.Windows.Forms.Panel panel_slide;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
