@@ -213,10 +213,5 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             AdminForm adminForm = new AdminForm();
             adminForm.ShowDialog();  
         }
-
-        private void DataGridView_student_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

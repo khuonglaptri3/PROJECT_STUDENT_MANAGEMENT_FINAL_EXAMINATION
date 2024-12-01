@@ -20,4 +20,3 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
     }
 }
-    
