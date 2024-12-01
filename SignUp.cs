@@ -14,6 +14,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
     public partial class SignUp : Form
     {
         SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\School.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection connect1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
 
         public SignUp()
         {
@@ -49,46 +50,117 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void Sign_upBut_Click(object sender, EventArgs e)
         {
-            if (connect.State != ConnectionState.Open)
+            if (connect1.State != ConnectionState.Open)
             {
                 try
                 {
-                    connect.Open();
-                    String CheckUsername = " SELECT * FROM users  WHERE username = '" + Username.Text.Trim() + "' ";
-                    using (SqlCommand CheckUser = new SqlCommand(CheckUsername, connect))
+                    connect1.Open();
+                    String CheckUsernamestd = "SELECT * FROM studentUsers WHERE username = @username";
+                    String CheckUsernametch = "SELECT * FROM teacherUsers WHERE username = @username";
+                    String CheckIDSTD = "SELECT * FROM student WHERE StdId = @StdId";
+                    String CheckIDTCH = "SELECT * FROM teacher WHERE tchdId = @tchdId";
+
+                    if (Studentrar.Checked)
                     {
-
-                        SqlDataAdapter adapter = new SqlDataAdapter(CheckUser);
-                        DataTable table = new DataTable();
-                        adapter.Fill(table);
-                        if (table.Rows.Count >= 1)
+                        using (SqlCommand CheckUser = new SqlCommand(CheckUsernamestd, connect1))
                         {
-                            MessageBox.Show(Username.Text + " already exists", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        else
-                        {
-                            string insertData = "INSERT INTO users (username, password)  VALUES (@username, @password)";
-                            using (SqlCommand cmd = new SqlCommand(insertData, connect))
+                            CheckUser.Parameters.AddWithValue("@username", Username.Text.Trim());
+                            SqlDataAdapter adapter = new SqlDataAdapter(CheckUser);
+                            DataTable table = new DataTable();
+                            adapter.Fill(table);
+                            if (table.Rows.Count >= 1)
                             {
-                                cmd.Parameters.AddWithValue("@username", Username.Text.Trim());
-                                cmd.Parameters.AddWithValue("@password", Password.Text.Trim());
-                                cmd.ExecuteNonQuery();
-                                MessageBox.Show("Register Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Hide();
-                                LoginForm loginForm = new LoginForm();
-                                loginForm.Show();
-
+                                MessageBox.Show(Username.Text + " already exists", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                            {
+                                using (SqlCommand CheckStdId = new SqlCommand(CheckIDSTD, connect1))
+                                {
+                                    CheckStdId.Parameters.AddWithValue("@StdId", Idtxt.Text.Trim());
+                                    SqlDataAdapter adapter1 = new SqlDataAdapter(CheckStdId);
+                                    DataTable table1 = new DataTable();
+                                    adapter1.Fill(table1);
+                                    if (table1.Rows.Count < 1)
+                                    {
+                                        MessageBox.Show("Student ID does not exist", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    else
+                                    {
+                                        string insertData = "INSERT INTO studentUsers (username, password, StdId) VALUES (@username, @password, @StdId)";
+                                        using (SqlCommand cmd = new SqlCommand(insertData, connect1))
+                                        {
+                                            cmd.Parameters.AddWithValue("@username", Username.Text.Trim());
+                                            cmd.Parameters.AddWithValue("@password", Password.Text.Trim());
+                                            cmd.Parameters.AddWithValue("@StdId", Idtxt.Text.Trim());
+                                            cmd.ExecuteNonQuery();
+                                            MessageBox.Show("Register Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            this.Hide();
+                                            LoginForm loginForm = new LoginForm();
+                                            loginForm.Show();
+                                        }
+                                    }
+                                }
                             }
                         }
+                    }
+                    else if (Teacherrarbut.Checked)
+                    {
+                        using (SqlCommand CheckUser = new SqlCommand(CheckUsernametch, connect1))
+                        {
+                            CheckUser.Parameters.AddWithValue("@username", Username.Text.Trim());
+                            SqlDataAdapter adapter = new SqlDataAdapter(CheckUser);
+                            DataTable table = new DataTable();
+                            adapter.Fill(table);
+                            if (table.Rows.Count >= 1)
+                            {
+                                MessageBox.Show(Username.Text + " already exists", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                            {
+                                using (SqlCommand CheckId = new SqlCommand(CheckIDTCH, connect1))
+                                {
+                                    CheckId.Parameters.AddWithValue("@tchdId", Idtxt.Text.Trim());
+                                    SqlDataAdapter adapter1 = new SqlDataAdapter(CheckId);
+                                    DataTable table1 = new DataTable();
+                                    adapter1.Fill(table1);
+                                    if (table1.Rows.Count < 1)
+                                    {
+                                        MessageBox.Show("Teacher ID does not exist", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    else
+                                    {
+                                        string insertData = "INSERT INTO teacherUsers (username, password, TeacherId) VALUES (@username, @password, @TeacherId)";
+                                        using (SqlCommand cmd = new SqlCommand(insertData, connect1))
+                                        {
+                                            cmd.Parameters.AddWithValue("@username", Username.Text.Trim());
+                                            cmd.Parameters.AddWithValue("@password", Password.Text.Trim());
+                                            cmd.Parameters.AddWithValue("@TeacherId", Idtxt.Text.Trim());
+                                            cmd.ExecuteNonQuery();
+                                            MessageBox.Show("Register Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            this.Hide();
+                                            LoginForm loginForm = new LoginForm();
+                                            loginForm.Show();
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select the type of account you want to register", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    {
+
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error connection Database " + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error connecting to Database: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
-                    connect.Close();
+                    connect1.Close();
                 }
             }
         }
@@ -96,6 +168,11 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private void showpass_CheckedChanged(object sender, EventArgs e)
         {
             Password.PasswordChar = showpass.Checked ? '\0' : '*'; 
+        }
+
+        private void Teacherrarbut_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
