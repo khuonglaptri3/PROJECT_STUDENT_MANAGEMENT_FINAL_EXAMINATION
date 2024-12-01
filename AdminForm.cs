@@ -65,14 +65,22 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {
+        { 
+            this.Close();    
             hideSubMenu();
+            ManegerStudentForm manegerStudentForm = new ManegerStudentForm () ;
+            manegerStudentForm.ShowDialog(); 
         }
 
         private void button_registrationstd_Click(object sender, EventArgs e)
         {
-            openChildForm(new RegisterForm()); 
+           RegisterForm registerForm = new RegisterForm(); 
+            this.Hide();
+            registerForm.ShowDialog();
+            this.Close(); 
+
             hideSubMenu();
+            
 
         }
         
@@ -112,19 +120,10 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         {
 
         }
-        private Form activeForm = null;
-        private void openChildForm(Form childForm)
+
+        private void panel_cover_Paint(object sender, PaintEventArgs e)
         {
-            if (activeForm != null)
-                activeForm.Close();
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panel_main.Controls.Add(childForm);
-            panel_main.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
+
         }
     }
 }

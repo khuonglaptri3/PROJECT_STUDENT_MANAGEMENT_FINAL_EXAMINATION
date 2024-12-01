@@ -53,6 +53,7 @@
             this.Total_stdtxt = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel_main = new System.Windows.Forms.Panel();
+            this.panel_cover = new System.Windows.Forms.Panel();
             this.panel_slide.SuspendLayout();
             this.Panel_subtch.SuspendLayout();
             this.panel_substd.SuspendLayout();
@@ -62,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel_main.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_slide
@@ -75,7 +77,7 @@
             this.panel_slide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_slide.Location = new System.Drawing.Point(0, 0);
             this.panel_slide.Name = "panel_slide";
-            this.panel_slide.Size = new System.Drawing.Size(212, 693);
+            this.panel_slide.Size = new System.Drawing.Size(212, 796);
             this.panel_slide.TabIndex = 0;
             // 
             // Panel_subtch
@@ -227,7 +229,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1045, 0);
+            this.label1.Location = new System.Drawing.Point(1268, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(25, 25);
             this.label1.TabIndex = 1;
@@ -241,7 +243,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(212, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1073, 80);
+            this.panel1.Size = new System.Drawing.Size(1293, 80);
             this.panel1.TabIndex = 3;
             // 
             // panel3
@@ -253,14 +255,14 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(212, 80);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1073, 203);
+            this.panel3.Size = new System.Drawing.Size(1293, 203);
             this.panel3.TabIndex = 4;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Properties.Resources.icons8_School_80px_1;
-            this.pictureBox1.Location = new System.Drawing.Point(955, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(1210, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);
             this.pictureBox1.TabIndex = 5;
@@ -293,9 +295,9 @@
             this.panel4.Controls.Add(this.Maletxt);
             this.panel4.Controls.Add(this.Total_stdtxt);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(212, 593);
+            this.panel4.Location = new System.Drawing.Point(212, 696);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1073, 100);
+            this.panel4.Size = new System.Drawing.Size(1293, 100);
             this.panel4.TabIndex = 5;
             // 
             // Femaletxt
@@ -334,21 +336,32 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(212, 283);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1073, 310);
+            this.panel5.Size = new System.Drawing.Size(1293, 413);
             this.panel5.TabIndex = 6;
             // 
             // panel_main
             // 
-            this.panel_main.Location = new System.Drawing.Point(0, -200);
+            this.panel_main.Controls.Add(this.panel_cover);
+            this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_main.Location = new System.Drawing.Point(0, 0);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(1070, 607);
-            this.panel_main.TabIndex = 0;
+            this.panel_main.Size = new System.Drawing.Size(1293, 413);
+            this.panel_main.TabIndex = 2;
+            // 
+            // panel_cover
+            // 
+            this.panel_cover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_cover.Location = new System.Drawing.Point(0, 0);
+            this.panel_cover.Name = "panel_cover";
+            this.panel_cover.Size = new System.Drawing.Size(1293, 413);
+            this.panel_cover.TabIndex = 0;
+            this.panel_cover.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_cover_Paint);
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1285, 693);
+            this.ClientSize = new System.Drawing.Size(1505, 796);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -372,6 +385,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel_main.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -403,5 +417,6 @@
         private System.Windows.Forms.Label Total_stdtxt;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel_main;
+        private System.Windows.Forms.Panel panel_cover;
     }
 }

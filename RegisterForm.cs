@@ -206,5 +206,12 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         {
             Application.Exit(); 
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            AdminForm adminForm = new AdminForm();
+            adminForm.ShowDialog();  
+        }
     }
 }
