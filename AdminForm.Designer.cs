@@ -47,15 +47,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Totalmaletxt = new System.Windows.Forms.Label();
+            this.Total_femaletxt = new System.Windows.Forms.Label();
+            this.Total_studenttxt = new System.Windows.Forms.Label();
             this.Femaletxt = new System.Windows.Forms.Label();
             this.Maletxt = new System.Windows.Forms.Label();
             this.Total_stdtxt = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel_main = new System.Windows.Forms.Panel();
             this.panel_cover = new System.Windows.Forms.Panel();
-            this.Total_studenttxt = new System.Windows.Forms.Label();
-            this.Total_femaletxt = new System.Windows.Forms.Label();
-            this.Totalmaletxt = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label_cfemale = new System.Windows.Forms.Label();
+            this.label_cmale = new System.Windows.Forms.Label();
+            this.comboBox_course = new System.Windows.Forms.ComboBox();
             this.panel_slide.SuspendLayout();
             this.Panel_subtch.SuspendLayout();
             this.panel_substd.SuspendLayout();
@@ -280,9 +284,13 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.GrayText;
+            this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.Totalmaletxt);
+            this.panel4.Controls.Add(this.label_cfemale);
             this.panel4.Controls.Add(this.Total_femaletxt);
+            this.panel4.Controls.Add(this.label_cmale);
             this.panel4.Controls.Add(this.Total_studenttxt);
+            this.panel4.Controls.Add(this.comboBox_course);
             this.panel4.Controls.Add(this.Femaletxt);
             this.panel4.Controls.Add(this.Maletxt);
             this.panel4.Controls.Add(this.Total_stdtxt);
@@ -291,6 +299,37 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1293, 100);
             this.panel4.TabIndex = 5;
+            // 
+            // Totalmaletxt
+            // 
+            this.Totalmaletxt.AutoSize = true;
+            this.Totalmaletxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.Totalmaletxt.Location = new System.Drawing.Point(87, 45);
+            this.Totalmaletxt.Name = "Totalmaletxt";
+            this.Totalmaletxt.Size = new System.Drawing.Size(30, 27);
+            this.Totalmaletxt.TabIndex = 10;
+            this.Totalmaletxt.Text = "...";
+            // 
+            // Total_femaletxt
+            // 
+            this.Total_femaletxt.AutoSize = true;
+            this.Total_femaletxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.Total_femaletxt.Location = new System.Drawing.Point(226, 45);
+            this.Total_femaletxt.Name = "Total_femaletxt";
+            this.Total_femaletxt.Size = new System.Drawing.Size(30, 27);
+            this.Total_femaletxt.TabIndex = 9;
+            this.Total_femaletxt.Text = "...";
+            // 
+            // Total_studenttxt
+            // 
+            this.Total_studenttxt.AutoSize = true;
+            this.Total_studenttxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.Total_studenttxt.Location = new System.Drawing.Point(183, 3);
+            this.Total_studenttxt.Name = "Total_studenttxt";
+            this.Total_studenttxt.Size = new System.Drawing.Size(30, 27);
+            this.Total_studenttxt.TabIndex = 0;
+            this.Total_studenttxt.Text = "...";
+            this.Total_studenttxt.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // Femaletxt
             // 
@@ -349,36 +388,53 @@
             this.panel_cover.TabIndex = 0;
             this.panel_cover.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_cover_Paint);
             // 
-            // Total_studenttxt
+            // label11
             // 
-            this.Total_studenttxt.AutoSize = true;
-            this.Total_studenttxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.Total_studenttxt.Location = new System.Drawing.Point(183, 3);
-            this.Total_studenttxt.Name = "Total_studenttxt";
-            this.Total_studenttxt.Size = new System.Drawing.Size(30, 27);
-            this.Total_studenttxt.TabIndex = 0;
-            this.Total_studenttxt.Text = "...";
-            this.Total_studenttxt.Click += new System.EventHandler(this.label1_Click_1);
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(841, 20);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(141, 27);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Select Class :";
             // 
-            // Total_femaletxt
+            // label_cfemale
             // 
-            this.Total_femaletxt.AutoSize = true;
-            this.Total_femaletxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.Total_femaletxt.Location = new System.Drawing.Point(226, 45);
-            this.Total_femaletxt.Name = "Total_femaletxt";
-            this.Total_femaletxt.Size = new System.Drawing.Size(30, 27);
-            this.Total_femaletxt.TabIndex = 9;
-            this.Total_femaletxt.Text = "...";
+            this.label_cfemale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_cfemale.AutoSize = true;
+            this.label_cfemale.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label_cfemale.ForeColor = System.Drawing.Color.White;
+            this.label_cfemale.Location = new System.Drawing.Point(1112, 61);
+            this.label_cfemale.Name = "label_cfemale";
+            this.label_cfemale.Size = new System.Drawing.Size(97, 27);
+            this.label_cfemale.TabIndex = 8;
+            this.label_cfemale.Text = "Female :";
             // 
-            // Totalmaletxt
+            // label_cmale
             // 
-            this.Totalmaletxt.AutoSize = true;
-            this.Totalmaletxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.Totalmaletxt.Location = new System.Drawing.Point(87, 45);
-            this.Totalmaletxt.Name = "Totalmaletxt";
-            this.Totalmaletxt.Size = new System.Drawing.Size(30, 27);
-            this.Totalmaletxt.TabIndex = 10;
-            this.Totalmaletxt.Text = "...";
+            this.label_cmale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_cmale.AutoSize = true;
+            this.label_cmale.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label_cmale.ForeColor = System.Drawing.Color.White;
+            this.label_cmale.Location = new System.Drawing.Point(991, 61);
+            this.label_cmale.Name = "label_cmale";
+            this.label_cmale.Size = new System.Drawing.Size(75, 27);
+            this.label_cmale.TabIndex = 9;
+            this.label_cmale.Text = "Male :";
+            this.label_cmale.Click += new System.EventHandler(this.label_cmale_Click);
+            // 
+            // comboBox_course
+            // 
+            this.comboBox_course.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox_course.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.comboBox_course.FormattingEnabled = true;
+            this.comboBox_course.Location = new System.Drawing.Point(1029, 12);
+            this.comboBox_course.Name = "comboBox_course";
+            this.comboBox_course.Size = new System.Drawing.Size(211, 35);
+            this.comboBox_course.TabIndex = 7;
+            this.comboBox_course.SelectedIndexChanged += new System.EventHandler(this.comboBox_course_SelectedIndexChanged);
             // 
             // AdminForm
             // 
@@ -441,5 +497,9 @@
         private System.Windows.Forms.Label Total_studenttxt;
         private System.Windows.Forms.Label Totalmaletxt;
         private System.Windows.Forms.Label Total_femaletxt;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label_cfemale;
+        private System.Windows.Forms.Label label_cmale;
+        private System.Windows.Forms.ComboBox comboBox_course;
     }
 }

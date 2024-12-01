@@ -13,6 +13,9 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
     public partial class LoginForm : Form
     {
         SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\School.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection connect1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
+        private Student student;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -39,44 +42,110 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 try
                 {
                     connect.Open();
-                    String selectData = "SELECT * FROM users Where username = @username AND password = @password";
-                    using (SqlCommand cmd = new SqlCommand(selectData, connect))
+                    if (Studentrar.Checked)
                     {
-                        cmd.Parameters.AddWithValue("@username", Username.Text.Trim());
-                        cmd.Parameters.AddWithValue("@password", Password.Text.Trim());
-                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                        DataTable table = new DataTable();
-                        adapter.Fill(table);
-                        if (table.Rows.Count >= 1)
+                        String selectData1 = "SELECT * FROM studentUsers Where username = @username AND password = @password";
+                        using (SqlCommand cmd1 = new SqlCommand(selectData1, connect1))
                         {
-                            if(Teacherrarbut.Checked)
+
+                            cmd1.Parameters.AddWithValue("@username", Username.Text.Trim());
+                            cmd1.Parameters.AddWithValue("@password", Password.Text.Trim());
+                            SqlDataAdapter adapter1 = new SqlDataAdapter(cmd1);
+                            DataTable table1 = new DataTable();
+                            adapter1.Fill(table1);
+                            if (table1.Rows.Count >= 1)
                             {
+                              
+                                MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                StudentForm studentForm = new StudentForm(student);
+
+                                studentForm.Show();
+                                this.Hide();
+                            }
+                        }
+                    }
+                    else if (Teacherrarbut.Checked)
+                    {
+                        string selectData = "SELECT * FROM teacherUsers Where username = @username AND password = @password";
+                        using (SqlCommand cmd = new SqlCommand(selectData, connect1))
+                        {
+                            cmd.Parameters.AddWithValue("@username", Username.Text.Trim());
+                            cmd.Parameters.AddWithValue("@password", Password.Text.Trim());
+                            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                            DataTable table = new DataTable();
+                            adapter.Fill(table);
+                            if (table.Rows.Count >= 1)
+                            {
+
                                 MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 TeacherForm teacherForm = new TeacherForm();
                                 teacherForm.Show();
                                 this.Hide();
                             }
-                            else if (Studentrar.Checked)
-                            {
-                                MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                StudentForm studentForm = new StudentForm();
-                                studentForm.Show();
-                                this.Hide();
-                            }
-                            else 
-                            {
-                                MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                AdminForm adminForm = new AdminForm();
-                                adminForm.Show();
-                                this.Hide();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Login Failed ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
+                    else
+                    {
+                        String selectData = "SELECT * FROM users Where username = @username AND password = @password";
+                        using (SqlCommand cmd = new SqlCommand(selectData, connect))
+                        {
+                            cmd.Parameters.AddWithValue("@username", Username.Text.Trim());
+                            cmd.Parameters.AddWithValue("@password", Password.Text.Trim());
+                            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                            DataTable table = new DataTable();
+                            adapter.Fill(table);
+                            if (table.Rows.Count >= 1)
+                            {
+                                
+                                    MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    AdminForm adminForm = new AdminForm(); 
+                                    adminForm.Show();    
+                                    this.Hide();
+                               
 
+                            }
+                        }
+                    }
+                    #region comment_code 
+                    //String selectData = "SELECT * FROM users Where username = @username AND password = @password";
+                    //using (SqlCommand cmd = new SqlCommand(selectData, connect))
+                    //{
+                    //    cmd.Parameters.AddWithValue("@username", Username.Text.Trim());
+                    //    cmd.Parameters.AddWithValue("@password", Password.Text.Trim());
+                    //    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    //    DataTable table = new DataTable();
+                    //    adapter.Fill(table);
+                    //    if (table.Rows.Count >= 1)
+                    //    {
+                    //        if (Teacherrarbut.Checked)
+                    //        {
+                    //            MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //            TeacherForm teacherForm = new TeacherForm();
+                    //            teacherForm.Show();
+                    //            this.Hide();
+                    //        }
+                    //        else if (Studentrar.Checked)
+                    //        {
+                    //            MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //            StudentForm studentForm = new StudentForm(student);
+
+                    //            studentForm.Show();
+                    //            this.Hide();
+                    //        }
+                    //        else
+                    //        {
+                    //            MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //            AdminForm adminForm = new AdminForm();
+                    //            adminForm.Show();
+                    //            this.Hide();
+                    //        }
+                    //    }
+                    //    else
+                    //    {
+                    //        MessageBox.Show("Login Failed ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //    }
+                    //}
+                    #endregion comment_code  
                 }
                 catch (Exception ex)
                 {
@@ -108,7 +177,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private void Registerbut_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SignUp signUp = new SignUp();   
+            SignUp signUp = new SignUp();
             signUp.Show();
         }
 

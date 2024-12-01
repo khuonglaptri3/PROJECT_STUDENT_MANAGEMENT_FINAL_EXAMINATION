@@ -10,7 +10,19 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
     public class Administrator : Person
     {
-
+        public DataTable getCourse(SqlConnection connect , string query)
+        {
+            if (connect.State == ConnectionState.Closed)
+            {
+                connect.Open();
+            }
+            SqlCommand command = new SqlCommand(query, connect);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            connect.Close();
+            return table;
+        }
         public  DataTable GetStudentList(SqlConnection connect)
         {
             connect.Open();
@@ -139,6 +151,17 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             int count = (int)command.ExecuteScalar();
             connect.Close();
             return count;
+        }
+        public int coutstudent(SqlConnection connect, string query, string courseName)
+        {
+            using (SqlCommand cmd = new SqlCommand(query, connect))
+            {
+                cmd.Parameters.AddWithValue("@CourseName", courseName);
+                connect.Open();
+                int count = (int)cmd.ExecuteScalar();
+                connect.Close();
+                return count;
+            }
         }
     }
 }

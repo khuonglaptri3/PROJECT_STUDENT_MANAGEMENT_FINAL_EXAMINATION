@@ -59,8 +59,15 @@
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Administrator.cs" />
+    <Compile Include="Course.cs" />
     <Compile Include="Date.cs" />
     <Compile Include="DGVPrinterHelper.cs" />
+    <Compile Include="EnrollInCourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollInCourseForm.Designer.cs">
+      <DependentUpon>EnrollInCourseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +123,9 @@
     </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrollInCourseForm.resx">
+      <DependentUpon>EnrollInCourseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

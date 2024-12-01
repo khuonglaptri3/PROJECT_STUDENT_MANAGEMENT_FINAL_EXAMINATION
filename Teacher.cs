@@ -9,14 +9,8 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
     public class Teacher : Person
     {
-        private string teacherID;
-        private List<string> subjectTaught = new List<string>();
+        
 
-        public string GetTeacherID
-        {
-            get { return teacherID; }
-            set { teacherID = value; }
-        }
 
     }
 }
