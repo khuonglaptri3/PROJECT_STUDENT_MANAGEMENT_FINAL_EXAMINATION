@@ -170,7 +170,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 {
                     double averageGrade = dt.AsEnumerable().Average(row => row.Field<int>("Grade"));
                     string judgment = GetGradeJudgment(averageGrade);
-                    textBox_studentInfo.Text = $"Average Grade: {averageGrade:F2}\nJudgment: {judgment}";
+                    textBox_studentInfo.Text = $"Average Grade: {averageGrade:F2}\r\nJudgment: {judgment}";
                 }
                 else
                 {
@@ -300,14 +300,31 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                     printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
                     printer.PageNumbers = true;
                     printer.PageNumberInHeader = false;
-                    printer.PorportionalColumns = true;
+                    printer.PorportionalColumns = false;
                     printer.HeaderCellAlignment = StringAlignment.Near;
                     printer.Footer = "Student Management System";
                     printer.FooterSpacing = 15;
                     printer.printDocument.DefaultPageSettings.Landscape = true;
+                    //foreach (DataGridViewColumn column in DataGridView_student.Columns)
+                    //{
+                    //    column.Width = (int)((double)column.Width / 0.3);
+                    //}
                     //DataGridView_student.Columns["CourseID"].HeaderText = "Course ID";
                     //DataGridView_student.Columns["CourseName"].HeaderText = "Course Name";
                     //DataGridView_student.Columns["Grade"].HeaderText = "Grade";
+                    int totalWidth = DataGridView_student.Columns.Cast<DataGridViewColumn>().Sum(col => col.Width);
+
+                    // Determine printable width of the page
+                    int printableWidth = printer.printDocument.DefaultPageSettings.Bounds.Width -
+                                         printer.printDocument.DefaultPageSettings.Margins.Left -
+                                         printer.printDocument.DefaultPageSettings.Margins.Right;
+                      
+                    // Adjust each column's width proportionally
+                    foreach (DataGridViewColumn column in DataGridView_student.Columns)
+                    {
+                        column.Width = (int)((double)column.Width / totalWidth * printableWidth);
+                    }
+
                     printer.PrintDataGridView(DataGridView_student);
                 }
                 else
@@ -388,7 +405,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                     {
                         if (reader.Read())
                         {
-                            studentInfo = $"ID: {reader["StdId"]}, Name: {reader["StdFirstName"]} {reader["StdLastName"]}, BirthDate: {reader["Birthdate"]},Gender: {reader["Gender"]}";
+                            studentInfo = $"ID: {reader["StdId"]}, Name: {reader["StdFirstName"]} {reader["StdLastName"]}, BirthDate: {reader["Birthdate"]},Gender: {reader["Gender"]}\r\n";
                         }
                     }
                 }
@@ -421,7 +438,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 {
                     double averageGrade = Convert.ToDouble(result);
                     string gradeJudgment = GetGradeJudgment(averageGrade);
-                    return $"Average Grade: {averageGrade:F2}\nJudgment: {gradeJudgment}";
+                    return $"Average Grade: {averageGrade:F2}\r\nJudgment: {gradeJudgment}";
                 }
             }
             return "No grades available.";
