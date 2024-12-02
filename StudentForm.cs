@@ -74,7 +74,12 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         #endregion CourseAndGrades_SubMenu
         private void button_viewcourse_Click(object sender, EventArgs e)
         {
+            ViewStudentDetailForm viewdetail = new ViewStudentDetailForm(StdId);
+            this.Hide();
+            viewdetail.ShowDialog();
+            this.Close();
 
+            hideSubMenu();
         }
 
         private void label3_Click(object sender, EventArgs e)

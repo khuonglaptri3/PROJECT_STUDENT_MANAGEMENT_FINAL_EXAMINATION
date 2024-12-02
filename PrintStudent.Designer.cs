@@ -46,9 +46,16 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel_studentInfo = new System.Windows.Forms.Panel();
+            this.textBox_studentInfo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.ID_textBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_student)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel_studentInfo.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // DataGridView_student
@@ -285,11 +292,57 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Select Class :";
             // 
+            // panel_studentInfo
+            // 
+            this.panel_studentInfo.Controls.Add(this.textBox_studentInfo);
+            this.panel_studentInfo.Location = new System.Drawing.Point(172, 440);
+            this.panel_studentInfo.Name = "panel_studentInfo";
+            this.panel_studentInfo.Size = new System.Drawing.Size(464, 194);
+            this.panel_studentInfo.TabIndex = 36;
+            // 
+            // textBox_studentInfo
+            // 
+            this.textBox_studentInfo.Location = new System.Drawing.Point(14, 15);
+            this.textBox_studentInfo.Multiline = true;
+            this.textBox_studentInfo.Name = "textBox_studentInfo";
+            this.textBox_studentInfo.Size = new System.Drawing.Size(438, 165);
+            this.textBox_studentInfo.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.label4.Location = new System.Drawing.Point(22, 1);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 23);
+            this.label4.TabIndex = 37;
+            this.label4.Text = "Select ID:";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.ID_textBox);
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Location = new System.Drawing.Point(496, 60);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(275, 40);
+            this.panel4.TabIndex = 38;
+            // 
+            // ID_textBox
+            // 
+            this.ID_textBox.Location = new System.Drawing.Point(130, 3);
+            this.ID_textBox.Name = "ID_textBox";
+            this.ID_textBox.Size = new System.Drawing.Size(127, 22);
+            this.ID_textBox.TabIndex = 38;
+            // 
             // PrintStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1293, 665);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel_studentInfo);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.DataGridView_student);
             this.Controls.Add(this.panel2);
@@ -307,6 +360,10 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel_studentInfo.ResumeLayout(false);
+            this.panel_studentInfo.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,5 +386,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel_studentInfo;
+        private System.Windows.Forms.TextBox textBox_studentInfo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox ID_textBox;
     }
 }
