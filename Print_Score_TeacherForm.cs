@@ -58,5 +58,10 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             printer.printDocument.DefaultPageSettings.Landscape = true;
             printer.PrintDataGridView(DataGridView_score);
         }
+
+        private void DataGridView_score_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

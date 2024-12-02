@@ -13,20 +13,13 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
     public partial class StudentForm : Form
     {
-        public StudentForm()
-        {
-            InitializeComponent();
-            //DisplayStudentName();
-        }
-        private int studentID;
+        private int StdId;
 
         public StudentForm(int studentId)
         {
             InitializeComponent();
-            this.studentID = studentId;
+            this.StdId = studentId;
             DisplayStudentName();
-
-            // Use studentId as needed, for example, to load student-specific data
         }
         private void hideSubMenu()
         {
@@ -46,7 +39,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
         private void button_enrollincourse_Click(object sender, EventArgs e)
         {
-            EnrollInCourseForm newCourse = new EnrollInCourseForm();
+            EnrollInCourseForm newCourse = new EnrollInCourseForm(StdId);
             this.Hide();
             newCourse.ShowDialog();
             this.Close();
@@ -90,13 +83,13 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
         private void DisplayStudentName()
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30";
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30"; 
             string query = "SELECT StdFirstName, StdLastName FROM Student WHERE StdId = @StdId";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@StdId", studentID);
+                command.Parameters.AddWithValue("@StdId", StdId);
 
                 try
                 {
