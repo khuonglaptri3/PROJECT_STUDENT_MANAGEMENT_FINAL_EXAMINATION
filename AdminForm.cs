@@ -115,16 +115,29 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void button_Registrationtch_Click(object sender, EventArgs e)
         {
+            RegistratorTeacher registerteacherForm = new RegistratorTeacher();
+            this.Hide();
+            registerteacherForm.ShowDialog();
+            this.Close();
+
             hideSubMenu();
+
         }
 
         private void button_managetch_Click(object sender, EventArgs e)
         {
+            this.Close();
             hideSubMenu();
+            TeacherManageForm teacherManageForm = new TeacherManageForm();
+            teacherManageForm.ShowDialog();
+            //hideSubMenu();
         }
 
         private void button_printtch_Click(object sender, EventArgs e)
         {
+            PrintTeacher printTeacher = new PrintTeacher();
+            this.Close();
+            printTeacher.ShowDialog();
             hideSubMenu();
         }
         #endregion Teacher_SubMenu   

@@ -32,7 +32,6 @@
             this.Total_stdtxt = new System.Windows.Forms.Label();
             this.Panel_subscore = new System.Windows.Forms.Panel();
             this.button_printsore = new System.Windows.Forms.Button();
-            this.button_managescore = new System.Windows.Forms.Button();
             this.button_newscore = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Maletxt = new System.Windows.Forms.Label();
@@ -49,10 +48,12 @@
             this.button_course = new System.Windows.Forms.Button();
             this.panel_slide = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.Panel_subscore.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel_subcourse.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel_slide.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -80,38 +81,25 @@
             // Panel_subscore
             // 
             this.Panel_subscore.Controls.Add(this.button_printsore);
-            this.Panel_subscore.Controls.Add(this.button_managescore);
             this.Panel_subscore.Controls.Add(this.button_newscore);
             this.Panel_subscore.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel_subscore.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Panel_subscore.Location = new System.Drawing.Point(0, 440);
             this.Panel_subscore.Name = "Panel_subscore";
-            this.Panel_subscore.Size = new System.Drawing.Size(212, 204);
+            this.Panel_subscore.Size = new System.Drawing.Size(212, 133);
             this.Panel_subscore.TabIndex = 3;
             // 
             // button_printsore
             // 
             this.button_printsore.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_printsore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_printsore.Location = new System.Drawing.Point(0, 134);
+            this.button_printsore.Location = new System.Drawing.Point(0, 67);
             this.button_printsore.Name = "button_printsore";
             this.button_printsore.Size = new System.Drawing.Size(212, 67);
             this.button_printsore.TabIndex = 5;
             this.button_printsore.Text = "Print";
             this.button_printsore.UseVisualStyleBackColor = true;
             this.button_printsore.Click += new System.EventHandler(this.button_printsore_Click);
-            // 
-            // button_managescore
-            // 
-            this.button_managescore.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_managescore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_managescore.Location = new System.Drawing.Point(0, 67);
-            this.button_managescore.Name = "button_managescore";
-            this.button_managescore.Size = new System.Drawing.Size(212, 67);
-            this.button_managescore.TabIndex = 4;
-            this.button_managescore.Text = "Manage";
-            this.button_managescore.UseVisualStyleBackColor = true;
-            this.button_managescore.Click += new System.EventHandler(this.button_managescore_Click);
             // 
             // button_newscore
             // 
@@ -132,9 +120,9 @@
             this.panel4.Controls.Add(this.Maletxt);
             this.panel4.Controls.Add(this.Total_stdtxt);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(212, 546);
+            this.panel4.Location = new System.Drawing.Point(212, 565);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1074, 100);
+            this.panel4.Size = new System.Drawing.Size(1095, 100);
             this.panel4.TabIndex = 9;
             // 
             // Maletxt
@@ -239,16 +227,17 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(212, 80);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1074, 83);
+            this.panel3.Size = new System.Drawing.Size(1095, 83);
             this.panel3.TabIndex = 8;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MintCream;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(212, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1074, 80);
+            this.panel1.Size = new System.Drawing.Size(1095, 80);
             this.panel1.TabIndex = 7;
             // 
             // HCMUTE
@@ -286,7 +275,7 @@
             this.panel_slide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_slide.Location = new System.Drawing.Point(0, 0);
             this.panel_slide.Name = "panel_slide";
-            this.panel_slide.Size = new System.Drawing.Size(212, 646);
+            this.panel_slide.Size = new System.Drawing.Size(212, 665);
             this.panel_slide.TabIndex = 6;
             // 
             // panel2
@@ -299,11 +288,22 @@
             this.panel2.Size = new System.Drawing.Size(212, 118);
             this.panel2.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1067, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 25);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click_2);
+            // 
             // TeacherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1286, 646);
+            this.ClientSize = new System.Drawing.Size(1307, 665);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -319,6 +319,8 @@
             this.panel_subcourse.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel_slide.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -332,7 +334,6 @@
         private System.Windows.Forms.Label Total_stdtxt;
         private System.Windows.Forms.Panel Panel_subscore;
         private System.Windows.Forms.Button button_printsore;
-        private System.Windows.Forms.Button button_managescore;
         private System.Windows.Forms.Button button_newscore;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label Maletxt;
@@ -349,5 +350,6 @@
         private System.Windows.Forms.Button button_course;
         private System.Windows.Forms.Panel panel_slide;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
     }
 }

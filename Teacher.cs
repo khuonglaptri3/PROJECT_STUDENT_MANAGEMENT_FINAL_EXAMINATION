@@ -21,6 +21,24 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 phone = value;
             }
         }
+        public Teacher()
+        {
+            FIRSTNAME = default;
+            LASTNAME = default;
+            GENDER = default;
+            GetDayOfBirth = default;
+            PHONE = default;
+            ADDRESS = default;
+        }
+        public Teacher(string FirstName, string LastName, string address, string gender, DateTime dateofbirth, string phone)
+        {
+            FIRSTNAME = FirstName;
+            LASTNAME = LastName;
+            GENDER = gender;
+            GetDayOfBirth = dateofbirth;
+            PHONE = phone;
+            ADDRESS = address;
+        }
         //public DataTable GetStudentList(SqlConnection connect)
         //{
         //    connect.Open();
@@ -189,6 +207,56 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 }
             }
             return false;
+        }
+        // khuong get_score student 
+        public DataTable Get_score_student(SqlConnection connect, string courseName, int tchId)
+        {
+            String selectData = "SELECT c.CourseID, g.StdId, CONCAT(s.StdFirstName, ' ', s.StdLastName) AS StdName, g.Grade " +
+                    "FROM GRADES g " +
+                    "JOIN Student s ON g.StdId = s.StdId " +
+                    "JOIN Course c ON g.CourseId = c.CourseID " +
+                    "WHERE c.TeachID = @TeachID AND c.CourseName = @CourseName";
+            if (connect.State == ConnectionState.Closed)
+            {
+                connect.Open();
+            }
+            
+            
+                SqlCommand cmd = new SqlCommand(selectData, connect);
+                cmd.Parameters.AddWithValue("@TeachID", tchId);
+                cmd.Parameters.AddWithValue("@CourseName", courseName.Trim());
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                connect.Close();
+                return table;
+
+            
+        }
+        public bool add_score_student(SqlConnection connect , Grade grade, int TchId)
+        {
+            String updateData = "UPDATE g " +
+                    "SET g.Grade = @Grade " +
+                    "FROM GRADES g " +
+                    "JOIN Course c ON g.CourseID = c.CourseID " +
+                    "WHERE c.TeachID = @TeachID AND c.CourseName = @CourseName AND g.StdId = @StdId";
+
+            if (connect.State == ConnectionState.Closed)
+            {
+                connect.Open();  
+            }
+            if (connect.State == ConnectionState.Open)
+            {
+                SqlCommand cmd = new SqlCommand(updateData, connect);
+                cmd.Parameters.AddWithValue("@Grade", grade.GradeValue);
+                cmd.Parameters.AddWithValue("@TeachID", TchId);
+                cmd.Parameters.AddWithValue("@CourseName", grade.CourseName);
+                cmd.Parameters.AddWithValue("@StdId", grade.StdId);
+                cmd.ExecuteNonQuery();
+                connect.Close();
+                return true;
+            }
+            return false;    
         }
         public override string PrintDetails()
         {

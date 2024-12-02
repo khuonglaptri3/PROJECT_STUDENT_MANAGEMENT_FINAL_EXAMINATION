@@ -10,7 +10,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
     public class Administrator : Person
     {
-        public DataTable getCourse(SqlConnection connect , string query)
+        public DataTable getCourse(SqlConnection connect, string query)
         {
             if (connect.State == ConnectionState.Closed)
             {
@@ -23,7 +23,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             connect.Close();
             return table;
         }
-        public  DataTable GetStudentList(SqlConnection connect)
+        public DataTable GetStudentList(SqlConnection connect)
         {
             connect.Open();
             String selectData = "SELECT * FROM Student ";
@@ -35,9 +35,9 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 connect.Close();
                 return table;
             }
-              
+
         }
-        public DataTable GetStudentList(SqlConnection connect , string selectData) 
+        public DataTable GetStudentList(SqlConnection connect, string selectData)
         {
             connect.Open();
             using (SqlCommand cmd = new SqlCommand(selectData, connect))
@@ -48,7 +48,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 connect.Close();
                 return table;
             }
-            
+
         }
         public string insertstudent(SqlConnection connect, Student student)
 
@@ -100,7 +100,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             }
             return false;
         }
-        public bool updatestudent(SqlConnection connect, Student student , int StdId )
+        public bool updatestudent(SqlConnection connect, Student student, int StdId)
         {
             if (connect.State == ConnectionState.Open)
             {
@@ -141,7 +141,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             connect.Close();
             return table;
         }
-        public int coutstudent(SqlConnection connect , string query)
+        public int coutstudent(SqlConnection connect, string query)
         {
             if (connect.State == ConnectionState.Closed)
             {
@@ -162,6 +162,146 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 connect.Close();
                 return count;
             }
+        }
+        public string insertteacher(SqlConnection connect, Teacher teacher)
+
+        {
+            if (connect.State == ConnectionState.Open)
+            {
+                connect.Close();
+            }
+            if (connect.State != ConnectionState.Open)
+            {
+
+                connect.Open();
+                string insertData = "INSERT INTO teacher ( tchFirstName , tchLastName , Birthdate , Phone , Gender ,Address) VALUES (@tchFirstName , @tchLastName , @Birthdate , @Phone , @Gender ,@Address)";
+                using (SqlCommand cmd = new SqlCommand(insertData, connect))
+                {
+                    cmd.Parameters.AddWithValue("@tchFirstName", teacher.FIRSTNAME.Trim());
+                    cmd.Parameters.AddWithValue("@tchLastName", teacher.LASTNAME.Trim());
+                    cmd.Parameters.AddWithValue("@Birthdate", teacher.GetDayOfBirth.ToString().Trim());
+                    cmd.Parameters.AddWithValue("@Phone", teacher.PHONE.Trim());
+                    cmd.Parameters.AddWithValue("@Gender", teacher.GENDER.Trim());
+                    cmd.Parameters.AddWithValue("@Address", teacher.ADDRESS.Trim());
+
+                    cmd.ExecuteNonQuery();
+                    connect.Close();
+                    return "True";
+
+                }
+            }
+            return "False";
+        }
+
+        public bool deleteteacher(SqlConnection connect, int id)
+        {
+            if (connect.State == ConnectionState.Open)
+            {
+                connect.Close();
+            }
+            if (connect.State != ConnectionState.Open)
+            {
+                connect.Open();
+                string deleteData = "DELETE FROM teacher WHERE tchdId = @id";
+                using (SqlCommand cmd = new SqlCommand(deleteData, connect))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.ExecuteNonQuery();
+                    connect.Close();
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool updateteacher(SqlConnection connect, Teacher teacher, int tchdId)
+        {
+            if (connect.State == ConnectionState.Open)
+            {
+                connect.Close();
+            }
+            if (connect.State != ConnectionState.Open)
+            {
+                connect.Open();
+                string updateData = "UPDATE teacher SET tchFirstName = @tchFirstName , tchLastName = @tchLastName , Birthdate = @Birthdate , Phone = @Phone , Gender = @Gender , Address = @Address WHERE StdId = @StdId";
+                using (SqlCommand cmd = new SqlCommand(updateData, connect))
+                {
+                    cmd.Parameters.AddWithValue("@tchFirstName", teacher.FIRSTNAME.Trim());
+                    cmd.Parameters.AddWithValue("@tchLastName", teacher.LASTNAME.Trim());
+                    cmd.Parameters.AddWithValue("@Birthdate", teacher.GetDayOfBirth.ToString().Trim());
+                    cmd.Parameters.AddWithValue("@Phone", teacher.PHONE.Trim());
+                    cmd.Parameters.AddWithValue("@Gender", teacher.GENDER.Trim());
+                    cmd.Parameters.AddWithValue("@Address", teacher.ADDRESS.Trim());
+                    cmd.Parameters.AddWithValue("@tchdId", tchdId);
+                    cmd.ExecuteNonQuery();
+                    connect.Close();
+                    return true;
+                }
+            }
+            return false;
+        }
+        public DataTable Seachteacher(SqlConnection connect, string search)
+        {
+            if (connect.State == ConnectionState.Closed)
+            {
+                connect.Open();
+            }
+
+            SqlCommand command = new SqlCommand("SELECT * FROM teacher WHERE CONCAT(tchFirstName, tchLastName, Address, Phone) LIKE '%" + search + "%'", connect);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            connect.Close();
+            return table;
+        }
+        public int coutteacher(SqlConnection connect, string query)
+        {
+            if (connect.State == ConnectionState.Closed)
+            {
+                connect.Open();
+            }
+            SqlCommand command = new SqlCommand(query, connect);
+            int count = (int)command.ExecuteScalar();
+            connect.Close();
+            return count;
+        }
+        public int coutteacher(SqlConnection connect, string query, string courseName)
+        {
+            using (SqlCommand cmd = new SqlCommand(query, connect))
+            {
+                cmd.Parameters.AddWithValue("@CourseName", courseName);
+                connect.Open();
+                int count = (int)cmd.ExecuteScalar();
+                connect.Close();
+                return count;
+            }
+        }
+        public DataTable GetTeacherList(SqlConnection connect)
+        {
+            connect.Open();
+            String selectData = "SELECT * FROM teacher ";
+            using (SqlCommand cmd = new SqlCommand(selectData, connect))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                connect.Close();
+                return table;
+            }
+
+        }
+        public DataTable GetTeacherList(SqlConnection connect, string selectData)
+        {
+            connect.Open();
+            using (SqlCommand cmd = new SqlCommand(selectData, connect))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                connect.Close();
+                return table;
+            }
+
         }
     }
 }

@@ -76,7 +76,11 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
 
         private void button_stdPrintcourse_Click(object sender, EventArgs e)
+
         {
+            PrintCourse printCourse = new PrintCourse(tchId);
+            printCourse.Show(); 
+            this.Hide(); 
             hideSubMenu();
         }
         #endregion subMenu_Course 
@@ -88,6 +92,9 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void button_newscore_Click(object sender, EventArgs e)
         {
+            TeacherScoreForm teacherScoreForm = new TeacherScoreForm(tchId); 
+            teacherScoreForm.Show();
+            this.Hide();    
             hideSubMenu();
         }
 
@@ -98,6 +105,9 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void button_printsore_Click(object sender, EventArgs e)
         {
+            Print_Score_TeacherForm print_Score_TeacherForm = new Print_Score_TeacherForm(tchId);   
+            this.Hide(); 
+            print_Score_TeacherForm.ShowDialog();    
             hideSubMenu();
         }
         #endregion SubMenu_Score    
@@ -110,6 +120,11 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private void label1_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label1_Click_2(object sender, EventArgs e)
+        {
+            Application.Exit(); 
         }
     }
 }

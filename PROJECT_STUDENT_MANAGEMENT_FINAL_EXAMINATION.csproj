@@ -80,6 +80,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grade.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,11 +100,29 @@
       <DependentUpon>ManegerStudentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
+    <Compile Include="PrintCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintCourse.Designer.cs">
+      <DependentUpon>PrintCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrintStudent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PrintStudent.Designer.cs">
       <DependentUpon>PrintStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintTeacher.Designer.cs">
+      <DependentUpon>PrintTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print_Score_TeacherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print_Score_TeacherForm.Designer.cs">
+      <DependentUpon>Print_Score_TeacherForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,6 +131,12 @@
     </Compile>
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistratorTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistratorTeacher.Designer.cs">
+      <DependentUpon>RegistratorTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="SignUp.cs">
       <SubType>Form</SubType>
@@ -132,6 +157,18 @@
     </Compile>
     <Compile Include="TeacherForm.Designer.cs">
       <DependentUpon>TeacherForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherManageForm.Designer.cs">
+      <DependentUpon>TeacherManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherScoreForm.Designer.cs">
+      <DependentUpon>TeacherScoreForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Addcourse.resx">
       <DependentUpon>Addcourse.cs</DependentUpon>
@@ -154,8 +191,17 @@
     <EmbeddedResource Include="ManegerStudentForm.resx">
       <DependentUpon>ManegerStudentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrintCourse.resx">
+      <DependentUpon>PrintCourse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrintStudent.resx">
       <DependentUpon>PrintStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintTeacher.resx">
+      <DependentUpon>PrintTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print_Score_TeacherForm.resx">
+      <DependentUpon>Print_Score_TeacherForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -165,6 +211,9 @@
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegistratorTeacher.resx">
+      <DependentUpon>RegistratorTeacher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +222,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherForm.resx">
       <DependentUpon>TeacherForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherManageForm.resx">
+      <DependentUpon>TeacherManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherScoreForm.resx">
+      <DependentUpon>TeacherScoreForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
