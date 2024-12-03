@@ -149,5 +149,35 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_Trường_Đại_Học_Sư_Phạm_Kỹ_Thuật_TP_Hồ_Chí_Minh {
+            get {
+                object obj = ResourceManager.GetObject("Logo_Trường_Đại_Học_Sư_Phạm_Kỹ_Thuật_TP_Hồ_Chí_Minh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z6092871735684_2132096a05904b697dc40489a04a643c {
+            get {
+                object obj = ResourceManager.GetObject("z6092871735684_2132096a05904b697dc40489a04a643c", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z6092871982096_94b5a035841802605cbe3fa91152a559 {
+            get {
+                object obj = ResourceManager.GetObject("z6092871982096_94b5a035841802605cbe3fa91152a559", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

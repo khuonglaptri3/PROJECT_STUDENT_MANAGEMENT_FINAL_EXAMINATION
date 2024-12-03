@@ -40,10 +40,9 @@
             this.button_registrationstd = new System.Windows.Forms.Button();
             this.button_std = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.HCMUTE = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -58,22 +57,22 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel_main = new System.Windows.Forms.Panel();
             this.panel_cover = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_slide.SuspendLayout();
             this.Panel_subtch.SuspendLayout();
             this.panel_substd.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel_main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_slide
             // 
-            this.panel_slide.BackColor = System.Drawing.Color.SpringGreen;
+            this.panel_slide.BackColor = System.Drawing.Color.PaleGreen;
             this.panel_slide.Controls.Add(this.Panel_subtch);
             this.panel_slide.Controls.Add(this.button_tch);
             this.panel_slide.Controls.Add(this.panel_substd);
@@ -137,13 +136,12 @@
             // 
             this.button_tch.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_tch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_tch.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.button_tch.Font = new System.Drawing.Font("Microsoft Tai Le", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_tch.Location = new System.Drawing.Point(0, 389);
             this.button_tch.Name = "button_tch";
             this.button_tch.Size = new System.Drawing.Size(212, 51);
             this.button_tch.TabIndex = 3;
             this.button_tch.Text = "Teacher";
-            this.button_tch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_tch.UseVisualStyleBackColor = true;
             this.button_tch.Click += new System.EventHandler(this.button_tch_Click);
             // 
@@ -166,7 +164,7 @@
             this.button_stdPrint.Location = new System.Drawing.Point(0, 134);
             this.button_stdPrint.Name = "button_stdPrint";
             this.button_stdPrint.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button_stdPrint.Size = new System.Drawing.Size(212, 67);
+            this.button_stdPrint.Size = new System.Drawing.Size(212, 70);
             this.button_stdPrint.TabIndex = 5;
             this.button_stdPrint.Text = "Print";
             this.button_stdPrint.UseVisualStyleBackColor = true;
@@ -200,39 +198,28 @@
             // 
             this.button_std.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_std.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_std.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_std.Font = new System.Drawing.Font("Microsoft Tai Le", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_std.Location = new System.Drawing.Point(0, 118);
             this.button_std.Name = "button_std";
             this.button_std.Size = new System.Drawing.Size(212, 67);
             this.button_std.TabIndex = 1;
             this.button_std.Text = "Student";
-            this.button_std.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_std.UseVisualStyleBackColor = true;
             this.button_std.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SpringGreen;
-            this.panel2.Controls.Add(this.HCMUTE);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(212, 118);
             this.panel2.TabIndex = 1;
             // 
-            // HCMUTE
-            // 
-            this.HCMUTE.AutoSize = true;
-            this.HCMUTE.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HCMUTE.Location = new System.Drawing.Point(48, 41);
-            this.HCMUTE.Name = "HCMUTE";
-            this.HCMUTE.Size = new System.Drawing.Size(102, 27);
-            this.HCMUTE.TabIndex = 2;
-            this.HCMUTE.Text = "HCMUTE";
-            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.MintCream;
+            this.panel1.BackColor = System.Drawing.Color.PaleGreen;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(212, 0);
@@ -240,10 +227,20 @@
             this.panel1.Size = new System.Drawing.Size(1293, 80);
             this.panel1.TabIndex = 3;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1268, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click_2);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -252,15 +249,6 @@
             this.panel3.Size = new System.Drawing.Size(1293, 203);
             this.panel3.TabIndex = 4;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Properties.Resources.icons8_School_80px_1;
-            this.pictureBox1.Location = new System.Drawing.Point(1210, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -281,6 +269,7 @@
             this.label3.Size = new System.Drawing.Size(107, 27);
             this.label3.TabIndex = 3;
             this.label3.Text = "Welcome";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel4
             // 
@@ -304,18 +293,19 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(838, 45);
+            this.label11.ForeColor = System.Drawing.Color.Silver;
+            this.label11.Location = new System.Drawing.Point(701, 35);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 27);
+            this.label11.Size = new System.Drawing.Size(178, 27);
             this.label11.TabIndex = 10;
-            this.label11.Text = "Class :";
+            this.label11.Text = "Class available : ";
             this.label11.Click += new System.EventHandler(this.label11_Click_1);
             // 
             // Totalmaletxt
             // 
             this.Totalmaletxt.AutoSize = true;
             this.Totalmaletxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.Totalmaletxt.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.Totalmaletxt.Location = new System.Drawing.Point(87, 45);
             this.Totalmaletxt.Name = "Totalmaletxt";
             this.Totalmaletxt.Size = new System.Drawing.Size(30, 27);
@@ -326,6 +316,7 @@
             // 
             this.Total_femaletxt.AutoSize = true;
             this.Total_femaletxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.Total_femaletxt.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.Total_femaletxt.Location = new System.Drawing.Point(289, 45);
             this.Total_femaletxt.Name = "Total_femaletxt";
             this.Total_femaletxt.Size = new System.Drawing.Size(30, 27);
@@ -336,6 +327,7 @@
             // 
             this.Total_studenttxt.AutoSize = true;
             this.Total_studenttxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.Total_studenttxt.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.Total_studenttxt.Location = new System.Drawing.Point(183, 3);
             this.Total_studenttxt.Name = "Total_studenttxt";
             this.Total_studenttxt.Size = new System.Drawing.Size(30, 27);
@@ -348,7 +340,7 @@
             this.comboBox_course.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox_course.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.comboBox_course.FormattingEnabled = true;
-            this.comboBox_course.Location = new System.Drawing.Point(1044, 37);
+            this.comboBox_course.Location = new System.Drawing.Point(885, 32);
             this.comboBox_course.Name = "comboBox_course";
             this.comboBox_course.Size = new System.Drawing.Size(211, 35);
             this.comboBox_course.TabIndex = 7;
@@ -358,6 +350,7 @@
             // 
             this.Femaletxt.AutoSize = true;
             this.Femaletxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Femaletxt.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.Femaletxt.Location = new System.Drawing.Point(183, 45);
             this.Femaletxt.Name = "Femaletxt";
             this.Femaletxt.Size = new System.Drawing.Size(97, 27);
@@ -368,6 +361,7 @@
             // 
             this.Maletxt.AutoSize = true;
             this.Maletxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Maletxt.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.Maletxt.Location = new System.Drawing.Point(17, 45);
             this.Maletxt.Name = "Maletxt";
             this.Maletxt.Size = new System.Drawing.Size(75, 27);
@@ -378,7 +372,8 @@
             // 
             this.Total_stdtxt.AutoSize = true;
             this.Total_stdtxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total_stdtxt.Location = new System.Drawing.Point(6, 0);
+            this.Total_stdtxt.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Total_stdtxt.Location = new System.Drawing.Point(6, 3);
             this.Total_stdtxt.Name = "Total_stdtxt";
             this.Total_stdtxt.Size = new System.Drawing.Size(171, 27);
             this.Total_stdtxt.TabIndex = 6;
@@ -404,6 +399,8 @@
             // 
             // panel_cover
             // 
+            this.panel_cover.BackgroundImage = global::PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Properties.Resources.z6092871735684_2132096a05904b697dc40489a04a643c;
+            this.panel_cover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel_cover.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_cover.Location = new System.Drawing.Point(0, 0);
             this.panel_cover.Name = "panel_cover";
@@ -411,16 +408,15 @@
             this.panel_cover.TabIndex = 0;
             this.panel_cover.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_cover_Paint);
             // 
-            // label1
+            // pictureBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1268, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 25);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "X";
-            this.label1.Click += new System.EventHandler(this.label1_Click_2);
+            this.pictureBox1.Image = global::PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Properties.Resources.Logo_Trường_Đại_Học_Sư_Phạm_Kỹ_Thuật_TP_Hồ_Chí_Minh;
+            this.pictureBox1.Location = new System.Drawing.Point(46, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(109, 106);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // AdminForm
             // 
@@ -441,16 +437,15 @@
             this.Panel_subtch.ResumeLayout(false);
             this.panel_substd.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel_main.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -469,7 +464,6 @@
         private System.Windows.Forms.Button button_managetch;
         private System.Windows.Forms.Button button_Registrationtch;
         private System.Windows.Forms.Button button_tch;
-        private System.Windows.Forms.Label HCMUTE;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;

@@ -42,16 +42,17 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.HCMUTE = new System.Windows.Forms.Label();
             this.button_course = new System.Windows.Forms.Button();
             this.panel_slide = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Panel_subscore.SuspendLayout();
             this.panel_subcourse.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_slide.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel_subscore
@@ -71,7 +72,7 @@
             this.button_printsore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_printsore.Location = new System.Drawing.Point(0, 67);
             this.button_printsore.Name = "button_printsore";
-            this.button_printsore.Size = new System.Drawing.Size(212, 67);
+            this.button_printsore.Size = new System.Drawing.Size(212, 66);
             this.button_printsore.TabIndex = 5;
             this.button_printsore.Text = "Print";
             this.button_printsore.UseVisualStyleBackColor = true;
@@ -85,7 +86,7 @@
             this.button_newscore.Name = "button_newscore";
             this.button_newscore.Size = new System.Drawing.Size(212, 67);
             this.button_newscore.TabIndex = 3;
-            this.button_newscore.Text = "New Score";
+            this.button_newscore.Text = "New Grade";
             this.button_newscore.UseVisualStyleBackColor = true;
             this.button_newscore.Click += new System.EventHandler(this.button_newscore_Click);
             // 
@@ -123,13 +124,12 @@
             // 
             this.button_score.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_score.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_score.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.button_score.Font = new System.Drawing.Font("Microsoft Tai Le", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_score.Location = new System.Drawing.Point(0, 389);
             this.button_score.Name = "button_score";
             this.button_score.Size = new System.Drawing.Size(212, 51);
             this.button_score.TabIndex = 3;
-            this.button_score.Text = "Score";
-            this.button_score.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_score.Text = "Grade";
             this.button_score.UseVisualStyleBackColor = true;
             this.button_score.Click += new System.EventHandler(this.button_score_Click);
             // 
@@ -152,7 +152,7 @@
             this.button_stdPrintcourse.Location = new System.Drawing.Point(0, 134);
             this.button_stdPrintcourse.Name = "button_stdPrintcourse";
             this.button_stdPrintcourse.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button_stdPrintcourse.Size = new System.Drawing.Size(212, 67);
+            this.button_stdPrintcourse.Size = new System.Drawing.Size(212, 70);
             this.button_stdPrintcourse.TabIndex = 5;
             this.button_stdPrintcourse.Text = "Print";
             this.button_stdPrintcourse.UseVisualStyleBackColor = true;
@@ -190,12 +190,12 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(212, 80);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1095, 83);
+            this.panel3.Size = new System.Drawing.Size(1095, 69);
             this.panel3.TabIndex = 8;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.MintCream;
+            this.panel1.BackColor = System.Drawing.Color.PaleGreen;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(212, 0);
@@ -214,27 +214,16 @@
             this.label1.Text = "X";
             this.label1.Click += new System.EventHandler(this.label1_Click_2);
             // 
-            // HCMUTE
-            // 
-            this.HCMUTE.AutoSize = true;
-            this.HCMUTE.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HCMUTE.Location = new System.Drawing.Point(48, 41);
-            this.HCMUTE.Name = "HCMUTE";
-            this.HCMUTE.Size = new System.Drawing.Size(102, 27);
-            this.HCMUTE.TabIndex = 2;
-            this.HCMUTE.Text = "HCMUTE";
-            // 
             // button_course
             // 
             this.button_course.Dock = System.Windows.Forms.DockStyle.Top;
             this.button_course.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_course.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_course.Font = new System.Drawing.Font("Microsoft Tai Le", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_course.Location = new System.Drawing.Point(0, 118);
             this.button_course.Name = "button_course";
             this.button_course.Size = new System.Drawing.Size(212, 67);
             this.button_course.TabIndex = 1;
             this.button_course.Text = "Course";
-            this.button_course.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_course.UseVisualStyleBackColor = true;
             this.button_course.Click += new System.EventHandler(this.button_std_Click);
             // 
@@ -255,17 +244,29 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SpringGreen;
-            this.panel2.Controls.Add(this.HCMUTE);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(212, 118);
             this.panel2.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Properties.Resources.Logo_Trường_Đại_Học_Sư_Phạm_Kỹ_Thuật_TP_Hồ_Chí_Minh;
+            this.pictureBox1.Location = new System.Drawing.Point(47, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(109, 106);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // TeacherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Properties.Resources.z6092871982096_94b5a035841802605cbe3fa91152a559;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1307, 665);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -284,7 +285,7 @@
             this.panel1.PerformLayout();
             this.panel_slide.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -303,10 +304,10 @@
         private System.Windows.Forms.Button button_newcourse;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label HCMUTE;
         private System.Windows.Forms.Button button_course;
         private System.Windows.Forms.Panel panel_slide;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

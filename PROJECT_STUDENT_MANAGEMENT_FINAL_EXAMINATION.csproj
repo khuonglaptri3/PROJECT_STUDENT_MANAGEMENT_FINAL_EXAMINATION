@@ -263,6 +263,9 @@
     <None Include="Resources\LOGO.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\z6092871982096_94b5a035841802605cbe3fa91152a559.jpg" />
+    <None Include="Resources\z6092871735684_2132096a05904b697dc40489a04a643c.jpg" />
+    <None Include="Resources\Logo_Trường_Đại_Học_Sư_Phạm_Kỹ_Thuật_TP_Hồ_Chí_Minh.png" />
     <None Include="Assets\icons8_dashboard_35px_1.png" />
     <None Include="Assets\icons8_dashboard_50px_2.png" />
     <None Include="Assets\icons8_logout_rounded_up_filled_35px.png" />

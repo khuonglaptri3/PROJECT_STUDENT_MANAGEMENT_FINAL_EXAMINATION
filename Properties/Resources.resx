@@ -118,23 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icons8_dashboard_35px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons8_dashboard_35px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_dashboard_50px_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons8_dashboard_50px_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8_logout_rounded_up_filled_35px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\icons8_logout_rounded_up_filled_35px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_School_80px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons8_School_80px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_students_filled_60px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons8_students_filled_60px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_student_35px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons8_student_35px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_student_registration_filled_60px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\icons8_student_registration_filled_60px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,7 +127,31 @@
   <data name="icons8_training_35px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\icons8_training_35px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_School_80px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\icons8_School_80px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_student_35px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\icons8_student_35px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_dashboard_35px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\icons8_dashboard_35px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_students_filled_60px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\icons8_students_filled_60px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_dashboard_50px_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\icons8_dashboard_50px_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_training_filled_60px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\icons8_training_filled_60px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo_Trường_Đại_Học_Sư_Phạm_Kỹ_Thuật_TP_Hồ_Chí_Minh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo_Trường_Đại_Học_Sư_Phạm_Kỹ_Thuật_TP_Hồ_Chí_Minh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="z6092871735684_2132096a05904b697dc40489a04a643c" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z6092871735684_2132096a05904b697dc40489a04a643c.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="z6092871982096_94b5a035841802605cbe3fa91152a559" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z6092871982096_94b5a035841802605cbe3fa91152a559.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

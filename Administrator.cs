@@ -10,6 +10,54 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
     public class Administrator : Person
     {
+        private string phone; 
+        public string PHONE
+        {
+            get { return phone; }
+            set { phone = value; }
+        }
+
+        public Administrator() { }
+        public Administrator(SqlConnection connect, int adminid)
+        {
+            string Selectdata = "SELECT * FROM users WHERE Idadmin = @id ";
+            if(connect.State != ConnectionState.Open) {
+                connect.Open();
+            }
+            using (SqlCommand cmd = new SqlCommand(Selectdata, connect))
+            {
+                cmd.Parameters.AddWithValue("@id", adminid);
+                SqlDataAdapter adatper = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable(); 
+                adatper.Fill(table);
+                FIRSTNAME = table.Rows[0]["adFirstName"].ToString();
+                LASTNAME = table.Rows[0]["adLastName"].ToString();
+                ADDRESS = table.Rows[0]["Address"].ToString();
+                GetDayOfBirth = Convert.ToDateTime(table.Rows[0]["Birthdate"]);
+                GENDER = table.Rows[0]["Gender"].ToString();
+                ID = adminid;
+                PHONE = table.Rows[0]["Phone"].ToString();
+                connect.Close();
+
+            }
+
+
+        }
+        public DataTable GetStdList(SqlConnection connect)
+        {
+            connect.Open();
+            String selectData = "SELECT * FROM teacher ";
+            using (SqlCommand cmd = new SqlCommand(selectData, connect))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                connect.Close();
+                return table;
+            }
+
+        }
+
         public DataTable getCourse(SqlConnection connect, string query)
         {
             if (connect.State == ConnectionState.Closed)
@@ -133,7 +181,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 connect.Open();
             }
 
-            SqlCommand command = new SqlCommand("SELECT * FROM Student WHERE CONCAT(StdFirstName, StdLastName, Address, Phone) LIKE '%" + search + "%'", connect);
+            SqlCommand command = new SqlCommand("SELECT * FROM Student WHERE CONCAT(StdFirstName, StdLastName ,StdId) LIKE '%" + search + "%'", connect);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -303,5 +351,10 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             }
 
         }
+        public override string PrintDetails()
+        {
+            return $" Welome {FIRSTNAME} {LASTNAME} ";
+         }
     }
+    
 }

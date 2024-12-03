@@ -13,12 +13,14 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
     public partial class ManegerStudentForm : Form
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
-        public ManegerStudentForm()
+        private int admin; 
+        private SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
+        public ManegerStudentForm(int admin)
         {
             InitializeComponent();
             Administrator administrator = new Administrator();
             DataGridView_student.DataSource = administrator.GetStudentList(connect);
+            this.admin = admin;
         }
         private bool verify()
         {
@@ -44,7 +46,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private void label9_Click(object sender, EventArgs e)
         {
             this.Hide();    
-            AdminForm ad = new AdminForm();
+            AdminForm ad = new AdminForm(admin);
 
             ad.ShowDialog();
             this.Close();   

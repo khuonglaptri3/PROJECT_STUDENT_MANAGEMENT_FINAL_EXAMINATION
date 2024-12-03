@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
     public partial class LoginForm : Form
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\School.mdf;Integrated Security=True;Connect Timeout=30");
-        SqlConnection connect1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
+        private SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\School.mdf;Integrated Security=True;Connect Timeout=30");
+        private SqlConnection connect1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
 
 
         public LoginForm()
@@ -94,7 +95,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                             }
                         }
                     }
-                    else
+                    else if (Adminrarbut.Checked)
                     {
                         String selectData = "SELECT * FROM users Where username = @username AND password = @password";
                         using (SqlCommand cmd = new SqlCommand(selectData, connect))
@@ -108,7 +109,8 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                             {
 
                                 MessageBox.Show("Login Successful", "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                AdminForm adminForm = new AdminForm();
+                                int admin = Convert.ToInt32(table.Rows[0][3]);
+                                AdminForm adminForm = new AdminForm(admin);
                                 adminForm.Show();
                                 this.Hide();
 
@@ -118,6 +120,10 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                                 MessageBox.Show("Tai khoan chua duoc dang ki ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please choose the role", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     #region comment_code 
                     //String selectData = "SELECT * FROM users Where username = @username AND password = @password";
@@ -168,6 +174,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 {
                     connect.Close();
                 }
+               
 
             }
         }

@@ -14,11 +14,13 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
     public partial class PrintTeacher : Form
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
+        private int admin; 
+        private SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
 
-        public PrintTeacher()
+        public PrintTeacher(int admin)
         {
             InitializeComponent();
+            this.admin = admin; 
         }
 
         private void PrintStudent_Load(object sender, EventArgs e)
@@ -84,7 +86,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private void label9_Click(object sender, EventArgs e)
         {
             this.Close();
-            AdminForm adminForm = new AdminForm();
+            AdminForm adminForm = new AdminForm(admin);
             adminForm.ShowDialog();
         }
 
@@ -171,7 +173,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private void label9_Click_1(object sender, EventArgs e)
         {
             this.Hide();     
-            AdminForm adminForm = new AdminForm();   
+            AdminForm adminForm = new AdminForm(admin);   
             adminForm.ShowDialog(); 
             this.Close(); 
         }

@@ -14,10 +14,13 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
     public partial class AdminForm : Form
     {
-        Administrator Administrator1 = new Administrator();
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
-        public AdminForm()
+        private int admin; 
+        private SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
+        private SqlConnection connect1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\School.mdf;Integrated Security=True;Connect Timeout=30");
+        private Administrator Administrator1 = new Administrator();
+        public AdminForm(int admin ) 
         {
+            this.admin = admin; 
             InitializeComponent();
             customizeDesign();
             Total_studenttxt.Text = Administrator1.coutstudent(connect, "SELECT COUNT(*) FROM student").ToString();
@@ -26,6 +29,8 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             comboBox_course.DataSource = Administrator1.getCourse(connect, "SELECT * FROM Course");
             comboBox_course.DisplayMember = "CourseName";
             comboBox_course.ValueMember = "CourseName";
+            Administrator administrator = new Administrator(connect1 , admin);
+            label3.Text = administrator.PrintDetails(); 
         }
         private void customizeDesign()
         {
@@ -62,7 +67,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();     
-            ManegerStudentForm manegerStudentForm = new ManegerStudentForm();
+            ManegerStudentForm manegerStudentForm = new ManegerStudentForm(admin);
             manegerStudentForm.ShowDialog();
             hideSubMenu();
             this.Close();
@@ -71,7 +76,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void button_registrationstd_Click(object sender, EventArgs e)
         {
-            RegisterForm registerForm = new RegisterForm();
+            RegisterForm registerForm = new RegisterForm(admin);
             this.Hide();     
             registerForm.ShowDialog();
             this.Close();
@@ -85,7 +90,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private void button_stdPrint_Click(object sender, EventArgs e)
         {
             this.Hide(); 
-            PrintStudent printStudent = new PrintStudent();
+            PrintStudent printStudent = new PrintStudent(admin);
             printStudent.ShowDialog();
             hideSubMenu();
             this.Close(); 
@@ -104,7 +109,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private void button_Registrationtch_Click(object sender, EventArgs e)
         {
             this.Hide(); 
-            RegistratorTeacher registerteacherForm = new RegistratorTeacher();
+            RegistratorTeacher registerteacherForm = new RegistratorTeacher(admin );
             registerteacherForm.ShowDialog();
             this.Close();
 
@@ -116,7 +121,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         {
             this.Hide(); 
             hideSubMenu();
-            TeacherManageForm teacherManageForm = new TeacherManageForm();
+            TeacherManageForm teacherManageForm = new TeacherManageForm(admin);
             teacherManageForm.ShowDialog();
             this.Close(); 
             //hideSubMenu();
@@ -125,7 +130,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private void button_printtch_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PrintTeacher printTeacher = new PrintTeacher();
+            PrintTeacher printTeacher = new PrintTeacher(admin);
             
             printTeacher.ShowDialog();
             hideSubMenu();
@@ -178,6 +183,16 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private void label1_Click_2(object sender, EventArgs e)
         {
             Application.Exit();  
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HCMUTE_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

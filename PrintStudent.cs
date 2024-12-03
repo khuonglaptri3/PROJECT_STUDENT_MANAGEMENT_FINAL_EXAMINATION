@@ -14,12 +14,17 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
     public partial class PrintStudent : Form
     {
+        private int admin; 
         private int studentID;
         private bool isFormLoaded = false;
         private SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
-        public PrintStudent()
+        public PrintStudent(int admin)
         {
             InitializeComponent();
+            this.admin = admin;
+            Administrator ad = new Administrator();
+            DataGridView_student.DataSource = ad.GetStdList(connect); 
+
         }
 
         private void PrintStudent_Load(object sender, EventArgs e)
@@ -138,12 +143,11 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             if (int.TryParse(ID_textBox.Text, out int studentId))
             {
                 LoadStudentDetails(studentId);
+
             }
-            else
-            {
-                MessageBox.Show("Please enter a valid Student ID.");
-            }
-            if (comboBox_class.SelectedValue != null)
+            else {
+
+                if (comboBox_class.SelectedValue != null)
             {
                 int courseId = (int)comboBox_class.SelectedValue;
                 string query = @"
@@ -174,24 +178,17 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             {
                 MessageBox.Show("Please select a course from the list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (string.IsNullOrWhiteSpace(ID_textBox.Text) && comboBox_class.SelectedValue == null)
+
+            // && comboBox_class.SelectedValue == null 
+            if (string.IsNullOrWhiteSpace(ID_textBox.Text))
             {
-                string selectQuery;
-                if (radioButton_all.Checked)
-                {
-                    selectQuery = "SELECT* FROM Student";
-                }
-                else if (radioButton_male.Checked)
-                {
-                    selectQuery = "SELECT * FROM Student WHERE Gender = 'Male'";
-                }
-                else
-                {
-                    selectQuery = "SELECT * FROM Student WHERE Gender = 'Female'";
-                }
+                string selectQuery = "SELECT* FROM Student";
+       
                 Administrator administrator = new Administrator();
                 DataGridView_student.DataSource = administrator.GetStudentList(connect, selectQuery);
             }
+        }
+
         }
 
         private void button_print_Click(object sender, EventArgs e)
@@ -305,7 +302,8 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 printer.printDocument.DefaultPageSettings.Landscape = true;
                 printer.PrintDataGridView(newDataGridView);
             }
-            else if (comboBox_class.SelectedValue != null && int.TryParse(comboBox_class.SelectedValue.ToString(), out int courseId))
+            //int.TryParse(comboBox_class.SelectedValue.ToString(), out int courseId)
+            else if (comboBox_class.SelectedValue != null && string.IsNullOrWhiteSpace(ID_textBox.Text) && int.TryParse(comboBox_class.SelectedValue.ToString(), out int courseId))
             {
                 string query = @"
         SELECT 
@@ -387,7 +385,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private void label9_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminForm adminForm = new AdminForm();  
+            AdminForm adminForm = new AdminForm(admin);  
             adminForm.ShowDialog();
             this.Close();    
         }
@@ -493,6 +491,17 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
 
         private void textBox_studentInfo_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void Clearbut_Click(object sender, EventArgs e)
+        {
+            ID_textBox.Text = ""; 
+            comboBox_class.Text = "";   
+            textBox_studentInfo.Text = "";   
+        }
+
+        private void panel_studentInfo_Paint(object sender, PaintEventArgs e)
         {
 
         }

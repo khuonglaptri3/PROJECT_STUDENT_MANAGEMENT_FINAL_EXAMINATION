@@ -13,9 +13,11 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 {
     public partial class RegistratorTeacher : Form
     {
-        public RegistratorTeacher()
+        private int admin; 
+        public RegistratorTeacher(int admin)
         {
             InitializeComponent();
+            this.admin = admin; 
         }
         //private void RegistratorTeacher_Load(object sender, EventArgs e)
         //{
@@ -90,7 +92,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private void label9_Click(object sender, EventArgs e)
         {
             this.Close();
-            AdminForm adminForm = new AdminForm();
+            AdminForm adminForm = new AdminForm(admin);
             adminForm.Show();    
         }
 

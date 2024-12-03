@@ -30,6 +30,10 @@
         {
             this.Registerbut = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Studentrar = new System.Windows.Forms.RadioButton();
+            this.Teacherrarbut = new System.Windows.Forms.RadioButton();
+            this.Idtxt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.showpass = new System.Windows.Forms.CheckBox();
             this.Sign_upBut = new System.Windows.Forms.Button();
@@ -42,13 +46,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Idtxt = new System.Windows.Forms.TextBox();
-            this.Studentrar = new System.Windows.Forms.RadioButton();
-            this.Teacherrarbut = new System.Windows.Forms.RadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Registerbut
@@ -66,6 +68,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.MintCream;
+            this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.Studentrar);
             this.panel3.Controls.Add(this.Teacherrarbut);
             this.panel3.Controls.Add(this.Idtxt);
@@ -84,6 +87,53 @@
             this.panel3.Size = new System.Drawing.Size(440, 421);
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // Studentrar
+            // 
+            this.Studentrar.AutoSize = true;
+            this.Studentrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Studentrar.ForeColor = System.Drawing.Color.Black;
+            this.Studentrar.Location = new System.Drawing.Point(296, 249);
+            this.Studentrar.Name = "Studentrar";
+            this.Studentrar.Size = new System.Drawing.Size(80, 20);
+            this.Studentrar.TabIndex = 15;
+            this.Studentrar.TabStop = true;
+            this.Studentrar.Text = "Student";
+            this.Studentrar.UseVisualStyleBackColor = true;
+            // 
+            // Teacherrarbut
+            // 
+            this.Teacherrarbut.AutoSize = true;
+            this.Teacherrarbut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Teacherrarbut.ForeColor = System.Drawing.Color.Black;
+            this.Teacherrarbut.Location = new System.Drawing.Point(193, 249);
+            this.Teacherrarbut.Name = "Teacherrarbut";
+            this.Teacherrarbut.Size = new System.Drawing.Size(86, 20);
+            this.Teacherrarbut.TabIndex = 14;
+            this.Teacherrarbut.TabStop = true;
+            this.Teacherrarbut.Text = "Teacher";
+            this.Teacherrarbut.UseVisualStyleBackColor = true;
+            this.Teacherrarbut.CheckedChanged += new System.EventHandler(this.Teacherrarbut_CheckedChanged);
+            // 
+            // Idtxt
+            // 
+            this.Idtxt.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Idtxt.Location = new System.Drawing.Point(27, 242);
+            this.Idtxt.Name = "Idtxt";
+            this.Idtxt.PasswordChar = '*';
+            this.Idtxt.Size = new System.Drawing.Size(85, 31);
+            this.Idtxt.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(23, 219);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 19);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "ID :";
             // 
             // label7
             // 
@@ -166,7 +216,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(162, 38);
+            this.label3.Location = new System.Drawing.Point(151, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 31);
             this.label3.TabIndex = 0;
@@ -217,52 +267,15 @@
             this.panel2.TabIndex = 3;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // label6
+            // pictureBox1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(23, 219);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 19);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "ID :";
-            // 
-            // Idtxt
-            // 
-            this.Idtxt.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Idtxt.Location = new System.Drawing.Point(27, 242);
-            this.Idtxt.Name = "Idtxt";
-            this.Idtxt.PasswordChar = '*';
-            this.Idtxt.Size = new System.Drawing.Size(85, 31);
-            this.Idtxt.TabIndex = 13;
-            // 
-            // Studentrar
-            // 
-            this.Studentrar.AutoSize = true;
-            this.Studentrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Studentrar.ForeColor = System.Drawing.Color.Black;
-            this.Studentrar.Location = new System.Drawing.Point(296, 249);
-            this.Studentrar.Name = "Studentrar";
-            this.Studentrar.Size = new System.Drawing.Size(80, 20);
-            this.Studentrar.TabIndex = 15;
-            this.Studentrar.TabStop = true;
-            this.Studentrar.Text = "Student";
-            this.Studentrar.UseVisualStyleBackColor = true;
-            // 
-            // Teacherrarbut
-            // 
-            this.Teacherrarbut.AutoSize = true;
-            this.Teacherrarbut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Teacherrarbut.ForeColor = System.Drawing.Color.Black;
-            this.Teacherrarbut.Location = new System.Drawing.Point(193, 249);
-            this.Teacherrarbut.Name = "Teacherrarbut";
-            this.Teacherrarbut.Size = new System.Drawing.Size(86, 20);
-            this.Teacherrarbut.TabIndex = 14;
-            this.Teacherrarbut.TabStop = true;
-            this.Teacherrarbut.Text = "Teacher";
-            this.Teacherrarbut.UseVisualStyleBackColor = true;
-            this.Teacherrarbut.CheckedChanged += new System.EventHandler(this.Teacherrarbut_CheckedChanged);
+            this.pictureBox1.Image = global::PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Properties.Resources.Logo_Trường_Đại_Học_Sư_Phạm_Kỹ_Thuật_TP_Hồ_Chí_Minh;
+            this.pictureBox1.Location = new System.Drawing.Point(390, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(47, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
             // 
             // SignUp
             // 
@@ -280,6 +293,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -304,5 +318,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton Studentrar;
         private System.Windows.Forms.RadioButton Teacherrarbut;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
