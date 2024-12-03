@@ -133,6 +133,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             this.Hide();
             TeacherForm teacherForm = new TeacherForm(TchId);
             teacherForm.ShowDialog();
+            this.Close();
         }
     }
 }

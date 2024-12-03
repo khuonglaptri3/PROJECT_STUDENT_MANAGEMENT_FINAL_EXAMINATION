@@ -99,6 +99,20 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             }
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();  
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            this.Hide(); 
+            StudentForm studentForm = new StudentForm(stdId); 
+            studentForm.ShowDialog();
+            this.Close(); 
+             
+        }
     }
 }
 

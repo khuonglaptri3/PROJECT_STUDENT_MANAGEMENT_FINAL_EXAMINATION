@@ -15,8 +15,6 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
 
         private string phone;
-        private List<string> courses;
-        private Dictionary<string, string> grades;//courses va grades
 
         public string PHONE
         {
@@ -40,6 +38,52 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             GetDayOfBirth = dateofbirth;
             PHONE = phone;
             ADDRESS = address;
+        }
+        //public Teacher(int TchId, SqlConnection connect)
+        //{
+        //    connect.Open();
+        //    String selectData = "SELECT * FROM teacher WHERE tchdId = @tchdId";
+        //    using (SqlCommand cmd = new SqlCommand(selectData, connect))
+        //    {
+        //        cmd.Parameters.AddWithValue("@tchdId", TchId);
+        //        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+        //        DataTable table = new DataTable();
+        //        adapter.Fill(table);
+        //        FIRSTNAME = table.Rows[0]["tchFirstName"].ToString();
+        //        LASTNAME = table.Rows[0]["tchLastName"].ToString();
+        //        ADDRESS = table.Rows[0]["Address"].ToString();
+        //        GetDayOfBirth = Convert.ToDateTime(table.Rows[0]["Birthdate"]);
+        //        GENDER = table.Rows[0]["Gender"].ToString();
+        //        ID = TchId;
+        //        PHONE = table.Rows[0]["Phone"].ToString();
+        //        connect.Close();
+        //    }
+        //}
+        public Student (SqlConnection connect , int Stdid)
+        {
+          if(connect.State  != ConnectionState.Open)
+            {
+                connect.Open(); 
+            }
+            String selectData = "SELECT * FROM Student WHERE StdId = @Stdid "; 
+            using (SqlCommand cmd = new SqlCommand(selectData , connect))
+            {
+                cmd.Parameters.AddWithValue("@Stdid", Stdid); 
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                FIRSTNAME = table.Rows[0]["StdFirstName"].ToString();
+                LASTNAME = table.Rows[0]["StdLastName"].ToString();
+                ADDRESS = table.Rows[0]["Address"].ToString();
+                GetDayOfBirth = Convert.ToDateTime(table.Rows[0]["Birthdate"]); 
+                GENDER = table.Rows[0]["Gender"].ToString();
+                ID = Stdid;
+                PHONE = table.Rows[0]["Phone"].ToString();
+                connect.Close();
+
+
+
+            }
         }
         public bool EnrollInCourse(SqlConnection connect, int Stdid, int CourseId)
         {
@@ -118,6 +162,10 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                     return resultTable;
                 }
             }
+        }
+        public override string PrintDetails()
+        {
+            return $" ID: {ID} Name:  {FIRSTNAME} {LASTNAME}  "; 
         }
 
     }

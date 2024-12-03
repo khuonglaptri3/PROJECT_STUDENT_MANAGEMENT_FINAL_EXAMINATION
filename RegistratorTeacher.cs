@@ -91,7 +91,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         {
             this.Close();
             AdminForm adminForm = new AdminForm();
-            adminForm.ShowDialog();
+            adminForm.Show();    
         }
 
         private void DataGridView_student_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -107,6 +107,11 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             //DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
             //imageColumn = (DataGridViewImageColumn)guna2DataGridView1.Columns[6];
             //imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); 
         }
     }
 }

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Student">
-    <Position X="0.5" Y="3" Width="1.5" />
+    <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgGQAAAAACABA=</HashCode>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAQAAAAAAAAAAgCAAAAAACABA=</HashCode>
       <FileName>Student.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -29,7 +29,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.Administrator">
-    <Position X="5" Y="2.75" Width="1.5" />
+    <Position X="4.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAgAQAQAAAAAEAAEAAAAMAAQAAABCACAAAAAgAAAA=</HashCode>
       <FileName>Administrator.cs</FileName>
@@ -38,7 +38,7 @@
   <Class Name="PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION.PrintStudent" Collapsed="true">
     <Position X="6" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EBQAAAQAACAAANAJgECAAAACAAAABAAAAAAAAWAAABA=</HashCode>
+      <HashCode>EBYAAAQAACAAANIJgECAQABCAgAABAAEAAABAWBEABw=</HashCode>
       <FileName>PrintStudent.cs</FileName>
     </TypeIdentifier>
   </Class>

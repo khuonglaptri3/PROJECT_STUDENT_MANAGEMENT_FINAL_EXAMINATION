@@ -56,8 +56,8 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         {
             Teacher teacher = new Teacher(tchId, connect);
-            printer.Title = $"{teacher.LASTNAME} {teacher.FIRSTNAME} {teacher.GetDayOfBirth} ";
-            printer.SubTitle = string.Format("Date: {0}", DateTime.Now.Date);
+            printer.Title = $" The Course of {teacher.PrintDetails()} teach :  ";
+            printer.SubTitle = string.Format("Date: {0}", DateTime.Now);
             printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
             printer.PageNumbers = true;
             printer.PageNumberInHeader = false;
@@ -67,6 +67,24 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             printer.FooterSpacing = 15;
             printer.printDocument.DefaultPageSettings.Landscape = true;
             printer.PrintDataGridView(DataGridView_student);
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TeacherForm teacherForm = new TeacherForm(tchId);    
+            teacherForm.Show();
+            this.Close(); 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); 
         }
     }
 }

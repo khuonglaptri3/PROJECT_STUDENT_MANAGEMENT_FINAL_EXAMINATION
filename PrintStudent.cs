@@ -16,7 +16,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
     {
         private int studentID;
         private bool isFormLoaded = false;
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
+        private SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
         public PrintStudent()
         {
             InitializeComponent();
@@ -61,18 +61,18 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 //LoadStudentData(studentId);
             }
         }
-        private void LoadStudentDetails(int studentId)//XT
-        { 
+        private void LoadStudentDetails(int studentId)
+        {
             string query = @"SELECT 
-                            c.CourseID, 
-                            c.CourseName, 
-                            g.Grade 
-                        FROM 
-                            GRADES g
-                        INNER JOIN 
-                            Course c ON g.CourseId = c.CourseID
-                        WHERE 
-                            g.StdId = @StudentId";
+                                c.CourseID, 
+                                c.CourseName, 
+                                g.Grade 
+                            FROM 
+                                GRADES g
+                            INNER JOIN 
+                                Course c ON g.CourseId = c.CourseID
+                            WHERE 
+                                g.StdId = @StudentId";
 
             using (SqlCommand cmd = new SqlCommand(query, connect))
             {
@@ -82,10 +82,19 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 adapter.Fill(dt);
 
                 DataGridView_student.DataSource = dt;
+                var studentDetails = dt.AsEnumerable()
+               .Select(row => new
+               {
+                   StudentId = row.Field<int?>("Grade") ?? 0, // Use nullable type and provide a default value
+               })
+               .ToList();
+                DataGridView_student.DataSource = dt;
 
                 if (dt.Rows.Count > 0)
                 {
-                    double averageGrade = dt.AsEnumerable().Average(row => row.Field<int>("Grade"));
+                    double averageGrade = dt.AsEnumerable()
+                                             .Where(row => !row.IsNull("Grade"))
+                                             .Average(row => row.Field<int>("Grade"));
                     string judgment = GetGradeJudgment(averageGrade);
                     textBox_studentInfo.Text = $"Average Grade: {averageGrade:F2}\r\nJudgment: {judgment}";
                 }
@@ -97,9 +106,9 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
         private string GetGradeJudgment(double averageGrade)//XT
         {
-            if (averageGrade >= 90) return "Excellent";
-            if (averageGrade >= 75) return "Good";
-            if (averageGrade >= 50) return "Average";
+            if (averageGrade >= 9) return "Excellent";
+            if (averageGrade >= 7) return "Good";
+            if (averageGrade >= 5) return "Average";
             return "Poor";
         }
         private void LoadStudentData()//XT
@@ -250,11 +259,6 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 {
                     MessageBox.Show("The DataGridView does not contain the required columns.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                //if (comboBox_class.SelectedValue == null || !int.TryParse(comboBox_class.SelectedValue.ToString(), out int courseId))
-                //{
-                //    MessageBox.Show("Please select a valid course from the list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    return;
-                //}
             }
 
             else if (string.IsNullOrWhiteSpace(ID_textBox.Text) && comboBox_class.SelectedValue == null)
@@ -382,9 +386,10 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void label9_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             AdminForm adminForm = new AdminForm();  
-            adminForm.ShowDialog();  
+            adminForm.ShowDialog();
+            this.Close();    
         }
         private string generateStudentInfoText(int studentId)
         {
@@ -485,6 +490,11 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             //{
             //    MessageBox.Show("Please select a valid course from the list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
+        }
+
+        private void textBox_studentInfo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

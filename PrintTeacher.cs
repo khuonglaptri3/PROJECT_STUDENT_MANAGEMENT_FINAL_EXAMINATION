@@ -162,5 +162,18 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             printer.printDocument.DefaultPageSettings.Landscape = true;
             printer.PrintDataGridView(DataGridView_student);
         }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();  
+        }
+
+        private void label9_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();     
+            AdminForm adminForm = new AdminForm();   
+            adminForm.ShowDialog(); 
+            this.Close(); 
+        }
     }
 }

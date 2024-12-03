@@ -84,6 +84,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             this.Hide();
             TeacherForm teacherForm = new TeacherForm(tchId);
             teacherForm.ShowDialog();
+            this.Close(); 
         }
 
         private void label2_Click(object sender, EventArgs e)

@@ -209,9 +209,10 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void label9_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();     
             AdminForm adminForm = new AdminForm();
-            adminForm.ShowDialog();  
+            adminForm.ShowDialog();
+            this.Close();
         }
 
         private void DataGridView_student_CellContentClick(object sender, DataGridViewCellEventArgs e)

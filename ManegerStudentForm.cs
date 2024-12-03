@@ -43,9 +43,11 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void label9_Click(object sender, EventArgs e)
         {
-            this.Close(); 
-           AdminForm ad = new AdminForm();
-            ad.ShowDialog();   
+            this.Hide();    
+            AdminForm ad = new AdminForm();
+
+            ad.ShowDialog();
+            this.Close();   
         }
 
         private void label10_Click(object sender, EventArgs e)

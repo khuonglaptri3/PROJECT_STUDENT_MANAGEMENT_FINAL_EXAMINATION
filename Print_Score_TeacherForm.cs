@@ -63,5 +63,18 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         {
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); 
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TeacherForm teacherForm = new TeacherForm(tchId);
+            teacherForm.Show();  
+            this.Close(); 
+        }
     }
 }

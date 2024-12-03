@@ -61,26 +61,29 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
         private void button_newcourse_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Addcourse addcourse = new Addcourse(tchId);
             addcourse.Show();
-            this.Hide();
+            this.Close(); 
             hideSubMenu();
         }
 
         private void button_managecourse_Click(object sender, EventArgs e)
         {
+            this.Hide();
             ManagerCourseForm managerCourseForm = new ManagerCourseForm(tchId);
             managerCourseForm.Show();
-            this.Hide();
             hideSubMenu();
+            this.Close();
         }
 
         private void button_stdPrintcourse_Click(object sender, EventArgs e)
 
         {
+            this.Hide();
             PrintCourse printCourse = new PrintCourse(tchId);
-            printCourse.Show(); 
-            this.Hide(); 
+            printCourse.Show();
+            this.Close(); 
             hideSubMenu();
         }
         #endregion subMenu_Course 
@@ -92,9 +95,10 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void button_newscore_Click(object sender, EventArgs e)
         {
+            this.Hide();    
             TeacherScoreForm teacherScoreForm = new TeacherScoreForm(tchId); 
             teacherScoreForm.Show();
-            this.Hide();    
+            this.Close();   
             hideSubMenu();
         }
 
@@ -105,10 +109,12 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void button_printsore_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Print_Score_TeacherForm print_Score_TeacherForm = new Print_Score_TeacherForm(tchId);   
-            this.Hide(); 
+             
             print_Score_TeacherForm.ShowDialog();    
             hideSubMenu();
+            this.Close(); 
         }
         #endregion SubMenu_Score    
 

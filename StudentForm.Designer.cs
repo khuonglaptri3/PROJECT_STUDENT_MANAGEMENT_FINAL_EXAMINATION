@@ -37,21 +37,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button_stdPrintcourse = new System.Windows.Forms.Button();
-            this.button_viewcourse = new System.Windows.Forms.Button();
             this.button_enrollincourse = new System.Windows.Forms.Button();
             this.panel_subcourse = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Maletxt = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.Femaletxt = new System.Windows.Forms.Label();
-            this.Total_stdtxt = new System.Windows.Forms.Label();
             this.panel_slide = new System.Windows.Forms.Panel();
+            this.button_viewcourse = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_subcourse.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel_slide.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +54,7 @@
             // 
             this.Panel_subscore.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel_subscore.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Panel_subscore.Location = new System.Drawing.Point(0, 389);
+            this.Panel_subscore.Location = new System.Drawing.Point(0, 320);
             this.Panel_subscore.Name = "Panel_subscore";
             this.Panel_subscore.Size = new System.Drawing.Size(212, 204);
             this.Panel_subscore.TabIndex = 3;
@@ -76,6 +71,7 @@
             this.button_courseandgrade.Text = "Course and Grades";
             this.button_courseandgrade.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_courseandgrade.UseVisualStyleBackColor = true;
+            this.button_courseandgrade.Click += new System.EventHandler(this.button_courseandgrade_Click);
             // 
             // HCMUTE
             // 
@@ -91,11 +87,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1045, 0);
+            this.label1.Location = new System.Drawing.Point(1054, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(25, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // panel3
             // 
@@ -105,7 +102,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(212, 80);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1056, 83);
+            this.panel3.Size = new System.Drawing.Size(1082, 83);
             this.panel3.TabIndex = 12;
             // 
             // label2
@@ -138,7 +135,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(212, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1056, 80);
+            this.panel1.Size = new System.Drawing.Size(1082, 80);
             this.panel1.TabIndex = 11;
             // 
             // tableLayoutPanel1
@@ -147,37 +144,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(168, 80);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(133, 64);
             this.tableLayoutPanel1.TabIndex = 5;
-            // 
-            // button_stdPrintcourse
-            // 
-            this.button_stdPrintcourse.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_stdPrintcourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_stdPrintcourse.Location = new System.Drawing.Point(0, 134);
-            this.button_stdPrintcourse.Name = "button_stdPrintcourse";
-            this.button_stdPrintcourse.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button_stdPrintcourse.Size = new System.Drawing.Size(212, 67);
-            this.button_stdPrintcourse.TabIndex = 5;
-            this.button_stdPrintcourse.Text = "Print";
-            this.button_stdPrintcourse.UseVisualStyleBackColor = true;
-            // 
-            // button_viewcourse
-            // 
-            this.button_viewcourse.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_viewcourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_viewcourse.Location = new System.Drawing.Point(0, 67);
-            this.button_viewcourse.Name = "button_viewcourse";
-            this.button_viewcourse.Size = new System.Drawing.Size(212, 67);
-            this.button_viewcourse.TabIndex = 4;
-            this.button_viewcourse.Text = "View Grades";
-            this.button_viewcourse.UseVisualStyleBackColor = true;
-            this.button_viewcourse.Click += new System.EventHandler(this.button_viewcourse_Click);
             // 
             // button_enrollincourse
             // 
@@ -193,14 +166,13 @@
             // 
             // panel_subcourse
             // 
-            this.panel_subcourse.Controls.Add(this.button_stdPrintcourse);
             this.panel_subcourse.Controls.Add(this.button_viewcourse);
             this.panel_subcourse.Controls.Add(this.button_enrollincourse);
             this.panel_subcourse.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_subcourse.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_subcourse.Location = new System.Drawing.Point(0, 185);
             this.panel_subcourse.Name = "panel_subcourse";
-            this.panel_subcourse.Size = new System.Drawing.Size(212, 204);
+            this.panel_subcourse.Size = new System.Drawing.Size(212, 135);
             this.panel_subcourse.TabIndex = 2;
             // 
             // panel2
@@ -213,47 +185,14 @@
             this.panel2.Size = new System.Drawing.Size(212, 118);
             this.panel2.TabIndex = 1;
             // 
-            // Maletxt
-            // 
-            this.Maletxt.AutoSize = true;
-            this.Maletxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Maletxt.Location = new System.Drawing.Point(17, 45);
-            this.Maletxt.Name = "Maletxt";
-            this.Maletxt.Size = new System.Drawing.Size(75, 27);
-            this.Maletxt.TabIndex = 7;
-            this.Maletxt.Text = "Male: ";
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.GrayText;
-            this.panel4.Controls.Add(this.Femaletxt);
-            this.panel4.Controls.Add(this.Maletxt);
-            this.panel4.Controls.Add(this.Total_stdtxt);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(212, 561);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1056, 100);
+            this.panel4.Size = new System.Drawing.Size(1082, 100);
             this.panel4.TabIndex = 13;
-            // 
-            // Femaletxt
-            // 
-            this.Femaletxt.AutoSize = true;
-            this.Femaletxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Femaletxt.Location = new System.Drawing.Point(123, 45);
-            this.Femaletxt.Name = "Femaletxt";
-            this.Femaletxt.Size = new System.Drawing.Size(97, 27);
-            this.Femaletxt.TabIndex = 8;
-            this.Femaletxt.Text = "Female: ";
-            // 
-            // Total_stdtxt
-            // 
-            this.Total_stdtxt.AutoSize = true;
-            this.Total_stdtxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total_stdtxt.Location = new System.Drawing.Point(6, 0);
-            this.Total_stdtxt.Name = "Total_stdtxt";
-            this.Total_stdtxt.Size = new System.Drawing.Size(171, 27);
-            this.Total_stdtxt.TabIndex = 6;
-            this.Total_stdtxt.Text = "Total Students: ";
             // 
             // panel_slide
             // 
@@ -267,17 +206,32 @@
             this.panel_slide.Name = "panel_slide";
             this.panel_slide.Size = new System.Drawing.Size(212, 661);
             this.panel_slide.TabIndex = 10;
+            this.panel_slide.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_slide_Paint);
+            // 
+            // button_viewcourse
+            // 
+            this.button_viewcourse.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_viewcourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_viewcourse.Location = new System.Drawing.Point(0, 67);
+            this.button_viewcourse.Name = "button_viewcourse";
+            this.button_viewcourse.Size = new System.Drawing.Size(212, 67);
+            this.button_viewcourse.TabIndex = 4;
+            this.button_viewcourse.Text = "View Grades";
+            this.button_viewcourse.UseVisualStyleBackColor = true;
+            this.button_viewcourse.Click += new System.EventHandler(this.button_viewcourse_Click);
             // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1268, 661);
+            this.ClientSize = new System.Drawing.Size(1294, 661);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel_slide);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StudentForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StudentForm";
             this.Load += new System.EventHandler(this.StudentForm_Load);
             this.panel3.ResumeLayout(false);
@@ -287,8 +241,6 @@
             this.panel_subcourse.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel_slide.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -304,16 +256,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button_stdPrintcourse;
-        private System.Windows.Forms.Button button_viewcourse;
         private System.Windows.Forms.Button button_enrollincourse;
         private System.Windows.Forms.Panel panel_subcourse;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label Maletxt;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label Femaletxt;
-        private System.Windows.Forms.Label Total_stdtxt;
         private System.Windows.Forms.Panel panel_slide;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button button_viewcourse;
     }
 }

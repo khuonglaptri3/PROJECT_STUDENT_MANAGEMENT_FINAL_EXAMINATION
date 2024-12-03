@@ -29,19 +29,18 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         {
 
         }
-        private void LoadStudentDetails(int studentId)//XT
+        private void LoadStudentDetails(int studentId)
         {
-        
             string query = @"SELECT 
-                            c.CourseID, 
-                            c.CourseName, 
-                            g.Grade 
-                        FROM 
-                            GRADES g
-                        INNER JOIN 
-                            Course c ON g.CourseId = c.CourseID
-                        WHERE 
-                            g.StdId = @StudentId";
+                                c.CourseID, 
+                                c.CourseName, 
+                                g.Grade 
+                            FROM 
+                                GRADES g
+                            INNER JOIN 
+                                Course c ON g.CourseId = c.CourseID
+                            WHERE 
+                                g.StdId = @StudentId";
 
             using (SqlCommand cmd = new SqlCommand(query, connect))
             {
@@ -51,10 +50,19 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 adapter.Fill(dt);
 
                 DataGridView_student.DataSource = dt;
+                var studentDetails = dt.AsEnumerable()
+               .Select(row => new
+               {
+                   StudentId = row.Field<int?>("Grade") ?? 0, // Use nullable type and provide a default value
+               })
+               .ToList();
+                DataGridView_student.DataSource = dt;
 
                 if (dt.Rows.Count > 0)
                 {
-                    double averageGrade = dt.AsEnumerable().Average(row => row.Field<int>("Grade"));
+                    double averageGrade = dt.AsEnumerable()
+                                             .Where(row => !row.IsNull("Grade"))
+                                             .Average(row => row.Field<int>("Grade"));
                     string judgment = GetGradeJudgment(averageGrade);
                     textBox_studentInfo.Text = $"Average Grade: {averageGrade:F2}\r\nJudgment: {judgment}";
                 }
@@ -271,15 +279,16 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void label9_Click(object sender, EventArgs e)
         {
-            this.Close();
-            AdminForm adminForm = new AdminForm();
-            adminForm.ShowDialog();
+            this.Hide(); 
+            StudentForm st = new StudentForm(studentID);
+            st.ShowDialog(); 
+            this.Close(); 
+            
         }
 
+        private void textBox_studentInfo_TextChanged(object sender, EventArgs e)
+        {
 
-
-
-
-
+        }
     }
 }

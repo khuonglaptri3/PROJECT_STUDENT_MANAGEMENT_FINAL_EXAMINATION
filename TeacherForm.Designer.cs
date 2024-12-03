@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Femaletxt = new System.Windows.Forms.Label();
-            this.Total_stdtxt = new System.Windows.Forms.Label();
             this.Panel_subscore = new System.Windows.Forms.Panel();
             this.button_printsore = new System.Windows.Forms.Button();
             this.button_newscore = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.Maletxt = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button_score = new System.Windows.Forms.Button();
@@ -44,39 +41,18 @@
             this.button_newcourse = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.HCMUTE = new System.Windows.Forms.Label();
             this.button_course = new System.Windows.Forms.Button();
             this.panel_slide = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.Panel_subscore.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel_subcourse.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_slide.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Femaletxt
-            // 
-            this.Femaletxt.AutoSize = true;
-            this.Femaletxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Femaletxt.Location = new System.Drawing.Point(123, 45);
-            this.Femaletxt.Name = "Femaletxt";
-            this.Femaletxt.Size = new System.Drawing.Size(97, 27);
-            this.Femaletxt.TabIndex = 8;
-            this.Femaletxt.Text = "Female: ";
-            // 
-            // Total_stdtxt
-            // 
-            this.Total_stdtxt.AutoSize = true;
-            this.Total_stdtxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total_stdtxt.Location = new System.Drawing.Point(6, 0);
-            this.Total_stdtxt.Name = "Total_stdtxt";
-            this.Total_stdtxt.Size = new System.Drawing.Size(171, 27);
-            this.Total_stdtxt.TabIndex = 6;
-            this.Total_stdtxt.Text = "Total Students: ";
             // 
             // Panel_subscore
             // 
@@ -116,24 +92,11 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.GrayText;
-            this.panel4.Controls.Add(this.Femaletxt);
-            this.panel4.Controls.Add(this.Maletxt);
-            this.panel4.Controls.Add(this.Total_stdtxt);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(212, 565);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1095, 100);
             this.panel4.TabIndex = 9;
-            // 
-            // Maletxt
-            // 
-            this.Maletxt.AutoSize = true;
-            this.Maletxt.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Maletxt.Location = new System.Drawing.Point(17, 45);
-            this.Maletxt.Name = "Maletxt";
-            this.Maletxt.Size = new System.Drawing.Size(75, 27);
-            this.Maletxt.TabIndex = 7;
-            this.Maletxt.Text = "Male: ";
             // 
             // label2
             // 
@@ -240,6 +203,17 @@
             this.panel1.Size = new System.Drawing.Size(1095, 80);
             this.panel1.TabIndex = 7;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1067, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 25);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click_2);
+            // 
             // HCMUTE
             // 
             this.HCMUTE.AutoSize = true;
@@ -288,17 +262,6 @@
             this.panel2.Size = new System.Drawing.Size(212, 118);
             this.panel2.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1067, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 25);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "X";
-            this.label1.Click += new System.EventHandler(this.label1_Click_2);
-            // 
             // TeacherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -314,8 +277,6 @@
             this.Text = "TeacherForm";
             this.Load += new System.EventHandler(this.TeacherForm_Load);
             this.Panel_subscore.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel_subcourse.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -329,14 +290,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label Femaletxt;
-        private System.Windows.Forms.Label Total_stdtxt;
         private System.Windows.Forms.Panel Panel_subscore;
         private System.Windows.Forms.Button button_printsore;
         private System.Windows.Forms.Button button_newscore;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label Maletxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button_score;

@@ -43,9 +43,10 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void label9_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide(); 
             AdminForm ad = new AdminForm();
             ad.ShowDialog();
+            this.Close(); 
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -132,6 +133,16 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
 
         private void DataGridView_student_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label7_Click_1(object sender, EventArgs e)
+        {
+             Application.Exit();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }

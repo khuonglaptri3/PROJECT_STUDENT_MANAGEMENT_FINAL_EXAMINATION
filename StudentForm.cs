@@ -14,12 +14,13 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
     public partial class StudentForm : Form
     {
         private int StdId;
-
+        private SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
         public StudentForm(int studentId)
         {
             InitializeComponent();
             this.StdId = studentId;
-            DisplayStudentName();
+            Student student = new Student(connect, studentId);
+            label3.Text = student.PrintDetails(); 
         }
         private void hideSubMenu()
         {
@@ -39,8 +40,9 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
         private void button_enrollincourse_Click(object sender, EventArgs e)
         {
-            EnrollInCourseForm newCourse = new EnrollInCourseForm(StdId);
             this.Hide();
+            EnrollInCourseForm newCourse = new EnrollInCourseForm(StdId);
+            
             newCourse.ShowDialog();
             this.Close();
 
@@ -74,8 +76,8 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         #endregion CourseAndGrades_SubMenu
         private void button_viewcourse_Click(object sender, EventArgs e)
         {
+            this.Hide(); 
             ViewStudentDetailForm viewdetail = new ViewStudentDetailForm(StdId);
-            this.Hide();
             viewdetail.ShowDialog();
             this.Close();
 
@@ -86,38 +88,38 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         {
 
         }
-        private void DisplayStudentName()
-        {
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30"; 
-            string query = "SELECT StdFirstName, StdLastName FROM Student WHERE StdId = @StdId";
+        //private void DisplayStudentName()
+        //{
+        //    string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30"; 
+        //    string query = "SELECT StdFirstName, StdLastName FROM Student WHERE StdId = @StdId";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@StdId", StdId);
+        //    using (SqlConnection connection = new SqlConnection(connectionString))
+        //    {
+        //        SqlCommand command = new SqlCommand(query, connection);
+        //        command.Parameters.AddWithValue("@StdId", StdId);
 
-                try
-                {
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        string firstName = reader["StdFirstName"].ToString();
-                        string lastName = reader["StdLastName"].ToString();
-                        label3.Text = $"Welcome {firstName} {lastName}";
-                    }
-                    else
-                    {
-                        MessageBox.Show("No student found with the provided ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    reader.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error retrieving student name: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
+        //        try
+        //        {
+        //            connection.Open();
+        //            SqlDataReader reader = command.ExecuteReader();
+        //            if (reader.Read())
+        //            {
+        //                string firstName = reader["StdFirstName"].ToString();
+        //                string lastName = reader["StdLastName"].ToString();
+        //                label3.Text = $"Welcome {firstName} {lastName}";
+        //            }
+        //            else
+        //            {
+        //                MessageBox.Show("No student found with the provided ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //            }
+        //            reader.Close();
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show("Error retrieving student name: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //    }
+        //}
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
@@ -130,6 +132,26 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
 
         private void StudentForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+           Application.Exit(); 
+        }
+
+        private void button_courseandgrade_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_slide_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button_stdPrintcourse_Click(object sender, EventArgs e)
         {
 
         }

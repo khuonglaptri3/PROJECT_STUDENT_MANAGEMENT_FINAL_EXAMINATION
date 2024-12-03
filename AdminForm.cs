@@ -27,21 +27,6 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             comboBox_course.DisplayMember = "CourseName";
             comboBox_course.ValueMember = "CourseName";
         }
-        //private Form activeForm = null;
-        //private void openChildForm(Form childForm)
-        //{
-        //    if (activeForm != null)
-        //        activeForm.Close();
-        //    activeForm = childForm;
-        //    childForm.TopLevel = false;
-        //    childForm.FormBorderStyle = FormBorderStyle.None;
-        //    childForm.Dock = DockStyle.Fill;
-        //    panel_main.Controls.Add(childForm);
-        //    panel_main.Tag = childForm;
-        //    childForm.BringToFront();
-        //    childForm.Show();
-
-        //}
         private void customizeDesign()
         {
             panel_substd.Visible = false;
@@ -76,16 +61,18 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
-            hideSubMenu();
+            this.Hide();     
             ManegerStudentForm manegerStudentForm = new ManegerStudentForm();
             manegerStudentForm.ShowDialog();
+            hideSubMenu();
+            this.Close();
+
         }
 
         private void button_registrationstd_Click(object sender, EventArgs e)
         {
             RegisterForm registerForm = new RegisterForm();
-            this.Hide();
+            this.Hide();     
             registerForm.ShowDialog();
             this.Close();
 
@@ -97,10 +84,11 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void button_stdPrint_Click(object sender, EventArgs e)
         {
+            this.Hide(); 
             PrintStudent printStudent = new PrintStudent();
-            this.Close();
             printStudent.ShowDialog();
             hideSubMenu();
+            this.Close(); 
         }
         #endregion Student_SubMenu   
         private void label1_Click(object sender, EventArgs e)
@@ -115,8 +103,8 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void button_Registrationtch_Click(object sender, EventArgs e)
         {
+            this.Hide(); 
             RegistratorTeacher registerteacherForm = new RegistratorTeacher();
-            this.Hide();
             registerteacherForm.ShowDialog();
             this.Close();
 
@@ -126,19 +114,22 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void button_managetch_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide(); 
             hideSubMenu();
             TeacherManageForm teacherManageForm = new TeacherManageForm();
             teacherManageForm.ShowDialog();
+            this.Close(); 
             //hideSubMenu();
         }
 
         private void button_printtch_Click(object sender, EventArgs e)
         {
+            this.Hide();
             PrintTeacher printTeacher = new PrintTeacher();
-            this.Close();
+            
             printTeacher.ShowDialog();
             hideSubMenu();
+            this.Close();
         }
         #endregion Teacher_SubMenu   
 
@@ -177,6 +168,16 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private void label11_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label11_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_2(object sender, EventArgs e)
+        {
+            Application.Exit();  
         }
     }
 }
