@@ -15,7 +15,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
     public partial class PrintStudent : Form
     {
         private int studentID;
-
+        private bool isFormLoaded = false;
         SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION\SYS_MANAGERMENT.mdf;Integrated Security=True;Connect Timeout=30");
         public PrintStudent()
         {
@@ -24,7 +24,18 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void PrintStudent_Load(object sender, EventArgs e)
         {
+            string query = "SELECT CourseID, CourseName FROM Course";
+            using (SqlCommand cmd = new SqlCommand(query, connect))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
 
+                comboBox_class.DataSource = dt;
+                comboBox_class.DisplayMember = "CourseName";
+                comboBox_class.ValueMember = "CourseID";
+            }
+            isFormLoaded = true;
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -51,101 +62,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             }
         }
         private void LoadStudentDetails(int studentId)//XT
-        {
-            //try
-            //{
-            //    connect.Open();
-
-            //    SqlCommand studentCommand = new SqlCommand("SELECT * FROM Student WHERE StdId = @StdId", connect);
-            //    studentCommand.Parameters.AddWithValue("@StdId", studentId);
-            //    SqlDataAdapter studentAdapter = new SqlDataAdapter(studentCommand);
-            //    DataTable studentTable = new DataTable();
-            //    studentAdapter.Fill(studentTable);
-
-            //    SqlCommand gradeCommand = new SqlCommand("SELECT * FROM GRADES WHERE StdId = @StdId", connect);
-            //    gradeCommand.Parameters.AddWithValue("@StdId", studentId);
-            //    SqlDataAdapter gradeAdapter = new SqlDataAdapter(gradeCommand);
-            //    DataTable gradeTable = new DataTable();
-            //    gradeAdapter.Fill(gradeTable);
-
-            //    connect.Close();
-
-            //    if (studentTable.Rows.Count > 0)
-            //    {
-            //        DataRow studentRow = studentTable.Rows[0];
-            //        StringBuilder studentInfo = new StringBuilder();
-            //        studentInfo.AppendLine($"Name: {studentRow["StdFirstName"]} {studentRow["StdLastName"]}");
-            //        studentInfo.AppendLine($"Birthdate: {studentRow["Birthdate"]}");
-            //        studentInfo.AppendLine($"Phone: {studentRow["Phone"]}");
-            //        studentInfo.AppendLine($"Gender: {studentRow["Gender"]}");
-            //        studentInfo.AppendLine($"Address: {studentRow["Address"]}");
-
-            //        if (gradeTable.Rows.Count > 0)
-            //        {
-            //            int totalGrades = 0;
-            //            foreach (DataRow row in gradeTable.Rows)
-            //            {
-            //                totalGrades += Convert.ToInt32(row["GradeValue"]);
-            //            }
-            //            double averageGrade = totalGrades / gradeTable.Rows.Count;
-            //            string gradeJudgment = GetGradeJudgment(averageGrade);
-
-            //            studentInfo.AppendLine($"Average Grade: {averageGrade}");
-            //            studentInfo.AppendLine($"Judgment: {gradeJudgment}");
-
-            //            DataGridView_student.DataSource = gradeTable;
-            //        }
-            //        else
-            //        {
-            //            studentInfo.AppendLine("Average Grade: N/A");
-            //            studentInfo.AppendLine("Judgment: N/A");
-            //        }
-
-            //        textBox_studentInfo.Text = studentInfo.ToString();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Student not found.");
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"An error occurred: {ex.Message}");
-            //}
-            //    studentID = studentId;
-            //    string query = @"
-            //SELECT 
-            //    c.CourseID, 
-            //    c.CourseName, 
-            //    g.Grade 
-
-            //FROM 
-            //    GRADES g
-            //JOIN 
-            //    Course c ON g.CourseId = c.CourseID
-            //WHERE 
-            //    g.StdId = @StudentId";
-
-            //    using (SqlCommand cmd = new SqlCommand(query, connect))
-            //    {
-            //        cmd.Parameters.AddWithValue("@StudentId", studentId);
-            //        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            //        DataTable dt = new DataTable();
-            //        adapter.Fill(dt);
-
-            //        DataGridView_student.DataSource = dt;
-
-            //        if (dt.Rows.Count > 0)
-            //        {
-            //            double averageGrade = dt.AsEnumerable().Average(row => row.Field<int>("Grade"));
-            //            string judgment = GetGradeJudgment(averageGrade);
-            //            textBox_studentInfo.Text = $"Average Grade: {averageGrade:F2}\nJudgment: {judgment}";
-            //        }
-            //        else
-            //        {
-            //            textBox_studentInfo.Text = "No courses found for this student.";
-            //        }
-            //    }
+        { 
             string query = @"SELECT 
                             c.CourseID, 
                             c.CourseName, 
@@ -187,25 +104,6 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
         private void LoadStudentData()//XT
         {
-            //if (connect.State == ConnectionState.Closed)
-            //{
-            //    connect.Open();
-            //}
-            //SqlCommand command = new SqlCommand("SELECT * FROM Student", connect);
-            //SqlDataAdapter adapter = new SqlDataAdapter(command);
-            //DataTable table = new DataTable();
-            //adapter.Fill(table);
-            //DataGridView_student.DataSource = table;
-            //connect.Close();
-            //string query = "SELECT CourseID, CourseName, Teacher FROM Courses WHERE CourseID = @CourseID";
-            //using (SqlCommand command = new SqlCommand(query, connect))
-            //{
-            //    //command.Parameters.AddWithValue("@StdId", 1); // Replace with the actual student ID
-            //    SqlDataAdapter adapter = new SqlDataAdapter(command);
-            //    DataTable table = new DataTable();
-            //    adapter.Fill(table);
-            //    DataGridView_student.DataSource = table;
-            //}
             string query = @"
         SELECT 
             c.CourseID, 
@@ -228,21 +126,6 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         }
         private void button_search_Click(object sender, EventArgs e)
         {
-            //string selectQuery;
-            //if (radioButton_all.Checked)
-            //{
-            //    selectQuery = "SELECT* FROM Student";
-            //}
-            //else if (radioButton_male.Checked)
-            //{
-            //    selectQuery = "SELECT * FROM Student WHERE Gender = 'Male'";
-            //}
-            //else
-            //{
-            //    selectQuery = "SELECT * FROM Student WHERE Gender = 'Female'";
-            //}
-            //Administrator administrator = new Administrator();
-            //DataGridView_student.DataSource = administrator.GetStudentList(connect , selectQuery);
             if (int.TryParse(ID_textBox.Text, out int studentId))
             {
                 LoadStudentDetails(studentId);
@@ -251,7 +134,38 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             {
                 MessageBox.Show("Please enter a valid Student ID.");
             }
-            if (string.IsNullOrWhiteSpace(ID_textBox.Text))
+            if (comboBox_class.SelectedValue != null)
+            {
+                int courseId = (int)comboBox_class.SelectedValue;
+                string query = @"
+            SELECT 
+                s.StdId, 
+                s.StdFirstName, 
+                s.StdLastName, 
+                s.Birthdate, 
+                s.Gender 
+            FROM 
+                Student s
+            JOIN 
+                GRADES g ON s.StdId = g.StdId
+            WHERE 
+                g.CourseId = @CourseId";
+
+                using (SqlCommand cmd = new SqlCommand(query, connect))
+                {
+                    cmd.Parameters.AddWithValue("@CourseId", courseId);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    DataGridView_student.DataSource = dt;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a course from the list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (string.IsNullOrWhiteSpace(ID_textBox.Text) && comboBox_class.SelectedValue == null)
             {
                 string selectQuery;
                 if (radioButton_all.Checked)
@@ -273,72 +187,108 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
         private void button_print_Click(object sender, EventArgs e)
         {
-            //DGVPrinter printer = new DGVPrinter();
-            //printer.Title = "HCMUTE student  list";
-            //printer.SubTitle = string.Format("Date: {0}", DateTime.Now.Date);
-            //printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
-            //printer.PageNumbers = true;
-            //printer.PageNumberInHeader = false;
-            //printer.PorportionalColumns = true;
-            //printer.HeaderCellAlignment = StringAlignment.Near;
-            //printer.Footer = "foxlearn";
-            //printer.FooterSpacing = 15;
-            //printer.printDocument.DefaultPageSettings.Landscape = true;
-            //printer.PrintDataGridView(DataGridView_student);
+
             if (int.TryParse(ID_textBox.Text, out studentID))
             {
                 LoadStudentDetails(studentID);
-                GenerateStudentInfoText(studentID);
-                GenerateEvaluationText(studentID);
+                string studentInfo = generateStudentInfoText(studentID);
+                string evaluationText = generateEvaluationText(studentID);
+                string contentToPrint = studentInfo + "\r\n Evaluation:\r\n" + evaluationText;
+                string filePath = @"D:\StudentInfo.txt";
+                System.IO.File.WriteAllText(filePath, contentToPrint);
+
                 if (DataGridView_student.Columns.Contains("CourseID") &&
                     DataGridView_student.Columns.Contains("CourseName") &&
                     DataGridView_student.Columns.Contains("Grade"))
                 {
+                    DataGridView newDataGridView = new DataGridView
+                    {
+                        AllowUserToAddRows = false,
+                        AllowUserToDeleteRows = false,
+                        ReadOnly = true,
+                        AutoGenerateColumns = false
+                    };
+                    foreach (DataGridViewColumn column in DataGridView_student.Columns)
+                    {
+                        newDataGridView.Columns.Add(new DataGridViewColumn
+                        {
+                            HeaderText = column.HeaderText,
+                            Name = column.Name,
+                            CellTemplate = new DataGridViewTextBoxCell(),
+                            Width = column.Width/2,
+                            Visible = column.Visible
+                        });
+                    }
+                    foreach (DataGridViewRow row in DataGridView_student.Rows)
+                    {
+                        if (!row.IsNewRow)
+                        {
+                            int rowIndex = newDataGridView.Rows.Add();
+                            for (int colIndex = 0; colIndex < DataGridView_student.Columns.Count; colIndex++)
+                            {
+                                newDataGridView.Rows[rowIndex].Cells[colIndex].Value = row.Cells[colIndex].Value;
+                            }
+                        }
+                    }
                     DGVPrinter printer = new DGVPrinter();
-                    printer.Title = "Student Course Details";
-                    printer.SubTitle = $"Printed on: {DateTime.Now.ToString("MM/dd/yyyy")}";
+                    printer.Title = "Student Course Details\r\n" + "\r\n";
+                    printer.SubTitle = $"Printed on: {DateTime.Now.ToString("MM/dd/yyyy")}\r\n" + contentToPrint + "\r\n";
                     printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
                     printer.PageNumbers = true;
                     printer.PageNumberInHeader = false;
-                    printer.PorportionalColumns = false;
+                    printer.PorportionalColumns = true;
                     printer.HeaderCellAlignment = StringAlignment.Near;
                     printer.Footer = "Student Management System";
                     printer.FooterSpacing = 15;
                     printer.printDocument.DefaultPageSettings.Landscape = true;
-                    //foreach (DataGridViewColumn column in DataGridView_student.Columns)
-                    //{
-                    //    column.Width = (int)((double)column.Width / 0.3);
-                    //}
-                    //DataGridView_student.Columns["CourseID"].HeaderText = "Course ID";
-                    //DataGridView_student.Columns["CourseName"].HeaderText = "Course Name";
-                    //DataGridView_student.Columns["Grade"].HeaderText = "Grade";
-                    int totalWidth = DataGridView_student.Columns.Cast<DataGridViewColumn>().Sum(col => col.Width);
 
-                    // Determine printable width of the page
-                    int printableWidth = printer.printDocument.DefaultPageSettings.Bounds.Width -
-                                         printer.printDocument.DefaultPageSettings.Margins.Left -
-                                         printer.printDocument.DefaultPageSettings.Margins.Right;
-                      
-                    // Adjust each column's width proportionally
-                    foreach (DataGridViewColumn column in DataGridView_student.Columns)
-                    {
-                        column.Width = (int)((double)column.Width / totalWidth * printableWidth);
-                    }
+                    printer.PrintDataGridView(newDataGridView);
 
-                    printer.PrintDataGridView(DataGridView_student);
+                    //printer.PrintDataGridView(DataGridView_student);
                 }
                 else
                 {
                     MessageBox.Show("The DataGridView does not contain the required columns.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                //if (comboBox_class.SelectedValue == null || !int.TryParse(comboBox_class.SelectedValue.ToString(), out int courseId))
+                //{
+                //    MessageBox.Show("Please select a valid course from the list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    return;
+                //}
             }
-            else
-            {
-                MessageBox.Show("Please enter a valid Student ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            if (string.IsNullOrWhiteSpace(ID_textBox.Text))
+
+            else if (string.IsNullOrWhiteSpace(ID_textBox.Text) && comboBox_class.SelectedValue == null)
             {
                 DGVPrinter printer = new DGVPrinter();
+                DataGridView newDataGridView = new DataGridView
+                {
+                    AllowUserToAddRows = false,
+                    AllowUserToDeleteRows = false,
+                    ReadOnly = true,
+                    AutoGenerateColumns = false
+                };
+                foreach (DataGridViewColumn column in DataGridView_student.Columns)
+                {
+                    newDataGridView.Columns.Add(new DataGridViewColumn
+                    {
+                        HeaderText = column.HeaderText,
+                        Name = column.Name,
+                        CellTemplate = new DataGridViewTextBoxCell(),
+                        Width = column.Width / 2,
+                        Visible = column.Visible
+                    });
+                }
+                foreach (DataGridViewRow row in DataGridView_student.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        int rowIndex = newDataGridView.Rows.Add();
+                        for (int colIndex = 0; colIndex < DataGridView_student.Columns.Count; colIndex++)
+                        {
+                            newDataGridView.Rows[rowIndex].Cells[colIndex].Value = row.Cells[colIndex].Value;
+                        }
+                    }
+                }
                 printer.Title = "HCMUTE student  list";
                 printer.SubTitle = string.Format("Date: {0}", DateTime.Now.Date);
                 printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
@@ -349,7 +299,79 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
                 printer.Footer = "foxlearn";
                 printer.FooterSpacing = 15;
                 printer.printDocument.DefaultPageSettings.Landscape = true;
-                printer.PrintDataGridView(DataGridView_student);
+                printer.PrintDataGridView(newDataGridView);
+            }
+            else if (comboBox_class.SelectedValue != null && int.TryParse(comboBox_class.SelectedValue.ToString(), out int courseId))
+            {
+                string query = @"
+        SELECT 
+            s.StdId, 
+            s.StdFirstName, 
+            s.StdLastName, 
+            s.Birthdate, 
+            s.Gender 
+        FROM 
+            Student s
+        JOIN 
+            GRADES g ON s.StdId = g.StdId
+        WHERE 
+            g.CourseId = @CourseId";
+
+                using (SqlCommand cmd = new SqlCommand(query, connect))
+                {
+                    cmd.Parameters.AddWithValue("@CourseId", courseId);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    DataGridView_student.DataSource = dt;
+                    DataGridView newDataGridView = new DataGridView
+                    {
+                        AllowUserToAddRows = false,
+                        AllowUserToDeleteRows = false,
+                        ReadOnly = true,
+                        AutoGenerateColumns = false
+                    };
+                    foreach (DataGridViewColumn column in DataGridView_student.Columns)
+                    {
+                        newDataGridView.Columns.Add(new DataGridViewColumn
+                        {
+                            HeaderText = column.HeaderText,
+                            Name = column.Name,
+                            CellTemplate = new DataGridViewTextBoxCell(),
+                            Width = column.Width / 2,
+                            Visible = column.Visible
+                        });
+                    }
+                    foreach (DataGridViewRow row in DataGridView_student.Rows)
+                    {
+                        if (!row.IsNewRow)
+                        {
+                            int rowIndex = newDataGridView.Rows.Add();
+                            for (int colIndex = 0; colIndex < DataGridView_student.Columns.Count; colIndex++)
+                            {
+                                newDataGridView.Rows[rowIndex].Cells[colIndex].Value = row.Cells[colIndex].Value;
+                            }
+                        }
+                    }
+                    DGVPrinter printer = new DGVPrinter();
+                    printer.Title = "Students in Selected Course\r\n" + "\r\n";
+                    printer.SubTitle = $"Printed on: {DateTime.Now.ToString("MM/dd/yyyy")}\r\n";
+                    printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+                    printer.PageNumbers = true;
+                    printer.PageNumberInHeader = false;
+                    printer.PorportionalColumns = true;
+                    printer.HeaderCellAlignment = StringAlignment.Near;
+                    printer.Footer = "Student Management System";
+                    printer.FooterSpacing = 15;
+                    printer.printDocument.DefaultPageSettings.Landscape = true;
+
+                    printer.PrintDataGridView(newDataGridView);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid Student ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -364,29 +386,8 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
             AdminForm adminForm = new AdminForm();  
             adminForm.ShowDialog();  
         }
-        private string GenerateStudentInfoText(int studentId)
+        private string generateStudentInfoText(int studentId)
         {
-            //string query = "SELECT StdFirstName, StdLastName, Birthdate, Phone, Gender, Address FROM Student WHERE StdId = @StdId";
-            //using (SqlCommand command = new SqlCommand(query, connect))
-            //{
-            //    command.Parameters.AddWithValue("@StdId", studentId);
-            //    connect.Open();
-            //    using (SqlDataReader reader = command.ExecuteReader())
-            //    {
-            //        if (reader.Read())
-            //        {
-            //            StringBuilder studentInfo = new StringBuilder();
-            //            studentInfo.AppendLine($"Name: {reader["StdFirstName"]} {reader["StdLastName"]}");
-            //            studentInfo.AppendLine($"Birthdate: {reader["Birthdate"]}");
-            //            studentInfo.AppendLine($"Phone: {reader["Phone"]}");
-            //            studentInfo.AppendLine($"Gender: {reader["Gender"]}");
-            //            studentInfo.AppendLine($"Address: {reader["Address"]}");
-            //            return studentInfo.ToString();
-            //        }
-            //    }
-            //    connect.Close();
-            //}
-            //return string.Empty;
             string studentInfo = string.Empty;
             string query = "SELECT * FROM Student WHERE StdId = @StdId";
 
@@ -424,7 +425,7 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
 
             return studentInfo;
         }
-        private string GenerateEvaluationText(int studentId)
+        private string generateEvaluationText(int studentId)
         {
             string query = "SELECT AVG(Grade) AS AverageGrade FROM GRADES WHERE StdId = @StdId";
             using (SqlCommand command = new SqlCommand(query, connect))
@@ -447,6 +448,43 @@ namespace PROJECT_STUDENT_MANAGEMENT_FINAL_EXAMINATION
         private void PrintEvaluationText(string evaluationText)
         {
             MessageBox.Show(evaluationText, "Evaluation");
+        }
+
+        private void comboBox_class_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!isFormLoaded) return;
+            //if (comboBox_class.SelectedValue != null && int.TryParse(comboBox_class.SelectedValue.ToString(),out int courseId))
+            //{
+
+            int courseId = (int)comboBox_class.SelectedValue;
+                string query = @"
+            SELECT 
+                s.StdId, 
+                s.StdFirstName, 
+                s.StdLastName, 
+                s.Birthdate, 
+                s.Gender 
+            FROM 
+                Student s
+            JOIN 
+                GRADES g ON s.StdId = g.StdId
+            WHERE 
+                g.CourseId = @CourseId";
+
+                using (SqlCommand cmd = new SqlCommand(query, connect))
+                {
+                    cmd.Parameters.AddWithValue("@CourseId", courseId);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    DataGridView_student.DataSource = dt;
+                }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Please select a valid course from the list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
     }
 
